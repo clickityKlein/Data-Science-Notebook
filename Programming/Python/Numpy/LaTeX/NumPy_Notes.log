@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  13 SEP 2022 11:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  13 SEP 2022 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -305,30 +305,41 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Concept1.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--6
+
+ []
+
+[2] (c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-[2] [3] (./NumPy_Notes.aux)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 15.
+) [3] [4]
+(./NumPy_Notes.aux)
 Package rerunfilecheck Info: File `NumPy_Notes.out' has not changed.
 (rerunfilecheck)             Checksum: BC434613578322005D5115560876ABFF;2120.
  ) 
 Here is how much of TeX's memory you used:
- 9964 strings out of 478268
- 153736 string characters out of 5850345
- 457071 words of memory out of 5000000
- 28065 multiletter control sequences out of 15000+600000
- 473542 words of font info for 42 fonts, out of 8000000 for 9000
+ 10666 strings out of 478268
+ 160561 string characters out of 5850345
+ 833943 words of memory out of 5000000
+ 28729 multiletter control sequences out of 15000+600000
+ 474047 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,461b,439s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,6n,63p,461b,1661s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super
-/sfrm1000.pfb>
-Output written on NumPy_Notes.pdf (3 pages, 76142 bytes).
+c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsltt10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on NumPy_Notes.pdf (4 pages, 103984 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
+ 152 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

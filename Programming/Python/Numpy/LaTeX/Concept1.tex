@@ -1,2 +1,43 @@
 % Creating and Saving NumPy ndarrays
 
+Not needing too much of an explanation, here's a beginning look at creating basic NumPy arrays.
+\\\\
+Covered in this section:
+\begin{itemize}
+	\item np.array: turn a list, or list of lists, into a NumPy array object
+	\item shape: return the dimensions of an array object
+	\item size: return the total number of elements in an array object
+	\item save \& load: arrays can be saved for future use
+\end{itemize}
+
+\begin{python}
+	x = np.array([1 ,2, 3, 4, 5])
+	print(x)
+	# [1 2 3 4 5]
+	
+	x.shape
+	# (5,)
+	
+	Y = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])
+	print(Y)
+	"""
+	[[ 1  2  3]
+	[ 4  5  6]
+	[ 7  8  9]
+	[10 11 12]]
+	"""
+	
+	Y.shape
+	# (4, 3)
+	Y.size
+	# 12
+	
+	# Notes Section:
+	# dtype changes with mixed data, and will uptype (int + floats -> all floats) 
+	# numpy arrays can be saved for later use
+	
+	# save
+	np.save('my_array', x)
+	# load
+	y = np.load('my_array.npy')
+\end{python}
