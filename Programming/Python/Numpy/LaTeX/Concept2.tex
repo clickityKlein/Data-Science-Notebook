@@ -1,1 +1,135 @@
 % Using Built-in Functions to Create ndarrays
+
+There are several function in the NumPy library which build generalized arrays, or arrays populated by data generated following rules. For example, build an array with dimensions nxm that consist of all 0s, or 1s along the diagonal, etc.
+\\\\
+
+Here are some of the essential generating functions:
+\begin{itemize}
+	\item zeros: create an array populated with all 0s
+	\item ones: create an array populated with all 1s
+	\item full: create an array populated with a specified input
+	\item eye: creates an array populated with the identiy matrix (s1 on the diagonals, 0s for the rest)
+	\item diag: takes a list, and places the list elements on the diagnoal of a matrix
+	\item arange: will return a 1d array with increasing values based upon specified start, stop and spacing where the endpoint is non-inclusive: [start, stop)
+	\item linspace: will return a 1d array with increasing values based upon start, stop and number of values desired where the endpoint is inclusive: [start, stop]
+	\item reshape: will return an array with the elements reshaped into desired dimensions (given that the two arrays have a compatible number of elements)
+	\item np.random.random: will return an array of random numbers filling specified dimensions
+	\item np.random.randint: will return an array of random integers based upon a range, and filling specified dimensions
+	\item np.random.normal: will return an array of normally distributed values based upon a range, and filling specified dimensions (note that this concept transfers to other common distributions)
+\end{itemize}
+
+\begin{python}
+	# numpy zeros function
+	x = np.zeros((3, 4))
+	# can change dtype: np.zeros((3, 4), dtype = int)
+	
+	# Below is what x, the object, look like:
+	"""
+	array([[0., 0., 0., 0.],
+	[0., 0., 0., 0.],
+	[0., 0., 0., 0.]])
+	"""
+	# For the rest of the examples, we'll be showing the print(x) version:
+	"""
+	[[0. 0. 0. 0.]
+	[0. 0. 0. 0.]
+	[0. 0. 0. 0.]]
+	"""
+	
+	x = np.ones((4, 5))
+	"""
+	[[1. 1. 1. 1. 1.]
+	[1. 1. 1. 1. 1.]
+	[1. 1. 1. 1. 1.]
+	[1. 1. 1. 1. 1.]]
+	"""
+	
+	x = np.full((4, 3), 5)
+	"""
+	[[5 5 5]
+	[5 5 5]
+	[5 5 5]
+	[5 5 5]]
+	"""
+	
+	x = np.eye(5)
+	"""
+	[[1. 0. 0. 0. 0.]
+	[0. 1. 0. 0. 0.]
+	[0. 0. 1. 0. 0.]
+	[0. 0. 0. 1. 0.]
+	[0. 0. 0. 0. 1.]]
+	"""
+	
+	x = np.diag([1, 2, 3, 4, 5])
+	"""
+	[[1 0 0 0 0]
+	[0 2 0 0 0]
+	[0 0 3 0 0]
+	[0 0 0 4 0]
+	[0 0 0 0 5]]
+	"""
+	
+	x = np.arange(10)
+	"""
+	# [0 1 2 3 4 5 6 7 8 9]
+	"""
+	
+	x = np.arange(4, 10)
+	"""
+	# [4 5 6 7 8 9]
+	"""
+	
+	x = np.arange(1, 14, 3)
+	"""
+	# [ 1  4  7 10 13]
+	"""
+	
+	# numpy linspace function (default = 50)
+	x = np.linspace(0, 25, 10)
+	"""
+	[ 0.          2.77777778  5.55555556  8.33333333 11.11111111 13.88888889
+	16.66666667 19.44444444 22.22222222 25.        ]
+	"""
+	
+	x = np.linspace(0, 25, 10, endpoint=False)
+	"""
+	[ 0.   2.5  5.   7.5 10.  12.5 15.  17.5 20.  22.5]
+	"""
+	
+	# numpy array methods
+	x = np.arange(20).reshape((4, 5))
+	"""
+	[[ 0  1  2  3  4]
+	[ 5  6  7  8  9]
+	[10 11 12 13 14]
+	[15 16 17 18 19]]
+	"""
+	
+	# numpy random functions
+	x = np.random.random((3, 3))
+	"""
+	[[0.82591877 0.69755492 0.27402617]
+	[0.13409014 0.66530258 0.10349078]
+	[0.22057372 0.17607417 0.98691068]]
+	"""
+	
+	x = np.random.randint(4, 15, (3, 2))
+	"""
+	[[ 9  4]
+	[14  8]
+	[ 4  5]]
+	"""
+	
+	# the 1000x1000 example is not illustrated, for formatting reasons
+	x = np.random.normal(0, 0.1, size = (1000, 1000))
+	
+\end{python}
+
+
+
+
+
+
+
+
