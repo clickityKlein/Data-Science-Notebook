@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\title{Calculus Notes Part 1}
+\author{Klein \\ carlj.klein@gmail.com}
+\date{}
+\maketitle
+	
+\section{Definition of a Derivative}
+We can begin the discussion of calculus with the example of a vehicle's speed over time.
+\\\\
+Imagine we have a vehicle which is averaging a certain speed, x, over a certain time period, t. There are two main scenarios where this can be achieved:
+\begin{itemize}
+	\item Constant: Either the vehicle has traveled at speed x the entire time t, or
+	\item Variable: The vehicle has traveled with varying speeds over time t 
+\end{itemize}
+In this example, we would use calculus to try and examine the how the speed changes over certain time intervals, and more specifically how the speed changes at an exact time.
+\\\\
+Colloquially, the rate of change of speed is known as acceleration. In general, the rate of change is known as a gradient.
+\\\\
+Back to our example:
+\begin{itemize}
+	\item Constant: the rate of change = acceleration = gradient = 0, or
+	\item Variable: the gradient over certain time periods, and most importantly, the gradient at specific points of time  
+\end{itemize}
+Let's cover some basic definitions:
+\begin{itemize}
+	\item function: relationship between input and output
+	\item gradient: rate of change of a function with respect to input 
+\end{itemize}
+
+Following on the importance of the gradient at a specific point in time, we develop the definition of a derivative.
+\\\\
+Imagine we're plotting the function of the vehicle (speed vs. time). Let's denote time with t, and we'll let speed be a function of time (i.e. speed = f(t)).
+\\\\
+Our goal is figure out the instantaneous rate of change at a specific time t. Let's start by examining a period time, which will be from t to $\Delta$t.
+\\\\
+Accordingly, speed during this period of time could be expressed as f(t) to f($\Delta$t).
+\\\\
+Let's go back to the concept of an average. In this example, the concept of average speed in any time period is:
+
+\[
+gradient = \frac{rise}{run} = \frac{\Delta speed}{\Delta time}
+\]
+
+Now let's represent speed as a function of time and denote time with t:
+
+\[
+gradient = \frac{f(t + \Delta t) - f(t)}{(t + \Delta t) - t} = \frac{f(t + \Delta t) - f(t)}{\Delta t}
+\]
+
+The question remains, how do we get as close as possible to the specific time t? Intuitively, we close the gap in the interval. To do this we want to let $\Delta$t get as small as possible, in other words:
+
+\[
+\lim_{\Delta t \to 0} \frac{f(t + \Delta t) - f(t)}{\Delta t}
+\]
+
+We've now created the definition of a derivative! If we let the variable t become arbitrary and denote the equation with the better known x and f(x), we can also write a derivative in the following ways:
+
+\[
+f'(x) = \frac{d}{dx}f(x) = \frac{df}{dx} = \lim_{\Delta x \to 0} \frac{f(x + \Delta x) - f(x)}{\Delta x}
+\]
+\end{document}
+
