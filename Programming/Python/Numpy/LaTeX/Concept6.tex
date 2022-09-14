@@ -1,1 +1,85 @@
 % Arithmetic Operations and Broadcasting
+Another feature of NumPy that makes it so powerful, is its built-in ability to perform mathematical operations both element-wise and matrix-wise. The concepts of the built-in mathematical functions range, but here are some of the essentials:
+
+\begin{itemize}
+	\item add
+	\item subtract
+	\item multiply
+	\item divide
+	\item sqrt
+	\item exp
+	\item power
+	\item Other Mathematical Functions
+	\item Statistical Functions
+	\item Broadcasting
+\end{itemize}
+
+Not exactly a function in itself, there is also the idea of broadcasting that will be covered in this section. Broadcasting refers to how NumPy handles arrays of different dimensions while performing arithmetic operations. NumPy generally broadcasts the smaller array across the larger array in order ot have compatible shapes. When performing arithmetic operations in the case of arrays with the same shape, the operations are done so on corresponding elements between the arrays. In the case of different shapes, one of the dimensions should be equivalent between the two arrays, and then the smaller array's values are extended either row-wise or column-wise to allow for the operation. An example will be provided in the code.
+
+\begin{python}
+	# NumPy allows element-wise and matrix-wise operations
+	x = np.array([1, 2, 3, 4])
+	y = np.array([3, 4, 5, 6])
+	
+	# addition
+	print(x + y)
+	print(np.add(x, y))
+	
+	# subtraction
+	print(x - y)
+	print(np.subtract(x, y))
+	
+	# multiplication
+	print(x * y)
+	print(np.multiply(x, y))
+	
+	# division
+	print(x / y)
+	print(np.divide(x, y))
+	
+	# in the above examples, you can use constants in place of the variables
+	
+	# arrays must be same shape (or broadcastable)
+	x = x.reshape(2, 2)
+	y = y.reshape(2, 2)
+	# you can perform all the same as above
+	
+	# other functions
+	np.sqrt(x)
+	np.exp(x)
+	np.power(x, 2)
+	
+	# statistical methods
+	x.mean()
+	x.mean(axis = 0)
+	x.mean(axis = 1)
+	x.std()
+	x.median()
+	x.max()
+	x.min()
+	
+	# methods across all elements
+	x.sum()
+	x.sum(axis = 0)
+	x.sum(axis = 1)
+	
+	# Broadcasting
+	X = np.arange(9).reshape(3, 3)
+	z = np.arange(3)
+	"""
+	X =
+	[[0 1 2]
+	[3 4 5]
+	[6 7 8]]
+	
+	z =
+	[0 1 2]
+	
+	X + z =
+	[[ 0  2  4]
+	[ 3  5  7]
+	[ 6  8 10]]
+	"""
+	# the example performs addition by column-wise broadcasting
+	# row-wise broadcasting is also possible, try using z.reshape(3, 1)
+\end{python}
