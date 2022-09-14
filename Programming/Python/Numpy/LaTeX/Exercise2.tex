@@ -1,1 +1,79 @@
-% Exercise: Creating ndarrays with Broadcasting
+% Exercise: NumPy Mini Project
+NumPy Mini-Project: Mean Normalization
+\\\\
+
+In machine learning we use large amounts of data to train our models. Some machine learning algorithms may require that the data is normalized in order to work correctly. The idea of normalization, also known as feature scaling, is to ensure that all the data is on a similar scale, i.e. that all the data takes on a similar range of values. For example, we might have a dataset that has values between 0 and 5,000. By normalizing the data we can make the range of values be between 0 and 1.
+\\\\
+
+In this lab, you will be performing a different kind of feature scaling known as mean normalization. Mean normalization will scale the data, but instead of making the values be between 0 and 1, it will distribute the values evenly in some small interval around zero. For example, if we have a dataset that has values between 0 and 5,000, after mean normalization the range of values will be distributed in some small range around 0, for example between -3 to 3. Because the range of values are distributed evenly around zero, this guarantees that the average (mean) of all elements will be zero. Therefore, when you perform mean normalization your data will not only be scaled but it will also have an average of zero.
+\\\\
+
+To Do:
+\begin{enumerate}
+	\item Create a rank 2 ndarray of random integers between 0 and 5,000 (inclusive), with 1000 rows and 20 columns. This will simulate a large dataset with a wide range of values.
+	\item Normalize the array using mean normalization, where norm\_col = (col - mean) / std.
+	\item Use broadcasting to calculate the the mean normalized version of the data.
+	\item Check results: the average of the mean normalized data should be close to zero, and the values should be evenly distributed around zero.
+	\item Split the mean normalized data into a training set (60\%), a cross validation set (20\%), and a test set (20\%).
+\end{enumerate}
+
+\begin{python}
+	# Step 1: Create Array
+	import numpy as np
+	
+	# Create a 1000 x 20 ndarray with random integers in the half-open interval [0, 5001).
+	X = np.random.randint(1, 5001, size = (1000, 20))
+
+	# Step 2: Normalize Array using Mean Normalization (norm_col = (col - mean) / std)
+	# mean is the average values of the column and std is the standard deviation of the column
+	
+	# Average of the values in each column of X
+	ave_cols = X.mean(axis = 0)
+	
+	# Standard Deviation of the values in each column of X
+	std_cols = X.std(axis = 0)
+	
+	# Step 3: Use Broadcasting to Calculate the Mean Normalized Version of X
+	# Mean normalize X
+	X_norm = (X - ave_cols) / std_cols
+	
+	# Step 4: Check results
+	# Average of X_norm values should be close to zero, and values should be evenly distributed around zero
+	# Print the average of all the values of X_norm
+	print(X_norm.mean())
+	
+	# Print the average of the minimum value in each column of X_norm
+	print(X_norm.min(axis = 0).mean())
+	
+	# Print the average of the maximum value in each column of X_norm
+	print(X_norm.max(axis = 0).mean())
+	
+	# Step 5: Split dataset into
+	# Traning Set (60%)
+	# Cross Validation Set (20%)
+	# Test Set (20%)
+	
+	# First, we'll create a random row indices vector
+	# Create a rank 1 ndarray that contains a random permutation of the row indices of `X_norm`
+	row_indices = np.random.permutation(X_norm.shape[0])
+	
+	# Second, we'll create some variables for splitting the set
+	total_rows = X_norm.shape[0]
+	train_rows = round(total_rows * .6)
+	cross_rows = round(total_rows * .2)
+	test_rows = total_rows - train_rows - cross_rows
+	
+	train_indices = row_indices[:train_rows]
+	cross_indices = row_indices[train_rows:cross_rows + train_rows]
+	test_indices = row_indices[cross_rows + train_rows:]
+	
+	# Third, we'll create the sets by slicing the data using the permutated indices
+	# Create a Training Set
+	X_train = X_norm[train_indices]
+	
+	# Create a Cross Validation Set
+	X_crossVal = X_norm[cross_indices]
+	
+	# Create a Test Set
+	X_test = X_norm[test_indices]
+\end{python}
