@@ -1,1 +1,107 @@
 % Accessing, Deleting, and Inserting Elemens Into ndarrays
+NumPy arrays are mutable objects, meaning they can be altered following creation. We'll be going over several ways to access and change existing arrays. Some of the essential functions covered are:
+\begin{itemize}
+	\item delete: specify the array and the indices for elements to be deleted
+	\item append: add elements to the end of an array
+	\item insert: add elements at a specified position of an array
+	\item vstack: stack two NumPy arrays vertically
+	\item hstack: stack two NumPy arrays horizontally
+\end{itemize}
+
+\begin{python}
+	# Can access and change elements based on indices
+	x = np.arange(1, 10).reshape(3, 3)
+	"""
+	[[1 2 3]
+	[4 5 6]
+	[7 8 9]]
+	"""
+	# Access element
+	x[0, 0] = 1
+	# 1
+	
+	# Change element
+	x[0, 0] = 99
+	"""
+	[[99  2  3]
+	[ 4  5  6]
+	[ 7  8  9]]
+	"""
+	
+	# deleting elements
+	x = np.arange(1, 6)
+	# [1 2 3 4 5]
+	# delete first and last elements
+	x = np.delete(x, [0, -1])
+	# [2 3 4]
+	
+	x = np.arange(1, 10).reshape(3, 3)
+	# for rank 2+ arrays, axis refers to dimension (row = 0, column = 1)
+	W = np.delete(x, 0, axis = 0)
+	"""
+	W is x with first row deleted
+	[[4 5 6]
+	[7 8 9]]
+	"""
+	W = np.delete(x, [0, 2], axis = 1)
+	"""
+	W is x with first and last columns deleted
+	[[2]
+	[5]
+	[8]]
+	"""
+	
+	# adding (appending) elements
+	x = np.arange(1, 6)
+	x = np.append(x, [6, 7])
+	# [1 2 3 4 5 6 7]
+	x = np.arange(1, 10).reshape(3, 3)
+	W = np.append(x, [[10 11 12]], axis = 0) # append row
+	Y = np.append(x, [[10], [11], [12]], axis = 1) # append column
+	
+	# inserting elements
+	x = np.arange(1, 6)
+	# insert elements in between elements in rank 1 array
+	x = np.insert(x, 2, [3 ,4])
+	print(x)
+	# [1 2 3 4 3 4 5]
+	
+	# insert row between rows in rank 2 array
+	x = np.arange(1, 6)
+	Y = np.arange(1, 10).reshape(3, 3)
+	W = np.insert(Y, 1, [4, 5, 6], axis = 0)
+	print(W)
+	"""
+	[[1 2 3]
+	[4 5 6]
+	[4 5 6]
+	[7 8 9]]
+	"""
+	
+	# insert column between columns in rank 2 array
+	W = np.insert(Y, 1, 5, axis = 1)
+	print(W)
+	"""
+	[[1 5 2 3]
+	[4 5 5 6]
+	[7 5 8 9]]
+	"""
+	
+	# stack arrays using vertical or horizontal stacking (pay attention to dimension)
+	x = np.array([1, 2])
+	Y = np.array([[3, 4], [5,6]])
+	z = np.vstack((x, Y))
+	print(z)
+	"""
+	[[1 2]
+	[3 4]
+	[5 6]]
+	"""
+	
+	z = np.hstack((Y, x.reshape(2, 1)))
+	print(z)
+	"""
+	[[3 4 1]
+	[5 6 2]]
+	"""
+\end{python}
