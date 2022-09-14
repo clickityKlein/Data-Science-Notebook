@@ -1,1 +1,14 @@
 % Exercise: Manipulating ndarrays
+This is a quick exercise to test the combination of some of the NumPy functions we've seen so far.
+\\\\
+The task is to create a 5x5 ndarray with consecutive integers from 1 to 25 (inclusive). Then, use Boolean indexing to pick out only the odd numbers in the array.
+
+\begin{python}
+	# Create a 5 x 5 ndarray with consecutive integers from 1 to 25 (inclusive).
+	X = np.arange(1, 26).reshape(5, 5)
+	
+	# Use Boolean indexing to pick out only the odd numbers in the array
+	Y = X[X % 2 != 0]
+\end{python}
+
+Although a short exercise in code length, this illustrates a power conditional argument when finding even and odd values, known in mathematics as the "modulus" or "mod" for short. Essentially, the command above divides the numbers by 2, and checks to see if there is any remainder. If there is no remainder, the number is even and is accepted.
