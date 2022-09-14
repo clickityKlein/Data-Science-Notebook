@@ -1,1 +1,100 @@
 % Slicing ndarrays
+Covered briefly in the previous section, we're going to do a deeper dive into the slicing capabilities of NumPy. Aside from syntax, some essential functions covered in this section are:
+
+\begin{itemize}
+	\item copy: this creates an entirely new array, where changes won't be mapped back to the original
+	\item diag: another use of the diagonal function, this is used to return an array featuring the diagonal of a rank 2 array
+	\item unique: this will find all of the unique values within an array
+\end{itemize}
+
+\begin{python}
+	# Here are the basic ways to slice a rank 1 array:
+	# 1. ndarray[start:end]
+	# 2. ndarray[start:]
+	# 3. ndarray[:end]
+	# Also, recall that ndarray[-1] will return the last element in an array
+	
+	# examples of slicing in rank 2 array
+	X = np.arange(1, 21).reshape(4, 5)
+	"""
+	[[ 1  2  3  4  5]
+	[ 6  7  8  9 10]
+	[11 12 13 14 15]
+	[16 17 18 19 20]]
+	"""
+	
+	# the rank 2 slice order is: rows, columns (starts are inclusive, ends are exclusive)
+	z = X[1:4, 2:5]
+	"""
+	[[ 8  9 10]
+	[13 14 15]
+	[18 19 20]]
+	"""
+	
+	# by leaving either the row or column input as ":" it will select entire row or column
+	# this will return the 3rd column
+	z = X[:, 2]
+	# [ 3  8 13 18]
+	# however, that returns a rank 1 array (row format). Let's return the correct dimensions:
+	z = X[:, 2:3]
+	"""
+	[[ 3]
+	[ 8]
+	[13]
+	[18]]
+	"""
+	
+	# slicing creates a "view" of the array
+	# changing z will change X (keep the copy command in mind here)
+	z = X[1:, 2:]
+	z[2, 2] = 0
+	"""
+	X =
+	[[ 1  2  3  4  5]
+	[ 6  7  8  9 10]
+	[11 12 13 14 15]
+	[16 17 18 19  0]]
+	
+	Even though the elements were changed in the z array, there was still a connection to the X array.
+	"""
+	
+	# create a brand new array (so to not change the original array)
+	z = X[1:, 2:].copy()
+	z[2, 2] = 0
+	"""
+	X =
+	[[ 1  2  3  4  5]
+	[ 6  7  8  9 10]
+	[11 12 13 14 15]
+	[16 17 18 19 20]]
+	
+	By using the copy function the connection to the original array was broken.
+	"""
+	
+	# use variable in slicing
+	indices = np.array([1, 3])
+	y = X[indices, :]
+	"""
+	[[ 6  7  8  9 10]
+	[16 17 18 19 20]]
+	"""
+	z = X[:, indices]
+	"""
+	[[ 2  4]
+	[ 7  9]
+	[12 14]
+	[17 19]]
+	"""
+	
+	# NumPy built in slicing methods
+	# ex: diagonals
+	z = np.diag(X)
+	# [ 1  7 13 19]
+	# specify k to shift the diagonal indexing
+	z = np.diag(X, k = 1)
+	# [ 2  8 14 20]
+	
+	# finding uniques
+	X = np.array([[1, 2, 3], [4, 5, 6], [1, 5, 6]])
+	# [1 2 3 4 5 6]
+\end{python}
