@@ -1,1 +1,59 @@
 % Concept1: Design of Visualization
+To begin our discussion of visualization, we need to cover some basic vocabulary and distinctions.
+
+Data can be broken into two main categories, each of which can be broken down further:
+\begin{itemize}
+	\item Qualitative / Categorical:
+	\begin{itemize}
+		\item Nominal: No order
+		\item Ordinal: Intrinsic Order
+	\end{itemize}
+	\item Quantitative / Numerical:
+	\begin{itemize}
+		\item Interval: Absolute differences are meaningful (addition and subtraction follows logic)
+		\item Ratio: relative differences are meaningful (multiplication and division follows logic)
+	\end{itemize}
+\end{itemize}
+
+It should be noted that the quantitative data type can be also be broken down into discrete and continuous variables.
+\\\\
+
+What about those 3-dimensions charts or fun backgrounds that we used to add to our science experiment plots as kids? That used to add some fun to our projects, right? While fun for the youth, it turns out there is an empirical rule when figuring out how much the additional "junk" either adds or detracts from conveying the data.
+\begin{itemize}
+	\item Data-Ink Ratio = data-ink / total ink used to print the graphic. The higher the Data-Ink Ratio, the better conveyed data is.
+\end{itemize}
+
+Can visualizations be purposefully misleading, even when using the data appropriately? Absolutely!
+\\\\
+
+A great example of this is trying to over-inflate the difference or change between data points during different time periods. Say a presenter is trying to make a claim there was a very large change from one year to the next. We'll say in year 1 the y-value was 100, and in year 2 the y-value was 105. The presenter changes the window of the graph to display from a y-value of 99 to a y-value of 106, and the x-values are only the two years. Obviously, this is going to look like a massive change! In reality, had the reporter shown the data at a true scale, the visual shows in actuality that the change isn't so tremendous.
+\\\\
+
+This concept also has an empirical rule:
+
+\begin{itemize}
+	\item Lie Factor = size of effect shown in graphic / size of effect shown in data
+	\\\\
+	= (change in visual / visual start) / (change in data / data start)
+	\\\\
+	As was said in the example, this can be used to purposefully distort data. In fact, a Lie Factor \> 1 suggests a misleading visual, and even greater than that suggest an even greater disparity from the truth.
+\end{itemize}
+
+Away from the empirical side of visuals, and more into the logical, we come across the common mistake of using too many colors! Colors can be useful when separating categories, however, they it's very easy to cause redundancy with them. Here are some tips when using color:
+
+\begin{itemize}
+	\item Get it right in black and white (and shades of grey)
+	\item Use less intense colors such as natural or pastel, and higher grey colors. The eye can actually concentrate longer under these conditions.
+	\item Color facilitates communication. Use color to separate the data into groups of interest, not just to color a visual.
+	\item Design for Color Blindness. Stay away from red / green pallets, and use blue / orange pallets.
+\end{itemize}
+
+Don't want to overdo it on the color schemes? Don't forget about other visual queues such as shape and size.
+\\\\
+
+Some tips on shape, size \& other tools:
+\begin{itemize}
+	\item Use different types of encodings, rather than using color (square / dot vs. colors to separate groups of interest).
+	\item Color and shape are good for categorical variables.
+	\item Size of marker can assist in adding additional quantitative data.
+\end{itemize}
