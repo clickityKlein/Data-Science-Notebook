@@ -1,1 +1,114 @@
 % Concept2.2: Bivariate Exploration of Data
+Having seen some basic ways to visually examine univariate data, we can move into exploring a data set by comparing two variables at a time with bivariate exploration of data.
+\\\\
+Commands:
+\begin{itemize}
+	\item plt.scatter: Matplotlib's command for a scatter plot.
+	\item sb.regplot: Seaborn's command for a scatter plot. Much like sb's histogram default, their plot includes a line of best fit.
+\end{itemize}
+
+Terminology:
+\begin{itemize}
+	\item heat maps:
+	\item scatter plots: Use for quantitative vs. quantitative variables.
+	\item violin plots: Use for quantitative vs. qualitative variables.
+	\item box plots:
+	\item clustered bar charts: Use for qualitative vs. qualitative variables.
+	\item faceting:
+	\item line plots:
+\end{itemize}
+
+Although univariate data seems simple by virtue of a single variable, due to practicality, most people are likely more familiar with the first example shown in this section, a scatter plot. This is the classic x vs. y, plot your data using coordinates plot. A very effective tool, and easy to implement when the data consists of a single dependent variable. However, it's not the only tool! Datasets of different complexity and data types require different approaches to understand their stories. Let's dive in with an example.
+
+\begin{python}
+	# first things first, let's check out our dataset
+	fuel_econ = pd.read_csv('fuel-econ.csv')
+	fuel_econ.shape
+	# (3929, 20)
+	fuel_econ.head(10)
+\end{python}
+
+\textbf{fuel\_econ.head(10)}
+\begin{center}
+	\begin{tabular}{lrllrl}
+		{} &     id &        make &           model &  year &           VClass \\
+		0 &  32204 &      Nissan &            GT-R &  2013 &  Subcompact Cars \\
+		1 &  32205 &  Volkswagen &              CC &  2013 &     Compact Cars \\
+		2 &  32206 &  Volkswagen &              CC &  2013 &     Compact Cars \\
+		3 &  32207 &  Volkswagen &      CC 4motion &  2013 &     Compact Cars \\
+		4 &  32208 &   Chevrolet &  Malibu eAssist &  2013 &     Midsize Cars \\
+		5 &  32209 &       Lexus &          GS 350 &  2013 &     Midsize Cars \\
+		6 &  32210 &       Lexus &      GS 350 AWD &  2013 &     Midsize Cars \\
+		7 &  32214 &     Hyundai &   Genesis Coupe &  2013 &  Subcompact Cars \\
+		8 &  32215 &     Hyundai &   Genesis Coupe &  2013 &  Subcompact Cars \\
+		9 &  32216 &     Hyundai &   Genesis Coupe &  2013 &  Subcompact Cars \\
+	\end{tabular}
+	
+\end{center}
+\begin{tabular}{llllrr}
+	{} &              drive &              trans &          fuelType &  cylinders &  displ \\
+	0 &    All-Wheel Drive &    Automatic (AM6) &  Premium Gasoline &          6 &    3.8 \\
+	1 &  Front-Wheel Drive &  Automatic (AM-S6) &  Premium Gasoline &          4 &    2.0 \\
+	2 &  Front-Wheel Drive &     Automatic (S6) &  Premium Gasoline &          6 &    3.6 \\
+	3 &    All-Wheel Drive &     Automatic (S6) &  Premium Gasoline &          6 &    3.6 \\
+	4 &  Front-Wheel Drive &     Automatic (S6) &  Regular Gasoline &          4 &    2.4 \\
+	5 &   Rear-Wheel Drive &     Automatic (S6) &  Premium Gasoline &          6 &    3.5 \\
+	6 &    All-Wheel Drive &     Automatic (S6) &  Premium Gasoline &          6 &    3.5 \\
+	7 &   Rear-Wheel Drive &    Automatic 8-spd &  Premium Gasoline &          4 &    2.0 \\
+	8 &   Rear-Wheel Drive &       Manual 6-spd &  Premium Gasoline &          4 &    2.0 \\
+	9 &   Rear-Wheel Drive &    Automatic 8-spd &  Premium Gasoline &          6 &    3.8 \\
+\end{tabular}
+
+\begin{tabular}{lrrrrr}
+	{} &  pv2 &  pv4 &     city &    UCity &  highway \\
+	0 &   79 &    0 &  16.4596 &  20.2988 &  22.5568 \\
+	1 &   94 &    0 &  21.8706 &  26.9770 &  31.0367 \\
+	2 &   94 &    0 &  17.4935 &  21.2000 &  26.5716 \\
+	3 &   94 &    0 &  16.9415 &  20.5000 &  25.2190 \\
+	4 &    0 &   95 &  24.7726 &  31.9796 &  35.5340 \\
+	5 &    0 &   99 &  19.4325 &  24.1499 &  28.2234 \\
+	6 &    0 &   99 &  18.5752 &  23.5261 &  26.3573 \\
+	7 &   89 &    0 &  17.4460 &  21.7946 &  26.6295 \\
+	8 &   89 &    0 &  20.6741 &  26.2000 &  29.2741 \\
+	9 &   89 &    0 &  16.4675 &  20.4839 &  24.5605 \\
+\end{tabular}
+
+\begin{tabular}{lrrrrr}
+	{} &  UHighway &     comb &  co2 &  feScore &  ghgScore \\
+	0 &   30.1798 &  18.7389 &  471 &        4 &         4 \\
+	1 &   42.4936 &  25.2227 &  349 &        6 &         6 \\
+	2 &   35.1000 &  20.6716 &  429 &        5 &         5 \\
+	3 &   33.5000 &  19.8774 &  446 &        5 &         5 \\
+	4 &   51.8816 &  28.6813 &  310 &        8 &         8 \\
+	5 &   38.5000 &  22.6002 &  393 &        6 &         6 \\
+	6 &   36.2109 &  21.4213 &  412 &        5 &         5 \\
+	7 &   37.6731 &  20.6507 &  432 &        5 &         5 \\
+	8 &   41.8000 &  23.8235 &  375 &        6 &         6 \\
+	9 &   34.4972 &  19.3344 &  461 &        4 &         4 \\
+\end{tabular}
+\newpage
+
+Next, we'll start off with our first bivariate plot, a scatterplot comparing size of the engine, 'disp (L)', to the combined city and highway miles per gallon, 'comb (mpg)'.
+
+\begin{python}
+	plt.scatter(data = fuel_econ, x = 'displ', y = 'comb')
+	plt.xlabel('Displacement (l)')
+	plt.ylabel('Combined Fuel Eff. (mpg)')
+	# See Figure 15
+	
+	# seaborn's version incudes a line
+	sb.regplot(data = fuel_econ, x = 'displ', y = 'comb', fit_reg = True)
+	plt.xlabel('Displacement (l)')
+	plt.ylabel('Combined Fuel Eff. (mpg)')
+	# See Figure 16
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure15.png}
+	\caption{Basic Matplotlib Scatter Plot.}\label{fig:figure15}
+\end{figure}
+
+\begin{figure}
+	\includegraphics{images/figure16.png}
+	\caption{Basic Seaborn Scatter Plot.}\label{fig:figure16}
+\end{figure}

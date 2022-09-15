@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  15 SEP 2022 10:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  15 SEP 2022 13:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -590,17 +590,48 @@ Overfull \hbox (24.37909pt too wide) in paragraph at lines 336--337
  []
 
 ) [20 <./Images/figure12.png>] [21 <./Images/figure13.png>] [22 <./Images/figur
-e14.png>] (./Concept2.2.tex) (./Concept2.3.tex) (./Concept3.tex)
-(./Concept4.tex) [23] (./Data_Visualization_Notes.aux)
+e14.png>] (./Concept2.2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--5
+
+ []
+
+[23]
+Overfull \hbox (41.93127pt too wide) in paragraph at lines 48--61
+[] 
+ []
+
+[24]
+<images/figure15.png, id=389, 383.4325pt x 266.9975pt>
+File: images/figure15.png Graphic file (type png)
+<use images/figure15.png>
+Package pdftex.def Info: images/figure15.png  used on input line 107.
+(pdftex.def)             Requested size: 383.43156pt x 266.99683pt.
+
+Overfull \hbox (38.43156pt too wide) in paragraph at lines 107--108
+[][] 
+ []
+
+<images/figure16.png, id=390, 383.4325pt x 266.9975pt>
+File: images/figure16.png Graphic file (type png)
+<use images/figure16.png>
+Package pdftex.def Info: images/figure16.png  used on input line 112.
+(pdftex.def)             Requested size: 383.43156pt x 266.99683pt.
+
+Overfull \hbox (38.43156pt too wide) in paragraph at lines 112--113
+[][] 
+ []
+
+) [25 <./Images/figure15.png>] [26 <./Images/figure16.png>] (./Concept2.3.tex)
+(./Concept3.tex) (./Concept4.tex) [27] (./Data_Visualization_Notes.aux)
 Package rerunfilecheck Info: File `Data_Visualization_Notes.out' has not change
 d.
 (rerunfilecheck)             Checksum: 33267C8970EB1ACD31FE4E4B455A7A95;1447.
  ) 
 Here is how much of TeX's memory you used:
- 11103 strings out of 478268
- 167257 string characters out of 5850345
- 1075599 words of memory out of 5000000
- 28946 multiletter control sequences out of 15000+600000
+ 11152 strings out of 478268
+ 168019 string characters out of 5850345
+ 1075704 words of memory out of 5000000
+ 28970 multiletter control sequences out of 15000+600000
  474354 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,7n,63p,691b,2021s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -612,10 +643,10 @@ ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsltt10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Data_Visualization_Notes.pdf (23 pages, 242872 bytes).
+Output written on Data_Visualization_Notes.pdf (27 pages, 270221 bytes).
 PDF statistics:
- 466 PDF objects out of 1000 (max. 8388607)
- 393 compressed objects within 4 object streams
- 232 named destinations out of 1000 (max. 500000)
- 135 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 512 PDF objects out of 1000 (max. 8388607)
+ 430 compressed objects within 5 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 
