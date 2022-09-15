@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  14 SEP 2022 18:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  15 SEP 2022 09:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -427,8 +427,7 @@ Overfull \hbox (1.8895pt too wide) in paragraph at lines 46--59
  [] 
  []
 
-[6]
-<images/figure1.png, id=101, 390.45876pt x 263.98625pt>
+<images/figure1.png, id=87, 390.45876pt x 263.98625pt>
 File: images/figure1.png Graphic file (type png)
 <use images/figure1.png>
 Package pdftex.def Info: images/figure1.png  used on input line 77.
@@ -438,59 +437,59 @@ Overfull \hbox (45.4578pt too wide) in paragraph at lines 77--78
 [][] 
  []
 
-<images/figure2.png, id=103, 390.45876pt x 263.98625pt>
+<images/figure2.png, id=89, 390.45876pt x 263.98625pt>
 File: images/figure2.png Graphic file (type png)
 <use images/figure2.png>
-Package pdftex.def Info: images/figure2.png  used on input line 83.
+Package pdftex.def Info: images/figure2.png  used on input line 82.
 (pdftex.def)             Requested size: 390.4578pt x 263.9856pt.
 
-Overfull \hbox (45.4578pt too wide) in paragraph at lines 83--84
+Overfull \hbox (45.4578pt too wide) in paragraph at lines 82--83
 [][] 
  []
 
-[7 <./Images/figure1.png>] [8 <./Images/figure2.png>]
-<images/figure3.png, id=123, 390.45876pt x 263.98625pt>
+<images/figure3.png, id=90, 390.45876pt x 263.98625pt>
 File: images/figure3.png Graphic file (type png)
 <use images/figure3.png>
-Package pdftex.def Info: images/figure3.png  used on input line 99.
+Package pdftex.def Info: images/figure3.png  used on input line 97.
 (pdftex.def)             Requested size: 390.4578pt x 263.9856pt.
 
-Overfull \hbox (45.4578pt too wide) in paragraph at lines 99--100
+Overfull \hbox (45.4578pt too wide) in paragraph at lines 97--98
 [][] 
  []
 
-[9 <./Images/figure3.png>]
-<images/figure4.png, id=139, 390.45876pt x 293.095pt>
+[6] [7 <./Images/figure1.png>] [8 <./Images/figure2.png>] [9 <./Images/figure3.
+png>]
+<images/figure4.png, id=130, 390.45876pt x 293.095pt>
 File: images/figure4.png Graphic file (type png)
 <use images/figure4.png>
-Package pdftex.def Info: images/figure4.png  used on input line 118.
+Package pdftex.def Info: images/figure4.png  used on input line 115.
 (pdftex.def)             Requested size: 390.4578pt x 293.09427pt.
 
-Overfull \hbox (45.4578pt too wide) in paragraph at lines 118--119
+Overfull \hbox (45.4578pt too wide) in paragraph at lines 115--116
 [][] 
  []
 
-<images/figure5.png, id=140, 410.53375pt x 262.9825pt>
+<images/figure5.png, id=131, 410.53375pt x 262.9825pt>
 File: images/figure5.png Graphic file (type png)
 <use images/figure5.png>
-Package pdftex.def Info: images/figure5.png  used on input line 124.
+Package pdftex.def Info: images/figure5.png  used on input line 120.
 (pdftex.def)             Requested size: 410.53275pt x 262.98184pt.
 
-Overfull \hbox (65.53275pt too wide) in paragraph at lines 124--125
+Overfull \hbox (65.53275pt too wide) in paragraph at lines 120--121
 [][] 
  []
 
-) (./Concept2.2.tex) (./Concept2.3.tex) (./Concept3.tex) (./Concept4.tex)
-[10 <./Images/figure4.png>] [11 <./Images/figure5.png>]
+) [10 <./Images/figure4.png>] [11 <./Images/figure5.png>] (./Concept2.2.tex)
+(./Concept2.3.tex) (./Concept3.tex) (./Concept4.tex) [12]
 (./Data_Visualization_Notes.aux)
 Package rerunfilecheck Info: File `Data_Visualization_Notes.out' has not change
 d.
 (rerunfilecheck)             Checksum: 33267C8970EB1ACD31FE4E4B455A7A95;1447.
  ) 
 Here is how much of TeX's memory you used:
- 10781 strings out of 478268
- 162591 string characters out of 5850345
- 759807 words of memory out of 5000000
+ 10782 strings out of 478268
+ 162598 string characters out of 5850345
+ 825961 words of memory out of 5000000
  28800 multiletter control sequences out of 15000+600000
  474354 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -503,10 +502,10 @@ ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsltt10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Data_Visualization_Notes.pdf (11 pages, 154890 bytes).
+Output written on Data_Visualization_Notes.pdf (12 pages, 154852 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 165 compressed objects within 2 object streams
- 65 named destinations out of 1000 (max. 500000)
+ 210 PDF objects out of 1000 (max. 8388607)
+ 168 compressed objects within 2 object streams
+ 66 named destinations out of 1000 (max. 500000)
  90 words of extra memory for PDF output out of 10000 (max. 10000000)
 
