@@ -1,1 +1,126 @@
 % Concept2.1: Univariate Exploration of Data
+The first tools added into our data exploration toolkit will be for univariate data, or examining the data a single variable at a time. Even though we're going to be using several different libraries, we'll still try to keep track of new and essential commands and terminology:
+\\\\
+
+Commands:
+\begin{itemize}
+	\item df.head: Retrieves the first few rows of data from a Pandas DataFrame. Able to specify how many rows
+	\item sb.countplot: Seaborn's command for generating a bar chart.
+	\item df[column].value\_counts().index: Will return an immutable sequence sorted number of categorical entries (highest to lowest).
+	\item df.melt: Will unpivot a DataFrame from wide to long format (i.e. we can "melt" two entries together).
+\end{itemize}
+
+Terminology:
+\begin{itemize}
+	\item bar chart: Useful in univariate data to show counts across categories.
+	\item relative frequency: Shows proportion of each category in population.
+\end{itemize}
+
+We'll be using a Pokemon dataset for our examples. Let's get an idea of what our data looks like:
+
+\begin{python}
+	pokemon = pd.read_csv("pokemon.csv")
+	pokemon.shape
+	# pokemon.shape = (807, 14)
+	pokemon.head(10)
+\end{python}
+
+\newpage
+\textbf{Pokemon.Head(10)}
+\begin{center}
+	\begin{tabular}{lrlrrrrl}
+		{} &  id &     species &  generation\_id &  height &  weight &  base\_experience & type\_1 \\
+		0 &   1 &   bulbasaur &              1 &     0.7 &     6.9 &               64 &  grass \\
+		1 &   2 &     ivysaur &              1 &     1.0 &    13.0 &              142 &  grass \\
+		2 &   3 &    venusaur &              1 &     2.0 &   100.0 &              236 &  grass \\
+		3 &   4 &  charmander &              1 &     0.6 &     8.5 &               62 &   fire \\
+		4 &   5 &  charmeleon &              1 &     1.1 &    19.0 &              142 &   fire \\
+		5 &   6 &   charizard &              1 &     1.7 &    90.5 &              240 &   fire \\
+		6 &   7 &    squirtle &              1 &     0.5 &     9.0 &               63 &  water \\
+		7 &   8 &   wartortle &              1 &     1.0 &    22.5 &              142 &  water \\
+		8 &   9 &   blastoise &              1 &     1.6 &    85.5 &              239 &  water \\
+		9 &  10 &    caterpie &              1 &     0.3 &     2.9 &               39 &    bug \\
+	\end{tabular}
+\end{center}
+\begin{center}
+	\begin{tabular}{llrrrrrr}
+		{} &  type\_2 &  hp &  attack &  defense &  speed &  special-attack &  special-defense \\
+		0 &  poison &  45 &      49 &       49 &     45 &              65 &               65 \\
+		1 &  poison &  60 &      62 &       63 &     60 &              80 &               80 \\
+		2 &  poison &  80 &      82 &       83 &     80 &             100 &              100 \\
+		3 &     NaN &  39 &      52 &       43 &     65 &              60 &               50 \\
+		4 &     NaN &  58 &      64 &       58 &     80 &              80 &               65 \\
+		5 &  flying &  78 &      84 &       78 &    100 &             109 &               85 \\
+		6 &     NaN &  44 &      48 &       65 &     43 &              50 &               64 \\
+		7 &     NaN &  59 &      63 &       80 &     58 &              65 &               80 \\
+		8 &     NaN &  79 &      83 &      100 &     78 &              85 &              105 \\
+		9 &     NaN &  45 &      30 &       35 &     45 &              20 &               20 \\
+	\end{tabular}
+\end{center}
+
+Now that we've had a peak at the data, let's get into some visualization.
+
+\begin{python}
+	# create a bar chart for one of the columns (generation_id)
+	# this will show counts of each pokemon for each generation
+	sb.countplot(data = pokemon, x = 'generation_id')
+	# See Figure 1
+	
+	# let's use a single neutral color to reduce redundancy and make it easier on the eyes
+	base_color = sb.color_palette()[0]
+	sb.countplot(data = pokemon, x = 'generation_id', color = base_color)
+	# See Figure 2
+\end{python}
+
+\newpage
+\begin{figure}
+	\includegraphics{images/figure1.png}
+	\caption{Figure 1}\label{fig:figure1}
+\end{figure}
+
+\newpage
+\begin{figure}
+	\includegraphics{images/figure2.png}
+	\caption{Figure 2}\label{fig:figure2}
+\end{figure}
+
+A simple, yet effective visual trick is adding some order to your plots via sorting.
+
+\begin{python}
+	# let's sort the data highest -> lowest
+	# we can use pandas series function: value_counts()
+	gen_order = pokemon['generation_id'].value_counts().index
+	sb.countplot(data = pokemon, x = 'generation_id', color = base_color, order = gen_order)
+	# See Figure 3
+\end{python}
+
+\newpage
+\begin{figure}
+	\includegraphics{images/figure3.png}
+	\caption{Figure 3}\label{fig:figure3}
+\end{figure}
+
+Let's combine the previous coloring and sorting to look at a new variable. Additionally, since we know the x-axis labels are somewhat long. Two favorable ways of dealing with this is to either rotate the x-axis labels, or create a horizontal bar chart.
+
+\begin{python}
+	type_order = pokemon['type_1'].value_counts().index
+	sb.countplot(data = pokemon, x = 'type_1', color = base_color, order = type_order)
+	plt.xticks(rotation = 90) 
+	# See Figure 4
+	
+	# Change x to y to change from vertical to horizontal bar chart
+	sb.countplot(data = pokemon, y = 'type_1', color = base_color, order = type_order)
+	# See Figure 5
+\end{python}
+
+\newpage
+\begin{figure}
+	\includegraphics{images/figure4.png}
+	\caption{Figure 4}\label{fig:figure4}
+\end{figure}
+
+\newpage
+\begin{figure}
+	\includegraphics{images/figure5.png}
+	\caption{Figure 5}\label{fig:figure5}
+\end{figure}
