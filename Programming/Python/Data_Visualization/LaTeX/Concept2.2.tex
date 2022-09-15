@@ -5,17 +5,24 @@ Commands:
 \begin{itemize}
 	\item plt.scatter: Matplotlib's command for a scatter plot.
 	\item sb.regplot: Seaborn's command for a scatter plot. Much like sb's histogram default, their plot includes a line of best fit.
+	\item plt.hist2d: Matplotlib's command for a heat map.
+	\item sb.violinplot: Seaborn's command for a violin plot.
+	\item sb.boxplot: Seaborn's command for a box plot.
 \end{itemize}
 
 Terminology:
 \begin{itemize}
-	\item heat maps:
+	\item heat maps: Use for discrete vs. discrete variables. Conceptualize as a top down 2-dimensional histogram. Can be an alternative to solving overplotting with a transparency method.
 	\item scatter plots: Use for quantitative vs. quantitative variables.
-	\item violin plots: Use for quantitative vs. qualitative variables.
-	\item box plots:
-	\item clustered bar charts: Use for qualitative vs. qualitative variables.
+	\item violin plots: Use for quantitative vs. qualitative variables. Plots a line from the minimum to maximum of the quantitative values, and features symmetrical smooth curves on both sides of the line which are wider at denser locations.
+	\item box plots: Use for quantitative vs. qualitative variables. Plots a line from the minimum to maximum of the quantitative values, with a box drawn around the interquartile range [Q1:25th percentile, Q3; 75th percentile].
+	\item clustered bar charts: Use for qualitative vs. quantitative variables. Compares variables by plotting aspects of categories side by side.
 	\item faceting:
 	\item line plots:
+	\item overplotting: when data or labels in a data visualization overlap, making it difficult to see individual points.
+	\item sampling: Choose a subset of the data (best if randomized).
+	\item transparency: By making the points partially transparent (increase the opacity), overplotting becomes evident by darker regions.
+	\item jitter: By adding small randomly generated numbers to the values prior to plotting, overplotting becomes event by denser regions.
 \end{itemize}
 
 Although univariate data seems simple by virtue of a single variable, due to practicality, most people are likely more familiar with the first example shown in this section, a scatter plot. This is the classic x vs. y, plot your data using coordinates plot. A very effective tool, and easy to implement when the data consists of a single dependent variable. However, it's not the only tool! Datasets of different complexity and data types require different approaches to understand their stories. Let's dive in with an example.
@@ -28,8 +35,10 @@ Although univariate data seems simple by virtue of a single variable, due to pra
 	fuel_econ.head(10)
 \end{python}
 
-\textbf{fuel\_econ.head(10)}
 \begin{center}
+\textbf{fuel\_econ.head(10)}
+\end{center}
+%\begin{center}
 	\begin{tabular}{lrllrl}
 		{} &     id &        make &           model &  year &           VClass \\
 		0 &  32204 &      Nissan &            GT-R &  2013 &  Subcompact Cars \\
@@ -44,7 +53,7 @@ Although univariate data seems simple by virtue of a single variable, due to pra
 		9 &  32216 &     Hyundai &   Genesis Coupe &  2013 &  Subcompact Cars \\
 	\end{tabular}
 	
-\end{center}
+%\end{center}
 \begin{tabular}{llllrr}
 	{} &              drive &              trans &          fuelType &  cylinders &  displ \\
 	0 &    All-Wheel Drive &    Automatic (AM6) &  Premium Gasoline &          6 &    3.8 \\
@@ -88,7 +97,7 @@ Although univariate data seems simple by virtue of a single variable, due to pra
 \end{tabular}
 \newpage
 
-Next, we'll start off with our first bivariate plot, a scatterplot comparing size of the engine, 'disp (L)', to the combined city and highway miles per gallon, 'comb (mpg)'.
+Next, we'll start off with our first bivariate plot, a scatterplot comparing size of the engine, 'disp (L)', to the combined city and highway fuel efficiency, 'comb (mpg)'.
 
 \begin{python}
 	plt.scatter(data = fuel_econ, x = 'displ', y = 'comb')
@@ -112,3 +121,165 @@ Next, we'll start off with our first bivariate plot, a scatterplot comparing siz
 	\includegraphics{images/figure16.png}
 	\caption{Basic Seaborn Scatter Plot.}\label{fig:figure16}
 \end{figure}
+
+The dataset we're using has almost 4,000 entries. It will likely be the case that future datasets will have many more elements. Even though we're treating the displacement variable (volume in the engine in Liters) as a quantitative variable, it could almost be expressed as a categorical variable, although it is technically a discrete quantitative variable.
+
+\begin{python}
+	fuel_econ['displ'].value_counts().size
+	# 46 different Liter options in this dataset
+	fuel_econ['displ'].value_counts().head(10)
+	"""
+	2.0    907
+	3.0    515
+	3.5    245
+	1.6    243
+	3.6    208
+	1.8    189
+	2.5    169
+	2.4    142
+	1.4    136
+	4.4    130
+	"""
+\end{python}
+
+Although there will be different combinations when paired with the fuel efficiency variable, we've still stacked over 900 entries on x = 2, with much of the data points overlapping each other. This is a prime example of overplotting. How do we fix this?
+\\\\
+
+There are a few main methods to fix overplotting:
+
+\begin{itemize}
+	\item sampling: Choose a subset of the data (best if randomized).
+	\item transparency: By making the points partially transparent (increase the opacity), overplotting becomes evident by the darker regions.
+	\item jitter: By adding small randomly generated numbers to the values prior to plotting, overplotting becomes event by denser regions. 
+	\item heat map: think of this as a 2-dimensional histogram where denser regions take on different colors.
+\end{itemize}
+
+In this example, we'll use Seaborn's scatter plot capabilities to add jitter and transparency, where transparency level is denoted with alpha. In a slight change of plot, we're mapping year onto overall fuel efficiency. Year is clearly another true example of discrete data.
+
+\begin{python}
+	sb.regplot(data = fuel_econ, x = 'year', y = 'comb', x_jitter = 0.3, scatter_kws = {'alpha' : 1/20})
+	# See Figure 17
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure17.png}
+	\caption{Seaborn Scatter Plot with jitter and transparency.}\label{fig:figure17}
+\end{figure}
+
+\newpage
+Thought we were done with histograms? Let's check them in 2-dimensions with heat maps. Instead of changing the settings on a scatter plot, we could use another type of plot called a heat map. Similar to histograms, we need to be thoughtful with bin selection. So, start with the descriptive statistics.
+
+\textbf{Statistics for Heat Map Guidance}
+\begin{center}
+	\begin{tabular}{lrr}
+		{} &        displ &         comb \\
+		count &  3929.000000 &  3929.000000 \\
+		mean  &     2.950573 &    24.791339 \\
+		std   &     1.305901 &     6.003246 \\
+		min   &     0.600000 &    12.821700 \\
+		25\%   &     2.000000 &    20.658100 \\
+		50\%   &     2.500000 &    24.000000 \\
+		75\%   &     3.600000 &    28.227100 \\
+		max   &     7.000000 &    57.782400 \\
+	\end{tabular}
+\end{center}
+
+\begin{python}
+	bins_x = np.arange(0.6, 7 + 0.3, 0.3)
+	bins_y = np.arange(12, 58 + 3, 3)
+	plt.hist2d(data = fuel_econ, x = 'displ', y = 'comb', cmin = 0.5, cmap = 'viridis_r', bins = [bins_x, bins_y])
+	plt.colorbar()
+	plt.xlabel('Displacement (l)')
+	plt.ylabel('Combined Fuel Eff. (mpg)')
+	# See Figure 18
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure18.png}
+	\caption{Basic Heat Map.}\label{fig:figure18}
+\end{figure}
+
+Not all inclusive, but to cover a major base, let's use a scatter plot for a continuous quantitative variable vs. a continuous quantitative variable.
+
+\begin{python}
+	sb.regplot(data = fuel_econ, x = 'city', y = 'highway', 
+	scatter_kws = {'alpha' : 1/20})
+	# See Figure 19
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure19.png}
+	\caption{City vs. Highway Scatter Plot.}\label{fig:figure19}
+\end{figure}
+
+Next up is pairing categorical data with quantitative data. There are two useful tools, which seem very similar, but can help tell different stories.
+
+\begin{itemize}
+	\item violin plot
+	\item box plot
+\end{itemize}
+
+One of the main differences between the two is that violin plots are wider where the data is more concentrated, which can be useful to see if data has more than one area of concentration (multimodal). Box plots shouldn't be down played. They are strong in placing emphasis on the interquartile range, and are known to be more simplistic and focused. Let's take a look!
+
+\begin{python}
+	# Violin Plots
+	sb.violinplot(data = fuel_econ, x = 'VClass', y = 'comb', color = base_color, inner = None)
+	plt.xticks(rotation = 15)
+	# See Figure 20
+	
+	# Box Plots (simplicity + focus, as compared to the violin plot)
+	sb.boxplot(data = fuel_econ, x = 'VClass', y = 'comb', color = base_color)
+	plt.xticks(rotation = 15)
+	# See Figure 21
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure20.png}
+	\caption{Basic Violin Plot.}\label{fig:figure20}
+\end{figure}
+
+\begin{figure}
+	\includegraphics{images/figure21.png}
+	\caption{Basic Box Plot.}\label{fig:figure21}
+\end{figure}
+
+\newpage
+A quick aside:
+\\\\
+
+It should absolutely be noted that with the prior, current and future plots illustrated, there are a plethora of options with each command. How should we handle the outliers? Can we transpose the IQR onto a violin plot? How can we focus on these specific data points? It's highy recommended to at least scan through at least some of the library and function documentation.
+\\\\
+
+Probably the simplest, yet valuable, plot yet is a clustered bar chart. This takes our bar chart plot from the univariate exploration section, and simply adds more bars. These can be either different categories, or can be aspects of the same category.
+\\\\
+
+For a quick example of a clustered bar chart, we'll continue on with our examination of Vehicle Class ('VClass'). As shown in the violin and box plots, there are 5 different types of vehicles in the dataset. However, we can break down the types of vehicles into subsets based on their transmission types (Automatic vs. Manual).
+
+\begin{python}
+	# a bit of data cleaning: just need auto vs. manual from the strings
+	fuel_econ['trans_type'] = fuel_econ['trans'].apply(lambda x: x.split()[0])
+	sb.countplot(data = fuel_econ, x = 'VClass', hue = 'trans_type')
+	plt.xticks(rotation = 15)
+	# See Figure 22
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure22.png}
+	\caption{Vertical Clustered Bar Chart.}\label{fig:figure22}
+\end{figure}
+
+Let's do another example of a clustered bar chart that puts together different aspects.
+
+\begin{python}
+	fuel_econ_subset = fuel_econ.loc[fuel_econ['fuelType'].isin(['Premium Gasoline', 'Regular Gasoline'])]
+	sb.countplot(data = fuel_econ_subset, y = 'VClass', hue = 'fuelType')
+	# See Figure 23
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure23.png}
+	\caption{Vertical Clustered Bar Chart.}\label{fig:figure23}
+\end{figure}
+
+
+

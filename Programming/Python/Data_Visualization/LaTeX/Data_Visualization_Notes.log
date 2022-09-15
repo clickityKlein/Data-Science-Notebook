@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  15 SEP 2022 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  15 SEP 2022 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -596,42 +596,155 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--5
  []
 
 [23]
-Overfull \hbox (41.93127pt too wide) in paragraph at lines 48--61
-[] 
+Overfull \hbox (41.93127pt too wide) in paragraph at lines 57--70
+[][] 
  []
 
-[24]
-<images/figure15.png, id=389, 383.4325pt x 266.9975pt>
+[24] [25]
+<images/figure15.png, id=394, 383.4325pt x 266.9975pt>
 File: images/figure15.png Graphic file (type png)
 <use images/figure15.png>
-Package pdftex.def Info: images/figure15.png  used on input line 107.
+Package pdftex.def Info: images/figure15.png  used on input line 116.
 (pdftex.def)             Requested size: 383.43156pt x 266.99683pt.
 
-Overfull \hbox (38.43156pt too wide) in paragraph at lines 107--108
+Overfull \hbox (38.43156pt too wide) in paragraph at lines 116--117
 [][] 
  []
 
-<images/figure16.png, id=390, 383.4325pt x 266.9975pt>
+<images/figure16.png, id=395, 383.4325pt x 266.9975pt>
 File: images/figure16.png Graphic file (type png)
 <use images/figure16.png>
-Package pdftex.def Info: images/figure16.png  used on input line 112.
+Package pdftex.def Info: images/figure16.png  used on input line 121.
 (pdftex.def)             Requested size: 383.43156pt x 266.99683pt.
 
-Overfull \hbox (38.43156pt too wide) in paragraph at lines 112--113
+Overfull \hbox (38.43156pt too wide) in paragraph at lines 121--122
 [][] 
  []
 
-) [25 <./Images/figure15.png>] [26 <./Images/figure16.png>] (./Concept2.3.tex)
-(./Concept3.tex) (./Concept4.tex) [27] (./Data_Visualization_Notes.aux)
+[26 <./Images/figure15.png>] [27 <./Images/figure16.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
+
+ []
+
+<images/figure17.png, id=422, 383.4325pt x 266.9975pt>
+File: images/figure17.png Graphic file (type png)
+<use images/figure17.png>
+Package pdftex.def Info: images/figure17.png  used on input line 165.
+(pdftex.def)             Requested size: 383.43156pt x 266.99683pt.
+
+Overfull \hbox (38.43156pt too wide) in paragraph at lines 165--166
+[][] 
+ []
+
+[28] [29 <./Images/figure17.png>]
+<images/figure18.png, id=449, 370.38374pt x 266.9975pt>
+File: images/figure18.png Graphic file (type png)
+<use images/figure18.png>
+Package pdftex.def Info: images/figure18.png  used on input line 198.
+(pdftex.def)             Requested size: 370.38283pt x 266.99683pt.
+
+Overfull \hbox (25.38283pt too wide) in paragraph at lines 198--199
+[][] 
+ []
+
+<images/figure19.png, id=450, 389.455pt x 262.9825pt>
+File: images/figure19.png Graphic file (type png)
+<use images/figure19.png>
+Package pdftex.def Info: images/figure19.png  used on input line 211.
+(pdftex.def)             Requested size: 389.45404pt x 262.98184pt.
+
+Overfull \hbox (44.45404pt too wide) in paragraph at lines 211--212
+[][] 
+ []
+
+[30] [31 <./Images/figure18.png>] [32 <./Images/figure19.png>]
+<images/figure20.png, id=486, 394.47375pt x 286.06876pt>
+File: images/figure20.png Graphic file (type png)
+<use images/figure20.png>
+Package pdftex.def Info: images/figure20.png  used on input line 237.
+(pdftex.def)             Requested size: 394.47278pt x 286.06805pt.
+
+Overfull \hbox (49.47278pt too wide) in paragraph at lines 237--238
+[][] 
+ []
+
+<images/figure21.png, id=487, 394.47375pt x 290.08376pt>
+File: images/figure21.png Graphic file (type png)
+<use images/figure21.png>
+Package pdftex.def Info: images/figure21.png  used on input line 242.
+(pdftex.def)             Requested size: 394.47278pt x 290.08304pt.
+
+Overfull \hbox (49.47278pt too wide) in paragraph at lines 242--243
+[][] 
+ []
+
+[33 <./Images/figure20.png>] [34 <./Images/figure21.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--252
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+<images/figure22.png, id=504, 407.5225pt x 286.06876pt>
+File: images/figure22.png Graphic file (type png)
+<use images/figure22.png>
+Package pdftex.def Info: images/figure22.png  used on input line 267.
+(pdftex.def)             Requested size: 407.5215pt x 286.06805pt.
+
+Overfull \hbox (62.5215pt too wide) in paragraph at lines 267--268
+[][] 
+ []
+
+<images/figure23.png, id=505, 460.72125pt x 262.9825pt>
+File: images/figure23.png Graphic file (type png)
+<use images/figure23.png>
+Package pdftex.def Info: images/figure23.png  used on input line 280.
+(pdftex.def)             Requested size: 460.72012pt x 262.98184pt.
+
+Overfull \hbox (115.72012pt too wide) in paragraph at lines 280--281
+[][] 
+ []
+
+) [35] [36 <./Images/figure22.png>] [37 <./Images/figure23.png>]
+(./Concept2.3.tex) (./Concept3.tex) (./Concept4.tex) [38]
+(./Data_Visualization_Notes.aux)
 Package rerunfilecheck Info: File `Data_Visualization_Notes.out' has not change
 d.
 (rerunfilecheck)             Checksum: 33267C8970EB1ACD31FE4E4B455A7A95;1447.
  ) 
 Here is how much of TeX's memory you used:
- 11152 strings out of 478268
- 168019 string characters out of 5850345
- 1075704 words of memory out of 5000000
- 28970 multiletter control sequences out of 15000+600000
+ 11326 strings out of 478268
+ 170618 string characters out of 5850345
+ 1076058 words of memory out of 5000000
+ 29068 multiletter control sequences out of 15000+600000
  474354 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,7n,63p,691b,2021s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -643,10 +756,10 @@ ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsltt10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Data_Visualization_Notes.pdf (27 pages, 270221 bytes).
+Output written on Data_Visualization_Notes.pdf (38 pages, 425472 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
- 430 compressed objects within 5 object streams
- 255 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 645 PDF objects out of 1000 (max. 8388607)
+ 537 compressed objects within 6 object streams
+ 324 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
