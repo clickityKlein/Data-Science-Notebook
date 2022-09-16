@@ -307,7 +307,7 @@ For an example, let's create a plot for every type of vehicle paired with combin
 \end{figure}
 
 \newpage
-One last plot to show for this section is a line plot, which shows a point estimate along with a confidence interval while comparing categorical variables with quantitative data.
+One last plot type to show for this section is a line plot, which shows a point estimate along with a confidence interval while comparing categorical variables with quantitative data.
 
 \begin{python}
 	sb.pointplot(data = fuel_econ, x = 'VClass', y = 'comb')
@@ -319,4 +319,52 @@ One last plot to show for this section is a line plot, which shows a point estim
 \begin{figure}
 	\includegraphics{images/figure25.png}
 	\caption{Line Plot.}\label{fig:figure25}
+\end{figure}
+
+\newpage
+We'll end our main discussion of bivariate data exploration with a challenge. Our task is to plot the distribution of combined fuel mileage (comb), by manufacturer, for all manual transmission vehicles with at least eighty cars in dataset.
+
+\begin{python}
+	# get manufacters with more than 80 entries
+	threshold = 80
+	manu_count = fuel_econ['make'].value_counts()
+	manu_index = np.sum(manu_count > threshold)
+	
+	manu_thresh = manu_count.index[:manu_index]
+	fuel_econ_subset = fuel_econ.loc[fuel_econ['make'].isin(manu_thresh)]
+	
+	sb.boxplot(data = fuel_econ_subset, x = 'make', y = 'comb', color = base_color)
+	plt.xticks(rotation = 90)
+	# See Figure 26
+	
+	manu_means = fuel_econ_susetb.groupby('make').mean()
+	comb_order = manu_means.sort_values('comb', ascending = False).index
+	
+	
+	# plotting
+	g = sb.FacetGrid(data = fuel_econ_sub, col = 'make', col_wrap = 6, size = 2, col_order = comb_order)
+	
+	# try sb.distplot instead of plt.hist to see the plot in terms of density!
+	g.map(plt.hist, 'comb', bins = np.arange(12, fuel_econ_subset['comb'].max()+2, 2))
+	g.set_titles('{col_name}')
+	# See Figure 27
+	
+	# plot the mean fuel efficiency
+	sb.barplot(data = fuel_econ_sub, y = 'make', x = 'comb', color = base_color, ci = 'sd', order = comb_order)
+	# See Figure 28
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure26.png}
+	\caption{Final Challenge: Facets.}\label{fig:figure26}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure27.png}
+	\caption{Final Challenge: Facets.}\label{fig:figure27}
+\end{figure}
+
+\begin{figure}
+	\includegraphics{images/figure28.png}
+	\caption{Final Challenge: Mean Fuel Efficiency.}\label{fig:figure28}
 \end{figure}
