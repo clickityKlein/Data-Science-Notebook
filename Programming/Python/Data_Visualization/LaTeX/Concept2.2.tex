@@ -8,6 +8,13 @@ Commands:
 	\item plt.hist2d: Matplotlib's command for a heat map.
 	\item sb.violinplot: Seaborn's command for a violin plot.
 	\item sb.boxplot: Seaborn's command for a box plot.
+	\item Creating Facets:
+	\begin{itemize}
+		\item g = sb.FacetGrid: Seaborn's initial command for creating facets (creates object to be called in secondary command). Specify category to create facets around.
+		\item g.map: Seaborn's secondary command for creating facets. Specify type of plot and quantitative (usually) data to create facets around.
+	\end{itemize}
+	\item sb.barplot: Seaborn's bar plot command (not to be confused with sb.countplot). For use when pairing categorical values with quantitative values.
+	\item sb.pointplot: Seaborn's command for creating a line plot.
 \end{itemize}
 
 Terminology:
@@ -17,9 +24,9 @@ Terminology:
 	\item violin plots: Use for quantitative vs. qualitative variables. Plots a line from the minimum to maximum of the quantitative values, and features symmetrical smooth curves on both sides of the line which are wider at denser locations.
 	\item box plots: Use for quantitative vs. qualitative variables. Plots a line from the minimum to maximum of the quantitative values, with a box drawn around the interquartile range [Q1:25th percentile, Q3; 75th percentile].
 	\item clustered bar charts: Use for qualitative vs. quantitative variables. Compares variables by plotting aspects of categories side by side.
-	\item faceting:
-	\item line plots:
-	\item overplotting: when data or labels in a data visualization overlap, making it difficult to see individual points.
+	\item faceting: creating a series of plots which share the same set of axes, but each subplot shows a subset of the data.
+	\item line plots: A scatter plot where point estimates are marked for each of the categories with a given confidence interval. Also known as a time series plot.
+	\item overplotting: When data or labels in a data visualization overlap, making it difficult to see individual points.
 	\item sampling: Choose a subset of the data (best if randomized).
 	\item transparency: By making the points partially transparent (increase the opacity), overplotting becomes evident by darker regions.
 	\item jitter: By adding small randomly generated numbers to the values prior to plotting, overplotting becomes event by denser regions.
@@ -268,7 +275,7 @@ For a quick example of a clustered bar chart, we'll continue on with our examina
 	\caption{Vertical Clustered Bar Chart.}\label{fig:figure22}
 \end{figure}
 
-Let's do another example of a clustered bar chart that puts together different aspects.
+Let's do another example of a clustered bar chart that puts together different aspects. In this example, we want to investigate the difference between the two main fuel types (regular and premium) by vehicle class.
 
 \begin{python}
 	fuel_econ_subset = fuel_econ.loc[fuel_econ['fuelType'].isin(['Premium Gasoline', 'Regular Gasoline'])]
@@ -281,5 +288,35 @@ Let's do another example of a clustered bar chart that puts together different a
 	\caption{Vertical Clustered Bar Chart.}\label{fig:figure23}
 \end{figure}
 
+\newpage
+With even more plotting techniques in our visualization toolbox, what happens when it seems sensible to test many different variations of a similar plot against the data, can we avoid creating a single plot at a time? Enter faceting, creating side by side series of plots containing subsets of the data.
+\\\\
 
+For an example, let's create a plot for every type of vehicle paired with combined efficiency.
 
+\begin{python}
+	bins = np.arange(12, 58 + 2, 2)
+	g = sb.FacetGrid(data = fuel_econ, col = 'VClass', col_wrap = 3, sharey = False)
+	g.map(plt.hist, 'comb', bins = bins)
+	# See Figure 24
+\end{python}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure24.png}
+	\caption{Vehicle Class Fuel Efficiency Facets.}\label{fig:figure24}
+\end{figure}
+
+\newpage
+One last plot to show for this section is a line plot, which shows a point estimate along with a confidence interval while comparing categorical variables with quantitative data.
+
+\begin{python}
+	sb.pointplot(data = fuel_econ, x = 'VClass', y = 'comb')
+	plt.xticks(rotation = 15)
+	plt.ylabel('Avg. Combined Fuel Eff. (mpg)')
+	# See Figure 25
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure25.png}
+	\caption{Line Plot.}\label{fig:figure25}
+\end{figure}
