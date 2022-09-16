@@ -1,1 +1,55 @@
 % Concept3: Explanatory Visuals
+We've examined the data using multiple methods, testing multiple ideas, and have formulated a story the data can tell. Now where do we go? Let's recall the entire data analysis process:
+
+\begin{itemize}
+	\item Extract
+	\item Clean
+	\item Explore
+	\item Analyze
+	\item Share
+\end{itemize} 
+
+We're in the endgame when it comes to the process, so here are some tips for telling a story and finalizing some visualizations.
+\\\\
+
+Telling a Story:
+\begin{enumerate}
+	\item Start with a Question
+	\item Use Repetition
+	\item Highlight the Answer
+	\item Call your Audience to Action
+\end{enumerate}
+
+Polishing Plots:
+\begin{itemize}
+	\item Appropriate Plot Type and Encodings
+	\item Good Design Integrity
+	\item Labeled Axes, Reasonable Tick Marks
+	\item Descriptive Legend and Titles
+	\item Accompanying Comments and Text
+\end{itemize}
+
+We'll use the pokemon dataset a final time to showcase a polished plot.
+
+\begin{python}
+	# We'll rerun the code to create variations for type and specify fairy vs. dragon, with some slight differences
+	
+	type_cols = ['type_1','type_2']
+	non_type_cols = pokemon.columns.difference(type_cols)
+	pkmn_types = pokemon.melt(id_vars = non_type_cols, value_vars = type_cols, var_name = 'type_level', value_name = 'type').dropna()
+	
+	pokemon_sub = pkmn_types.loc[pkmn_types['type'].isin(['fairy','dragon'])]
+	
+	type_cols = ['type_1','type_2']
+	non_type_cols = pokemon.columns.difference(type_cols)
+	pkmn_types = pokemon.melt(id_vars = non_type_cols, value_vars = type_cols, 
+	var_name = 'type_level', value_name = 'type').dropna()
+	
+	pokemon_sub = pkmn_types.loc[pkmn_types['type'].isin(['fairy','dragon'])]
+	# See Figure 45
+\end{python}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure45.png}
+	\caption{Polished Plot.}\label{fig:figure45}
+\end{figure}
