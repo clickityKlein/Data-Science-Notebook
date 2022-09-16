@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  15 SEP 2022 18:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  15 SEP 2022 22:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -792,17 +792,172 @@ Overfull \hbox (101.66765pt too wide) in paragraph at lines 368--369
  []
 
 ) [40] [41 <./Images/figure26.png>] [42 <./Images/figure27.png> <./Images/figur
-e28.png>] (./Concept2.3.tex) [43] (./Concept3.tex) (./Concept4.tex) [44]
+e28.png>] (./Concept2.3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--27
+
+ []
+
+[43]
+<images/figure29.png, id=615, 386.44376pt x 262.9825pt>
+File: images/figure29.png Graphic file (type png)
+<use images/figure29.png>
+Package pdftex.def Info: images/figure29.png  used on input line 48.
+(pdftex.def)             Requested size: 386.44281pt x 262.98184pt.
+
+Overfull \hbox (41.44281pt too wide) in paragraph at lines 48--49
+[][] 
+ []
+
+[44 <./Images/figure29.png>]
+<images/figure30.png, id=641, 383.4325pt x 262.9825pt>
+File: images/figure30.png Graphic file (type png)
+<use images/figure30.png>
+Package pdftex.def Info: images/figure30.png  used on input line 67.
+(pdftex.def)             Requested size: 383.43156pt x 262.98184pt.
+
+Overfull \hbox (38.43156pt too wide) in paragraph at lines 67--68
+[][] 
+ []
+
+[45 <./Images/figure30.png>]
+<images/figure31.png, id=653, 509.905pt x 281.05pt>
+File: images/figure31.png Graphic file (type png)
+<use images/figure31.png>
+Package pdftex.def Info: images/figure31.png  used on input line 101.
+(pdftex.def)             Requested size: 345.01909pt x 190.168pt.
+<images/figure32.png, id=654, 544.0325pt x 281.05pt>
+File: images/figure32.png Graphic file (type png)
+<use images/figure32.png>
+Package pdftex.def Info: images/figure32.png  used on input line 106.
+(pdftex.def)             Requested size: 345.01683pt x 178.23747pt.
+<images/figure33.png, id=655, 384.43625pt x 262.9825pt>
+File: images/figure33.png Graphic file (type png)
+<use images/figure33.png>
+Package pdftex.def Info: images/figure33.png  used on input line 111.
+(pdftex.def)             Requested size: 384.4353pt x 262.98184pt.
+
+Overfull \hbox (39.4353pt too wide) in paragraph at lines 111--112
+[][] 
+ []
+
+[46] [47 <./Images/figure31.png> <./Images/figure32.png>] [48 <./Images/figure3
+3.png>]
+<images/figure34.png, id=711, 274.02374pt x 207.77625pt>
+File: images/figure34.png Graphic file (type png)
+<use images/figure34.png>
+Package pdftex.def Info: images/figure34.png  used on input line 139.
+(pdftex.def)             Requested size: 345.02504pt x 261.61238pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+<images/figure35.png, id=712, 1113.15875pt x 425.59pt>
+File: images/figure35.png Graphic file (type png)
+<use images/figure35.png>
+Package pdftex.def Info: images/figure35.png  used on input line 155.
+(pdftex.def)             Requested size: 345.0077pt x 131.90555pt.
+[49 <./Images/figure34.png>]
+<images/figure36.png, id=730, 404.51125pt x 286.06876pt>
+File: images/figure36.png Graphic file (type png)
+<use images/figure36.png>
+Package pdftex.def Info: images/figure36.png  used on input line 181.
+(pdftex.def)             Requested size: 404.51025pt x 286.06805pt.
+
+Overfull \hbox (59.51025pt too wide) in paragraph at lines 181--182
+[][] 
+ []
+
+<images/figure37.png, id=731, 394.47375pt x 286.06876pt>
+File: images/figure37.png Graphic file (type png)
+<use images/figure37.png>
+Package pdftex.def Info: images/figure37.png  used on input line 186.
+(pdftex.def)             Requested size: 394.47278pt x 286.06805pt.
+
+Overfull \hbox (49.47278pt too wide) in paragraph at lines 186--187
+[][] 
+ []
+
+<images/figure38.png, id=732, 394.47375pt x 290.08376pt>
+File: images/figure38.png Graphic file (type png)
+<use images/figure38.png>
+Package pdftex.def Info: images/figure38.png  used on input line 191.
+(pdftex.def)             Requested size: 394.47278pt x 290.08304pt.
+
+Overfull \hbox (49.47278pt too wide) in paragraph at lines 191--192
+[][] 
+ []
+
+[50 <./Images/figure35.png>] [51 <./Images/figure36.png>] [52 <./Images/figure3
+7.png>] [53 <./Images/figure38.png>]
+<images/figure39.png, id=785, 1076.02pt x 208.78pt>
+File: images/figure39.png Graphic file (type png)
+<use images/figure39.png>
+Package pdftex.def Info: images/figure39.png  used on input line 211.
+(pdftex.def)             Requested size: 344.99019pt x 66.93839pt.
+<images/figure40.png, id=786, 388.45125pt x 286.06876pt>
+File: images/figure40.png Graphic file (type png)
+<use images/figure40.png>
+Package pdftex.def Info: images/figure40.png  used on input line 216.
+(pdftex.def)             Requested size: 388.45029pt x 286.06805pt.
+
+Overfull \hbox (43.45029pt too wide) in paragraph at lines 216--217
+[][] 
+ []
+
+<images/figure41.png, id=787, 1060.96375pt x 1061.9675pt>
+File: images/figure41.png Graphic file (type png)
+<use images/figure41.png>
+Package pdftex.def Info: images/figure41.png  used on input line 236.
+(pdftex.def)             Requested size: 345.0034pt x 345.3298pt.
+<images/figure42.png, id=788, 1060.96375pt x 1061.9675pt>
+File: images/figure42.png Graphic file (type png)
+<use images/figure42.png>
+Package pdftex.def Info: images/figure42.png  used on input line 241.
+(pdftex.def)             Requested size: 345.0034pt x 345.3298pt.
+<images/figure43.png, id=789, 887.315pt x 885.3075pt>
+File: images/figure43.png Graphic file (type png)
+<use images/figure43.png>
+Package pdftex.def Info: images/figure43.png  used on input line 263.
+(pdftex.def)             Requested size: 344.99539pt x 344.21486pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
+
+ []
+
+[54 <./Images/figure39.png>] [55 <./Images/figure40.png>] [56 <./Images/figure4
+1.png>] [57 <./Images/figure42.png>] [58 <./Images/figure43.png>]
+<images/figure44.png, id=846, 859.21pt x 281.05pt>
+File: images/figure44.png Graphic file (type png)
+<use images/figure44.png>
+Package pdftex.def Info: images/figure44.png  used on input line 286.
+(pdftex.def)             Requested size: 345.00208pt x 112.85114pt.
+) [59 <./Images/figure44.png>] (./Concept3.tex) (./Concept4.tex) [60]
 (./Data_Visualization_Notes.aux)
 Package rerunfilecheck Info: File `Data_Visualization_Notes.out' has not change
 d.
 (rerunfilecheck)             Checksum: 33267C8970EB1ACD31FE4E4B455A7A95;1447.
  ) 
 Here is how much of TeX's memory you used:
- 11462 strings out of 478268
- 172756 string characters out of 5850345
- 1076311 words of memory out of 5000000
- 29150 multiletter control sequences out of 15000+600000
+ 11849 strings out of 478268
+ 178884 string characters out of 5850345
+ 1077256 words of memory out of 5000000
+ 29353 multiletter control sequences out of 15000+600000
  474354 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,7n,63p,691b,2021s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -814,10 +969,10 @@ ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsltt10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Data_Visualization_Notes.pdf (44 pages, 505702 bytes).
+Output written on Data_Visualization_Notes.pdf (60 pages, 949657 bytes).
 PDF statistics:
- 735 PDF objects out of 1000 (max. 8388607)
- 610 compressed objects within 7 object streams
- 373 named destinations out of 1000 (max. 500000)
- 205 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1021 PDF objects out of 1200 (max. 8388607)
+ 846 compressed objects within 9 object streams
+ 541 named destinations out of 1000 (max. 500000)
+ 285 words of extra memory for PDF output out of 10000 (max. 10000000)
 

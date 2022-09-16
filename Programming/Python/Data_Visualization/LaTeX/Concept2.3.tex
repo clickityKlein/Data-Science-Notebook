@@ -1,1 +1,288 @@
 % Concept2.3: Multivariate Exploration of Data
+We'll be making use of both the pokemon and fuel\_econ datasets while discussing exploration of multivariate data. When plotting three variables together, there are four major cases to consider:
+\begin{itemize}
+	\item three numeric variables
+	\item two numeric variables and one categorical variable
+	\item one numberic variable and two categorical variables
+	\item three categorical variables
+\end{itemize}
+
+Commands:
+\begin{itemize}
+	\item np.random.seed: Use when you want "randomized" results to be reproducible.
+	\item np.random.choice: If an ndarray is passed through, a random sampling is produced from its data. If an integer is passed through, a random sampling is generated as if it were np.arange.
+	\item sb.PairGrid: Seaborn function for Plot Matrices (i.e. plot all pairwise relationships among data for specified variables).
+	\item sb.PairGrid.map\_offdiag: Will plot onto currently active matplotlib axes (i.e. will draw over the current diagonal of the plot matrices).
+\end{itemize}
+
+Terminology:
+\begin{itemize}
+	\item Non-Positional Encoding (for Third Variables): Recall the main encodings of size, shape and color. If we have a plot which illustrates a relationship between two of the variables, we can use an encoding to illustrate another relationship.
+	\item Plot Matrices: Plot pairwise relationships among data given specified variables.
+	\item Feature Engineering: Creating a new variable by leveraging relationships between variables with mathematical operations.
+\end{itemize}
+
+We'll start with an example illustrating the effectiveness of non-positional encodings for a third variable.
+\\\\
+
+An example of using color as the encoder:
+\begin{python}
+	"""
+	We'll start by taking a random sampling from the fuel_econ dataset. Note that since this a NumPy function, an ndarray must be passed through. A Pandas DataFrame will not work, which is why we must use two steps.
+	"""
+	np.random.seed(2018)
+	sample = np.random.choice(fuel_econ.shape[0], 200, replace = False)
+	fuel_econ_subset = fuel_econ.loc[sample]
+	
+	ttype_markers = [['Automatic', 'o'], ['Manual', '^']]
+	
+	for ttype, marker in ttype_markers:
+		plot_data = fuel_econ_subset.loc[fuel_econ_subset['trans_type'] == ttype]
+		sb.regplot(data = fuel_econ_subset, x = 'displ', y = 'comb', x_jitter = 0.04, fit_reg = False, marker = marker)
+	plt.xlabel('Displacement (l)')
+	plt.ylabel('Combined Fuel Eff. (mpg)')
+	# See Figure 29
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure29.png}
+	\caption{Non-Positional Encoding Example: Shape.}\label{fig:figure29}
+\end{figure}
+
+An example of using size as an encoder:
+
+\begin{python}
+	sizes = [200, 350, 500]
+	legend_obj = []
+	for s in sizes:
+		legend_obj.append(plt.scatter([],[],s = s/2, color = base_color))
+	plt.legend(legend_obj, sizes, title = 'CO2 (g/mi)')
+	sb.regplot(data = fuel_econ_subset, x = 'displ', y = 'comb', x_jitter = 0.04, fit_reg = False, scatter_kws = {'s' : fuel_econ_subset['co2']/2})
+	plt.xlabel('Displacement (l)')
+	plt.ylabel('Combined Fuel Eff. (mpg)')
+	# See Figure 30
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure30.png}
+	\caption{Non-Positional Encoding Example: Size.}\label{fig:figure30}
+\end{figure}
+
+\newpage
+As we could've guessed, when it comes to encodings, color is more natural. Here are three different examples which use color encoding to represent a third variable.
+
+\begin{python}
+	"""
+	Note: FacetGrid is used differently in the first two examples. Rather than create a series of plots, its used to separate categorical data from the third variable.
+	"""
+	
+	g = sb.FacetGrid(data = fuel_econ_subset, hue = 'trans_type', hue_order = ['Automatic', 'Manual'], size = 4, aspect = 1.5)
+	g.map(sb.regplot, 'displ', 'comb', x_jitter = 0.04, fit_reg = False)
+	g.add_legend()
+	plt.xlabel('Displacement (l)')
+	plt.ylabel('Combined Fuel Eff. (mpg)')
+	# See Figure 31
+	
+	g = sb.FacetGrid(data = fuel_econ_subset, hue = 'VClass', size = 4, aspect = 1.5, palette = 'viridis_r')
+	g.map(sb.regplot, 'displ', 'comb', x_jitter = 0.04, fit_reg = False)
+	g.add_legend()
+	plt.xlabel('Displacement (l)')
+	plt.ylabel('Combined Fuel Eff. (mpg)')
+	# See Figure 32
+	
+	plt.scatter(data = fuel_econ_subset, x = 'displ', y = 'comb', c = 'co2', cmap = 'viridis_r')
+	plt.colorbar(label = 'CO2 (g/mi)')
+	plt.xlabel('Displacement (l)')
+	plt.ylabel('Combined Fuel Eff. (mpg)')
+	# See Figure 33
+\end{python}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure31.png}
+	\caption{Non-Positional Encoding Example: Color \#1.}\label{fig:figure31}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure32.png}
+	\caption{Non-Positional Encoding Example: Color \#2.}\label{fig:figure32}
+\end{figure}
+
+\begin{figure}
+	\includegraphics{images/figure33.png}
+	\caption{Non-Positional Encoding Example: Color \#3.}\label{fig:figure33}
+\end{figure}
+
+Recall the pokemon dataset, and how we previously unpivoted the type\_1 and type\_2 data together? Let's resurrect that code and mix encodings with transformations to examine relationships between height, weight and type.
+
+\begin{python}
+	# create our single column of types
+	type_cols = ['type_1','type_2']
+	non_type_cols = pokemon.columns.difference(type_cols)
+	pkmn_types = pokemon.melt(id_vars = non_type_cols, value_vars = type_cols, var_name = 'type_level', value_name = 'type').dropna()
+	
+	# apply a log transformation to the data we're examining
+	pkmn_types['log_weight'] = np.log(pkmn_types['weight'])
+	pkmn_types['log_height'] = np.log(pkmn_types['height'])
+	
+	# Let's specifically zoom in on fairy and dragon type pokemon
+	ptypes = ['fairy', 'dragon']
+	
+	g = sb.FacetGrid(data = pkmn_types, hue = 'type', hue_order = ptypes)
+	g.map(sb.regplot, 'log_weight', 'height', fit_reg = False)
+	g.add_legend()
+	plt.xlabel('log of Weight')
+	plt.ylabel('Height')
+	# See Figure 34
+\end{python} 
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure34.png}
+	\caption{Pokemon Height vs. Weight by Category.}\label{fig:figure34}
+\end{figure}
+
+With bivariate data, when we used faceting to create a series of plots, we used bar charts or histograms while changing a specification of the second variable. With three variables, we could use scatter plots comparing two variables with a third variable encoded. This is known as faceting in two directions.
+\\\\
+
+Let's go back to our fuel economy dataset and compare vehicle class, transmission type and combined fuel efficiency.
+
+\begin{python}
+	g = sb.FacetGrid(data = fuel_econ, col = 'VClass', row = 'trans_type')
+	g.map(plt.scatter, 'displ', 'comb')
+	# See Figure 35
+\end{python}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure35.png}
+	\caption{Basic Faceting in Two Directions.}\label{fig:figure35}
+\end{figure}
+
+Continuing the trend, here are some more adaptations of bivariate plots extended to multivariate plots.
+
+\begin{python}
+	sb.pointplot(data = fuel_econ, x = 'VClass', y = 'comb', hue = 'trans_type', ci = 'sd', linestyles = '', dodge = True)
+	plt.xticks(rotation = 15)
+	plt.ylabel('Avg. Combined Efficiency (mpg)')
+	# See Figure 36
+	
+	sb.barplot(data = fuel_econ, x = 'VClass', y = 'comb', hue = 'trans_type', ci = 'sd')
+	plt.xticks(rotation = 15)
+	plt.ylabel('Avg. Combined Efficiency (mpg)')
+	# See Figure 37
+	
+	sb.boxplot(data = fuel_econ, x = 'VClass', y = 'comb', hue = 'trans_type')
+	plt.xticks(rotation = 15)
+	plt.ylabel('Avg. Combined Efficiency (mpg)')
+	# See Figure 38
+	
+	# not illustrated, but feasible, is using a heatmap to illustrate a third variable
+\end{python}
+
+\begin{figure}
+	\includegraphics{images/figure36.png}
+	\caption{Pointplot for Multivariate.}\label{fig:figure36}
+\end{figure}
+
+\begin{figure}
+	\includegraphics{images/figure37.png}
+	\caption{Bar Plot for Multivariate.}\label{fig:figure37}
+\end{figure}
+
+\begin{figure}
+	\includegraphics{images/figure38.png}
+	\caption{Box Plot for Multivariate.}\label{fig:figure38}
+\end{figure}
+
+And a few more challenge examples:
+
+\begin{python}
+	# Plot the city vs highway fuel efficiencies for each vehicle class
+	g = sb.FacetGrid(data = fuel_econ, col = 'VClass')
+	g.map(plt.scatter, 'city', 'highway')
+	# See Figure 39
+	
+	# Plot the relationship between engine size (displ), class, and fuel type (fuelType). Use premium vs. regular
+	sb.barplot(data = fuel_econ, x = 'VClass', y = 'displ', hue = 'fuelType', hue_order = ['Premium Gasoline', 'Regular Gasoline'], ci = 'sd')
+	plt.xticks(rotation = 15)
+	plt.ylabel('Engine Size (l)')
+	# See Figure 40
+\end{python}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure39.png}
+	\caption{Vehicle Class vs. Combined Fuel Efficiency (by Transmission Type).}\label{fig:figure39}
+\end{figure}
+
+\begin{figure}
+	\includegraphics{images/figure40.png}
+	\caption{Vehicle Class vs. Engine Size (by Fuel Type).}\label{fig:figure40}
+\end{figure}
+
+Possibly even more powerful than a few different combinations would be pairwise combinations between specified variables. This is the concept of plot matrices.
+
+\begin{python}
+	# let's look at the pairwise relationships between the 6 combat types
+	pkmn_stats = ['hp', 'attack', 'defense', 'speed', 'special-attack', 'special-defense']
+	g = sb.PairGrid(data = pokemon, vars = pkmn_stats)
+	g.map(plt.scatter)
+	# See Figure 41
+	
+	# if needed, we even impose another plot over the existing plots on the diagonal
+	g = g.map_offdiag(plt.scatter)
+	g.map_diag(plt.hist)
+	# See Figure 42
+\end{python}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure41.png}
+	\caption{Pairwise Relationships.}\label{fig:figure41}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure42.png}
+	\caption{Histograms on the Diagonal.}\label{fig:figure42}
+\end{figure}
+
+If we run a slight variaton of the code above, we'll actual just get the histogram along the diagonal, instead of imposed.
+
+\begin{python}
+	econ_vars = ['displ', 'co2', 'city', 'highway', 'comb']
+	g = sb.PairGrid(data = fuel_econ, vars = econ_vars)
+	
+	"""
+	If we don't run:
+	g.map(plt.scatter)
+	Then, just the histograms will be drawn on the diagonals.
+	"""
+	
+	g = g.map_offdiag(plt.scatter)
+	g.map_diag(plt.hist)
+	# See Figure 43
+\end{python}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure43.png}
+	\caption{Histograms on the Diagonal.}\label{fig:figure43}
+\end{figure}
+
+We'll draw the multivariate exploration to an end with one last concept, feature engineering. Let's work through a challenge problem to get an idea of how this can be used.
+\\\\
+
+The output of the preceding task pointed out a potentially interesting relationship between co2 emissions and overall fuel efficiency. Engineer a new variable that depicts CO2 emissions as a function of gallons of gas (g / gal). (The 'co2' variable is in units of g / mi, and the 'comb' variable is in units of mi / gal.) Then, plot this new emissions variable against engine size ('displ') and fuel type ('fuelType'). For this task, compare not just Premium Gasoline and Regular Gasoline, but also Diesel fuel.
+
+\begin{python}
+	fuel_econ['new_var'] = fuel_econ['co2'] * fuel_econ['comb']
+	fuel_econ_sub = fuel_econ.loc[fuel_econ['fuelType'].isin(['Premium Gasoline', 'Regular Gasoline', 'Diesel'])]
+	
+	# plotting
+	g = sb.FacetGrid(data = fuel_econ_sub, col = 'fuelType', size = 4, col_wrap = 3)
+	g.map(sb.regplot, 'new_var', 'displ', y_jitter = 0.04, fit_reg = False, scatter_kws = {'alpha' : 1/5})
+	g.set_ylabels('Engine displacement (l)')
+	g.set_xlabels('CO2 (g/gal)')
+	g.set_titles('{col_name}')
+	# See Figure 44
+\end{python}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure44.png}
+	\caption{Feature Engineering.}\label{fig:figure44}
+\end{figure}
