@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  16 SEP 2022 16:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  17 SEP 2022 02:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -973,19 +973,104 @@ Overfull \hbox (115.3248pt too wide) in paragraph at lines 70--81
  [] 
  []
 
-) [63] (./Data_Visualization_Notes.aux)
+[63]
+<images/figure46.png, id=914, 382.42876pt x 252.945pt>
+File: images/figure46.png Graphic file (type png)
+<use images/figure46.png>
+Package pdftex.def Info: images/figure46.png  used on input line 124.
+(pdftex.def)             Requested size: 382.42781pt x 252.94438pt.
+
+Overfull \hbox (37.42781pt too wide) in paragraph at lines 124--125
+[][] 
+ []
+
+<images/figure47.png, id=915, 397.485pt x 251.94125pt>
+File: images/figure47.png Graphic file (type png)
+<use images/figure47.png>
+Package pdftex.def Info: images/figure47.png  used on input line 129.
+(pdftex.def)             Requested size: 397.48402pt x 251.94063pt.
+
+Overfull \hbox (52.48402pt too wide) in paragraph at lines 129--130
+[][] 
+ []
+
+<images/figure48.png, id=916, 403.5075pt x 262.9825pt>
+File: images/figure48.png Graphic file (type png)
+<use images/figure48.png>
+Package pdftex.def Info: images/figure48.png  used on input line 134.
+(pdftex.def)             Requested size: 403.50652pt x 262.98184pt.
+
+Overfull \hbox (58.50652pt too wide) in paragraph at lines 134--135
+[][] 
+ []
+
+<images/figure49.png, id=917, 403.5075pt x 262.9825pt>
+File: images/figure49.png Graphic file (type png)
+<use images/figure49.png>
+Package pdftex.def Info: images/figure49.png  used on input line 139.
+(pdftex.def)             Requested size: 403.50652pt x 262.98184pt.
+
+Overfull \hbox (58.50652pt too wide) in paragraph at lines 139--140
+[][] 
+ []
+
+<images/figure50.png, id=918, 403.5075pt x 262.9825pt>
+File: images/figure50.png Graphic file (type png)
+<use images/figure50.png>
+Package pdftex.def Info: images/figure50.png  used on input line 144.
+(pdftex.def)             Requested size: 403.50652pt x 262.98184pt.
+
+Overfull \hbox (58.50652pt too wide) in paragraph at lines 144--145
+[][] 
+ []
+
+[64] [65 <./Images/figure46.png>] [66 <./Images/figure47.png>] [67 <./Images/fi
+gure48.png>] [68 <./Images/figure49.png>] [69 <./Images/figure50.png>] [70]
+[71]
+<images/figure51.png, id=1061, 376.40625pt x 248.93pt>
+File: images/figure51.png Graphic file (type png)
+<use images/figure51.png>
+Package pdftex.def Info: images/figure51.png  used on input line 236.
+(pdftex.def)             Requested size: 376.40532pt x 248.92938pt.
+
+Overfull \hbox (31.40532pt too wide) in paragraph at lines 236--237
+[][] 
+ []
+
+<images/figure52.png, id=1062, 379.4175pt x 250.9375pt>
+File: images/figure52.png Graphic file (type png)
+<use images/figure52.png>
+Package pdftex.def Info: images/figure52.png  used on input line 241.
+(pdftex.def)             Requested size: 379.41656pt x 250.93687pt.
+
+Overfull \hbox (34.41656pt too wide) in paragraph at lines 241--242
+[][] 
+ []
+
+<images/figure53.png, id=1063, 1076.02pt x 353.32pt>
+File: images/figure53.png Graphic file (type png)
+<use images/figure53.png>
+Package pdftex.def Info: images/figure53.png  used on input line 246.
+(pdftex.def)             Requested size: 344.99019pt x 113.28035pt.
+<images/figure54.png, id=1064, 1076.02pt x 353.32pt>
+File: images/figure54.png Graphic file (type png)
+<use images/figure54.png>
+Package pdftex.def Info: images/figure54.png  used on input line 251.
+(pdftex.def)             Requested size: 344.99019pt x 113.28035pt.
+) [72 <./Images/figure51.png>] [73 <./Images/figure52.png> <./Images/figure53.p
+ng>] [74 <./Images/figure54.png>] (./Data_Visualization_Notes.aux)
 Package rerunfilecheck Info: File `Data_Visualization_Notes.out' has not change
 d.
 (rerunfilecheck)             Checksum: 33267C8970EB1ACD31FE4E4B455A7A95;1447.
  ) 
 Here is how much of TeX's memory you used:
- 11895 strings out of 478268
- 179553 string characters out of 5850345
- 1077294 words of memory out of 5000000
- 29366 multiletter control sequences out of 15000+600000
+ 12160 strings out of 478268
+ 183821 string characters out of 5850345
+ 1180698 words of memory out of 5000000
+ 29489 multiletter control sequences out of 15000+600000
  474354 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,7n,63p,691b,2021s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,7n,63p,848b,2033s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-di
@@ -995,10 +1080,10 @@ c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt1
 0.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Data_Visualization_Notes.pdf (63 pages, 982255 bytes).
+Output written on Data_Visualization_Notes.pdf (74 pages, 1110703 bytes).
 PDF statistics:
- 1075 PDF objects out of 1200 (max. 8388607)
- 893 compressed objects within 9 object streams
- 573 named destinations out of 1000 (max. 500000)
- 290 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1291 PDF objects out of 1440 (max. 8388607)
+ 1078 compressed objects within 11 object streams
+ 706 named destinations out of 1000 (max. 500000)
+ 335 words of extra memory for PDF output out of 10000 (max. 10000000)
 

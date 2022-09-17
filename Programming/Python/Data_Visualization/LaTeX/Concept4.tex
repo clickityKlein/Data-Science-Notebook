@@ -182,24 +182,43 @@ Next, we'll move into bivariate exploration.
 	# See Figure 52
 	
 	# Let's compare price and the categorical variables
+	"""
 	sb.boxplot(data = diamonds, x = 'cut', y = 'price', color = base_color, order = cut_order)
 	sb.boxplot(data = diamonds, x = 'color', y = 'price', color = base_color, order = color_order)
 	sb.boxplot(data = diamonds, x = 'clarity', y = 'price', color = base_color, order = clarity_order)
+	
+	Which can all be done with the following commands:
+	"""
+	
+	category_list = ['cut', 'color', 'clarity']
+	non_category_list = diamonds.columns.difference(category_list)
+	diamonds_c = diamonds.melt(id_vars = non_category_list, value_vars = category_list, var_name = 'main_category', value_name = 'main_value')
+
+	sb.catplot(data = diamonds_c, y = 'price', x = 'main_value', col = 'main_category', kind = 'box', sharex= False, color = base_color)
+	# See Figure 53
+	
+	"""
+	Then, we'll check out the data after a transformation:
 	
 	sb.boxplot(data = diamonds, x = 'cut', y = 'log_price', color = base_color, order = cut_order)
 	sb.boxplot(data = diamonds, x = 'color', y = 'log_price', color = base_color, order = color_order)
 	sb.boxplot(data = diamonds, x = 'clarity', y = 'log_price', color = base_color, order = clarity_order)
 	
-	"""
-	With a violin plot, you can get more insight into what causes the trend in median prices to appear as it does.
-	Faceted histograms will also produce a similar result, though unless the faceting keeps the price axis common across facets,
-	the trend will be harder to see. For each ordinal variable, there are multiple modes into which prices appear to fall.
-	Going across increasing quality levels, you should see that the modes rise in price - this should be
-	the expected effect of quality. However, you should also see that more of the data will be located in the lower-priced
-	modes - this explains the unintuitive result noted in the previous comment. This is clearest in the clarity variable.
-	Let's keep searching the data to see if there's more we can say about this pattern.
+	Which can all be done with the following commands:
 	"""
 	
+	
+	sb.catplot(data = diamonds_c, y = 'log_price', x = 'main_value', col = 'main_category', kind = 'box', sharex= False, color = base_color)
+	# See Figure 54
+	
+	"""
+	With a violin plot, you can get more insight into what causes the trend in median prices to appear as it does. Faceted histograms will also produce a similar result, though unless the faceting keeps the price axis common across facets, the trend will be harder to see. For each ordinal variable, there are multiple modes into which prices appear to fall. Going across increasing quality levels, you should see that the modes rise in price - this should be the expected effect of quality. However, you should also see that more of the data will be located in the lower-priced modes - this explains the unintuitive result noted in the previous comment. This is clearest in the clarity variable. Let's keep searching the data to see if there's more we can say about this pattern.
+	"""
+	
+	"""
+	
+	Let's combine the boxplot images and the boxplot images using a combination of the methods we've seen:
+	"""
 	sb.violinplot(data = diamonds, x = 'cut', y = 'price', color = base_color, inner = None)
 	sb.violinplot(data = diamonds, x = 'color', y = 'price', color = base_color, inner = None)
 	sb.violinplot(data = diamonds, x = 'clarity', y = 'price', color = base_color, inner = None)
@@ -207,6 +226,10 @@ Next, we'll move into bivariate exploration.
 	sb.violinplot(data = diamonds, x = 'cut', y = 'carat', color = base_color, inner = None)
 	sb.violinplot(data = diamonds, x = 'color', y = 'carat', color = base_color, inner = None)
 	sb.violinplot(data = diamonds, x = 'clarity', y = 'carat', color = base_color, inner = None)
+	"""
+	
+	
+	
 \end{python}
 
 \begin{figure}
@@ -217,4 +240,14 @@ Next, we'll move into bivariate exploration.
 \begin{figure}
 	\includegraphics{images/figure52.png}
 	\caption{Price vs. Carat with Transformations.}\label{fig:figure52}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure53.png}
+	\caption{Box Plots Price vs. Category.}\label{fig:figure53}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure54.png}
+	\caption{Box Plots Price vs. Category.}\label{fig:figure54}
 \end{figure}
