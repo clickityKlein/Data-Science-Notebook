@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  17 SEP 2022 02:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  20 SEP 2022 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1030,44 +1030,102 @@ gure48.png>] [68 <./Images/figure49.png>] [69 <./Images/figure50.png>] [70]
 <images/figure51.png, id=1061, 376.40625pt x 248.93pt>
 File: images/figure51.png Graphic file (type png)
 <use images/figure51.png>
-Package pdftex.def Info: images/figure51.png  used on input line 236.
+Package pdftex.def Info: images/figure51.png  used on input line 241.
 (pdftex.def)             Requested size: 376.40532pt x 248.92938pt.
 
-Overfull \hbox (31.40532pt too wide) in paragraph at lines 236--237
+Overfull \hbox (31.40532pt too wide) in paragraph at lines 241--242
 [][] 
  []
 
 <images/figure52.png, id=1062, 379.4175pt x 250.9375pt>
 File: images/figure52.png Graphic file (type png)
 <use images/figure52.png>
-Package pdftex.def Info: images/figure52.png  used on input line 241.
+Package pdftex.def Info: images/figure52.png  used on input line 246.
 (pdftex.def)             Requested size: 379.41656pt x 250.93687pt.
 
-Overfull \hbox (34.41656pt too wide) in paragraph at lines 241--242
+Overfull \hbox (34.41656pt too wide) in paragraph at lines 246--247
 [][] 
  []
 
 <images/figure53.png, id=1063, 1076.02pt x 353.32pt>
 File: images/figure53.png Graphic file (type png)
 <use images/figure53.png>
-Package pdftex.def Info: images/figure53.png  used on input line 246.
+Package pdftex.def Info: images/figure53.png  used on input line 251.
 (pdftex.def)             Requested size: 344.99019pt x 113.28035pt.
 <images/figure54.png, id=1064, 1076.02pt x 353.32pt>
 File: images/figure54.png Graphic file (type png)
 <use images/figure54.png>
-Package pdftex.def Info: images/figure54.png  used on input line 251.
+Package pdftex.def Info: images/figure54.png  used on input line 256.
 (pdftex.def)             Requested size: 344.99019pt x 113.28035pt.
-) [72 <./Images/figure51.png>] [73 <./Images/figure52.png> <./Images/figure53.p
-ng>] [74 <./Images/figure54.png>] (./Data_Visualization_Notes.aux)
+<images/figure55.png, id=1065, 1076.02pt x 353.32pt>
+File: images/figure55.png Graphic file (type png)
+<use images/figure55.png>
+Package pdftex.def Info: images/figure55.png  used on input line 261.
+(pdftex.def)             Requested size: 344.99019pt x 113.28035pt.
+<images/figure56.png, id=1066, 1076.02pt x 353.32pt>
+File: images/figure56.png Graphic file (type png)
+<use images/figure56.png>
+Package pdftex.def Info: images/figure56.png  used on input line 266.
+(pdftex.def)             Requested size: 344.99019pt x 113.28035pt.
+<images/figure57.png, id=1067, 1076.02pt x 353.32pt>
+File: images/figure57.png Graphic file (type png)
+<use images/figure57.png>
+Package pdftex.def Info: images/figure57.png  used on input line 271.
+(pdftex.def)             Requested size: 344.99019pt x 113.28035pt.
+[72]
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--281
+
+ []
+
+[73 <./Images/figure51.png>] [74 <./Images/figure52.png> <./Images/figure53.png
+>] [75 <./Images/figure54.png> <./Images/figure55.png> <./Images/figure56.png>]
+<images/figure58.png, id=1120, 363.3575pt x 252.945pt>
+File: images/figure58.png Graphic file (type png)
+<use images/figure58.png>
+Package pdftex.def Info: images/figure58.png  used on input line 317.
+(pdftex.def)             Requested size: 345.01024pt x 240.17288pt.
+<images/figure59.png, id=1121, 1726.45pt x 208.78pt>
+File: images/figure59.png Graphic file (type png)
+<use images/figure59.png>
+Package pdftex.def Info: images/figure59.png  used on input line 322.
+(pdftex.def)             Requested size: 344.99411pt x 41.7202pt.
+<images/figure60.png, id=1122, 1726.45pt x 208.78pt>
+File: images/figure60.png Graphic file (type png)
+<use images/figure60.png>
+Package pdftex.def Info: images/figure60.png  used on input line 327.
+(pdftex.def)             Requested size: 344.99411pt x 41.7202pt.
+<images/figure61.png, id=1123, 385.44pt x 252.945pt>
+File: images/figure61.png Graphic file (type png)
+<use images/figure61.png>
+Package pdftex.def Info: images/figure61.png  used on input line 332.
+(pdftex.def)             Requested size: 344.99901pt x 226.4056pt.
+) [76 <./Images/figure57.png>] [77 <./Images/figure58.png> <./Images/figure59.p
+ng> <./Images/figure60.png>] [78 <./Images/figure61.png>]
+(./Data_Visualization_Notes.aux)
 Package rerunfilecheck Info: File `Data_Visualization_Notes.out' has not change
 d.
 (rerunfilecheck)             Checksum: 33267C8970EB1ACD31FE4E4B455A7A95;1447.
  ) 
 Here is how much of TeX's memory you used:
- 12160 strings out of 478268
- 183821 string characters out of 5850345
- 1180698 words of memory out of 5000000
- 29489 multiletter control sequences out of 15000+600000
+ 12259 strings out of 478268
+ 185576 string characters out of 5850345
+ 1181179 words of memory out of 5000000
+ 29540 multiletter control sequences out of 15000+600000
  474354 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,7n,63p,848b,2033s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1080,10 +1138,10 @@ c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt1
 0.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/
 texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Data_Visualization_Notes.pdf (74 pages, 1110703 bytes).
+Output written on Data_Visualization_Notes.pdf (78 pages, 1388952 bytes).
 PDF statistics:
- 1291 PDF objects out of 1440 (max. 8388607)
- 1078 compressed objects within 11 object streams
- 706 named destinations out of 1000 (max. 500000)
- 335 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1367 PDF objects out of 1440 (max. 8388607)
+ 1135 compressed objects within 12 object streams
+ 747 named destinations out of 1000 (max. 500000)
+ 370 words of extra memory for PDF output out of 10000 (max. 10000000)
 

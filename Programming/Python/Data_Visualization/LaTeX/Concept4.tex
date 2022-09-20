@@ -216,9 +216,6 @@ Next, we'll move into bivariate exploration.
 	"""
 	
 	"""
-	
-	Let's combine the boxplot images and the boxplot images using a combination of the methods we've seen:
-	"""
 	sb.violinplot(data = diamonds, x = 'cut', y = 'price', color = base_color, inner = None)
 	sb.violinplot(data = diamonds, x = 'color', y = 'price', color = base_color, inner = None)
 	sb.violinplot(data = diamonds, x = 'clarity', y = 'price', color = base_color, inner = None)
@@ -226,10 +223,18 @@ Next, we'll move into bivariate exploration.
 	sb.violinplot(data = diamonds, x = 'cut', y = 'carat', color = base_color, inner = None)
 	sb.violinplot(data = diamonds, x = 'color', y = 'carat', color = base_color, inner = None)
 	sb.violinplot(data = diamonds, x = 'clarity', y = 'carat', color = base_color, inner = None)
+	
+	Like we did above with the box plots, we can combine these with a similar method for the violin plots: 
 	"""
 	
+	sb.catplot(data = diamonds_c, y = 'price', x = 'main_value', col = 'main_category', kind = 'violin', sharex= False, color = base_color)
+	# See Figure 55
 	
+	sb.catplot(data = diamonds_c, y = 'log_price', x = 'main_value', col = 'main_category', kind = 'violin', sharex= False, color = base_color)
+	# See Figure 56
 	
+	sb.catplot(data = diamonds_c, y = 'carat', x = 'main_value', col = 'main_category', kind = 'violin', sharex= False, color = base_color)
+	# See Figure 57
 \end{python}
 
 \begin{figure}
@@ -249,5 +254,81 @@ Next, we'll move into bivariate exploration.
 
 \begin{figure}
 	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure54.png}
-	\caption{Box Plots Price vs. Category.}\label{fig:figure54}
+	\caption{Box Plots Log Price vs. Category.}\label{fig:figure54}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure55.png}
+	\caption{Violin Plots of Diamond Quality vs. Price by the 3 C's.}\label{fig:figure55}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure56.png}
+	\caption{Violin Plots of Diamond Quality vs. Log Price by the 3 C's.}\label{fig:figure56}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure57.png}
+	\caption{Violin Plots of Diamond Quality vs. Carat by the 3 C's.}\label{fig:figure57}
+\end{figure}
+
+\newpage
+In the previous workspace, you looked at various bivariate relationships. You saw that the log of price was approximately linearly related to the cube root of carat weight, as analogy to its length, width, and depth. You also saw that there was an non-intuitive relationship between price and the categorical quality measures of cut, color, and clarity, that the median price decreased with increasing quality. Investigating the distributions more clearly and looking at the relationship between carat weight with the three categorical variables showed that this was due to carat size tending to be smaller for the diamonds with higher categorical grades.
+\\\\
+
+The goal of this workspace will be to depict these interaction effects through the use of multivariate plots.
+\\\\
+
+To start off with, create a plot of the relationship between price, carat, and clarity. In the previous workspace, you saw that clarity had the clearest interactions with price and carat. How clearly does this show up in a multivariate visualization?
+
+\begin{python}
+	# plot of price by carat, weight, and clarity
+	plt.scatter(data = diamonds, x = 'clarity', y = 'price', c = 'carat')
+	plt.colorbar()
+	# See Figure 58
+	
+	# Let's do a faceted scatterplot instead
+	g = sb.FacetGrid(data = diamonds, col = 'clarity')
+	g.map(plt.scatter, 'carat', 'price')
+	# See Figure 59
+	
+	g = sb.FacetGrid(data = diamonds, col = 'clarity')
+	g.map(plt.scatter, 'cube_carat', 'log_price')
+	# See Figure 60
+	
+	# now let's examine price against cut and color
+	# focus visualization around 1 carat weight
+	diamonds_sub = diamonds[diamonds['carat'] == 1]
+	plt.scatter(data = diamonds_sub, x = 'clarity', y = 'price', c = 'carat')
+	plt.colorbar()
+	# See Figure 61
+\end{python}
+
+If we were to present an analysis on the diamond dataset, the next steps would be to select and polish our relevant plots, and then share our findings. Remember the following steps to telling a story with data:
+
+\begin{enumerate}
+	\item Start with a Question
+	\item Use Repetition
+	\item Highlight the Answer
+	\item Call your Audience to Action
+\end{enumerate}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure58.png}
+	\caption{Carat vs. Price across Clarity.}\label{fig:figure58}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure59.png}
+	\caption{Carat vs. Price across Clarity.}\label{fig:figure59}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure60.png}
+	\caption{Cube Carat vs. Log Price across Clarity.}\label{fig:figure60}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/figure61.png}
+	\caption{Clarity vs. Price of 1 Carat Diamonds.}\label{fig:figure61}
 \end{figure}
