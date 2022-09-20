@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{listings}
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage{pythonhighlight}
+\usepackage{graphicx}
 \setlength{\parindent}{0pt}
 
 \begin{document}
@@ -57,6 +59,11 @@ The question remains, how do we get as close as possible to the specific time t?
 \[
 \lim_{\Delta t \to 0} \frac{f(t + \Delta t) - f(t)}{\Delta t}
 \]
+
+\begin{figure}
+	\includegraphics{images/figure1.png}
+	\caption{Basic Example for Points Closing In.}\label{fig:figure1}
+\end{figure}
 
 We've now created the definition of a derivative! If we let the variable t become arbitrary and denote the equation with the better known x and f(x), we can also write a derivative in the following ways:
 
