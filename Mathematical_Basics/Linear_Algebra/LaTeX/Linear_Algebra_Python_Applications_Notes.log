@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  19 OCT 2022 00:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  20 OCT 2022 01:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,31 +314,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--17
 
  []
 
-[1
+(./concept1.tex) [1
 
-{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./Linear_Algebra_Python_Applications_Notes.aux)
+{c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./Linear_A
+lgebra_Python_Applications_Notes.aux)
 Package rerunfilecheck Info: File `Linear_Algebra_Python_Applications_Notes.out
 ' has not changed.
-(rerunfilecheck)             Checksum: 0684C18ABB033AE968F04D49BF4DD0CD;665.
+(rerunfilecheck)             Checksum: 615EE76E9030A6CD3CD4284CD322CB49;2359.
  ) 
 Here is how much of TeX's memory you used:
- 9939 strings out of 478268
- 153916 string characters out of 5850345
- 451893 words of memory out of 5000000
- 28049 multiletter control sequences out of 15000+600000
- 472899 words of font info for 40 fonts, out of 8000000 for 9000
+ 9980 strings out of 478268
+ 154486 string characters out of 5850345
+ 458408 words of memory out of 5000000
+ 28075 multiletter control sequences out of 15000+600000
+ 473541 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,490b,317s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/tex
-live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on Linear_Algebra_Python_Applications_Notes.pdf (1 page, 56343 b
-ytes).
+ 60i,6n,63p,490b,318s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public
+/cm-super/sfrm1000.pfb>
+Output written on Linear_Algebra_Python_Applications_Notes.pdf (2 pages, 68251 
+bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
- 9 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 121 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
