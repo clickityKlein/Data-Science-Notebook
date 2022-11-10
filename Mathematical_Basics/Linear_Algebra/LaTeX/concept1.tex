@@ -16,10 +16,37 @@ We'll begin with the basics of linear algebra, which are rooted in a discussion 
 \end{itemize}
 
 \subsection{Operations on a Single Matrix}\label{concept1.1}
+For somewhat of an analogue into data science and for review's sake, we could mention Gauss-Jordan elimination (or Gaussian elimination) to solve a system of equations. Essentially a series of row operations "mimicking" algebra. We'll skip the details and any coding in this section as the solutions available with the tools we'll build throughout the sections will be much more direct and less computationally expensive.
+\\
+
+However, we should touch on number of solutions. Systems of equations can have a few different solutions:
+\begin{itemize}
+	\item single, unique solution
+	\item no solutions
+	\item infinitely many solutions
+\end{itemize}
 
 \subsection{Matrix Addition \& Subtraction}\label{concept1.2}
+For matrix addition and subtraction, matrices must be the same size, and then the operation is performed on corresponding entries between the matrices.
+
+For example, say matrices A and B have addition or subtraction performed between them to form a matrix C:
+\begin{equation}
+	A \pm B = C \Longrightarrow a_{n, m} \pm b_{n, m} = c_{n, m} \: \forall n, m
+\end{equation}
+
+Note that all of the matrices above have dimensions nxm.
+\\
+
+For python, NumPy arrays will add correspondingly (element-wise), as is shown above. However, don't make the mistake of thinking lists, or lists of lists, will perform in this manner.
 
 \subsection{Matrix Multiplication (Dot Product)}\label{concept1.3}
+Before diving into the dot product, we'll quickly mention scalar multiplication. Suppose we have a constant c and a Matrix A, then by performing scalar multiplication of A by c will multiply each element of A by c:
+
+\begin{equation}
+	cA \Longrightarrow c*a_{n, m} \: \forall n, m
+\end{equation}
+
+
 
 \subsection{Vector Basics}\label{concept1.4}
 
