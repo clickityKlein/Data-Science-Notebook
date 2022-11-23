@@ -29,12 +29,18 @@ However, we should touch on number of solutions. Systems of equations can have a
 \subsection{Matrix Addition \& Subtraction}\label{concept1.2}
 For matrix addition and subtraction, matrices must be the same size, and then the operation is performed on corresponding entries between the matrices.
 
-For example, say matrices A and B have addition or subtraction performed between them to form a matrix C:
+For example, say matrices A and B have addition or subtraction performed between them to form a matrix C. All matrices will have the same mxn (rows by columns) dimensions.
+
+\begin{displaymath}
+	\generic_A
+\end{displaymath}
+
+In other words...
 \begin{equation}
-	A \pm B = C \Longrightarrow a_{n, m} \pm b_{n, m} = c_{n, m} \: \forall n, m
+	A \pm B = C \Longrightarrow a_{m, n} \pm b_{m, n} = c_{m, n} \: \forall m, n
 \end{equation}
 
-Note that all of the matrices above have dimensions nxm.
+Note that all of the matrices above have dimensions mxn.
 \\
 
 For python, NumPy arrays will add correspondingly (element-wise), as is shown above. However, don't make the mistake of thinking lists, or lists of lists, will perform in this manner.
@@ -43,7 +49,7 @@ For python, NumPy arrays will add correspondingly (element-wise), as is shown ab
 Before diving into the dot product, we'll quickly mention scalar multiplication. Suppose we have a constant c and a Matrix A, then by performing scalar multiplication of A by c will multiply each element of A by c:
 
 \begin{equation}
-	cA \Longrightarrow c*a_{n, m} \: \forall n, m
+	cA \Longrightarrow c*a_{m, n} \: \forall m, n
 \end{equation}
 
 
