@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  23 NOV 2022 00:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  23 NOV 2022 09:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -373,46 +373,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--21
 [1
 
 {c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-! Undefined control sequence.
-l.35 	\generic
-              _A
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
  []
 
-) [2] [3] (./Linear_Algebra_Python_Applications_Notes.aux)
+[2]) [3] (./Linear_Algebra_Python_Applications_Notes.aux)
 Package rerunfilecheck Info: File `Linear_Algebra_Python_Applications_Notes.out
 ' has not changed.
 (rerunfilecheck)             Checksum: C36BEC88059F8456EF24151656BDDF34;2359.
  ) 
 Here is how much of TeX's memory you used:
- 10660 strings out of 478268
- 163612 string characters out of 5850345
- 468261 words of memory out of 5000000
+ 10663 strings out of 478268
+ 163648 string characters out of 5850345
+ 473261 words of memory out of 5000000
  28734 multiletter control sequences out of 15000+600000
  474669 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,504b,324s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,7n,63p,504b,324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Linear_Algebra_Python_Applications_Notes.pdf (3 pages, 99995 
-bytes).
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2022/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2022/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/te
+xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/202
+2/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Linear_Algebra_Python_Applications_Notes.pdf (3 pages, 117429
+ bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
+ 156 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
+ 26 named destinations out of 1000 (max. 500000)
  113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
