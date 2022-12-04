@@ -1,0 +1,34 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lin-alg-equations}[2022/12/01 Linear Algebra Equations]
+\ProcessOptions\relax
+\RequirePackage{nicematrix}
+
+% Generic Matrix A
+\newcommand*{\MatrixA}
+{%
+	\begin{bNiceMatrix}
+		a_{1,1} & \Cdots & a_{1,n} \\
+		\Vdots  & \Ddots & \Vdots  \\
+		a_{m,1} & \Cdots & a_{m,n} \\
+	\end{bNiceMatrix}%
+}
+
+% Generic Matrix B
+\newcommand*{\MatrixB}
+{%
+	\begin{bNiceMatrix}
+		b_{1,1} & \Cdots & b_{1,n} \\
+		\Vdots  & \Ddots & \Vdots  \\
+		b_{m,1} & \Cdots & b_{m,n} \\
+	\end{bNiceMatrix}%
+}
+
+% Generic Matrix C
+\newcommand*{\MatrixC}
+{%
+	\begin{bNiceMatrix}
+		c_{1,1} & \Cdots & c_{1,n} \\
+		\Vdots  & \Ddots & \Vdots  \\
+		c_{m,1} & \Cdots & c_{m,n} \\
+	\end{bNiceMatrix}%
+}

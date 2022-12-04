@@ -32,50 +32,24 @@ For matrix addition and subtraction, matrices must be the same size, and then th
 For example, say matrices A and B have addition or subtraction performed between them to form a matrix C. All matrices will have the same mxn (rows by columns) dimensions.
 
 \begin{equation}
-	\begin{pmatrix}
-		a_{1, 1} &\; .\; .\; . & a_{1, n} \\
-		.        &\; .\; .\; . & .        \\
-		.        &\; .\; .\; . & .        \\
-		.        & \; .\; .\; . & .        \\
-		a_{m, 1} & \; .\; .\; . & a_{m, n}
-	\end{pmatrix}
+	\label{eq:generic_A}
+	A = \MatrixA
 \end{equation}
 
 \begin{equation}
-	\begin{pmatrix}
-		b_{1, 1} &\; .\; .\; . & b_{1, n} \\
-		.        &\; .\; .\; . & .        \\
-		.        &\; .\; .\; . & .        \\
-		.        & \; .\; .\; . & .        \\
-		b_{m, 1} & \; .\; .\; . & b_{m, n}
-	\end{pmatrix}
+	\label{eq:generic_B}
+	B = \MatrixB
 \end{equation}
 
 \begin{equation}
-	\begin{pmatrix}
-		a_{1, 1} &\; .\; .\; . & a_{1, n} \\
-		.        &\; .\; .\; . & .        \\
-		.        &\; .\; .\; . & .        \\
-		.        & \; .\; .\; . & .        \\
-		a_{m, 1} & \; .\; .\; . & a_{m, n}
-	\end{pmatrix}
-	+
-	\begin{pmatrix}
-		b_{1, 1} &\; .\; .\; . & b_{1, n} \\
-		.        &\; .\; .\; . & .        \\
-		.        &\; .\; .\; . & .        \\
-		.        & \; .\; .\; . & .        \\
-		b_{m, 1} & \; .\; .\; . & b_{m, n}
-	\end{pmatrix}
+	\label{eq:A+B=C}
+	\MatrixA \pm \MatrixB = \MatrixC
 \end{equation}
-
 
 In other words...
 \begin{equation}
 	A \pm B = C \Longrightarrow a_{m, n} \pm b_{m, n} = c_{m, n} \: \forall m, n
 \end{equation}
-
-Note that all of the matrices above have dimensions mxn.
 \\
 
 For python, NumPy arrays will add correspondingly (element-wise), as is shown above. However, don't make the mistake of thinking lists, or lists of lists, will perform in this manner.
