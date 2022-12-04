@@ -53,13 +53,82 @@ In other words...
 \\
 
 For python, NumPy arrays will add correspondingly (element-wise), as is shown above. However, don't make the mistake of thinking lists, or lists of lists, will perform in this manner.
+\\
+
+The following are always properties for Addition, but not always true for Subtraction:
+\begin{itemize}
+	\item Commutative: A + B = B + A
+	\item Associative: (A + B) + C = A + (B + C)
+\end{itemize}
+
 
 \subsection{Matrix Multiplication (Dot Product)}\label{concept1.3}
 Before diving into the dot product, we'll quickly mention scalar multiplication. Suppose we have a constant c and a Matrix A, then by performing scalar multiplication of A by c will multiply each element of A by c:
 
 \begin{equation}
+	cA = \MatrixcA
+\end{equation}
+
+\begin{equation}
 	cA \Longrightarrow c*a_{m, n} \: \forall m, n
 \end{equation}
+
+Now to explain multiplying a matrix by another matrix. Dimensions and order of the matrices come into play here.
+
+\begin{itemize}
+	\item Dimensions: the number of columns of the first matrix must be equal to the number of rows of the second matrix. The dimensions of the resulting matrix will be the number of rows of the first matrix by the number of columns of the second matrix.
+	\item Order: A $\cdot$ B $\neq$ B $\cdot$ A
+\end{itemize}
+
+The dot product constructs a new matrix with each element being the sum of the first matrix's rows by the second matrix's columns.
+\\
+
+Recall our generic matrices A and B, but with specified labels.
+
+\begin{equation}
+	\MatrixSpecA
+\end{equation}
+
+\begin{equation}
+	\MatrixSpecB
+\end{equation}
+
+Returning dimensions discussion for a dot product:
+\begin{itemize}
+	\item $n_a = m_b$ must be true
+	\item The resulting matrix will have dimensions $m_a$ x $n_b$
+\end{itemize}
+
+An easy way to look at this is to examine the inner and outer dimensions of the matrices:
+
+\begin{itemize}
+	\item $A_{dimensions} = m_a$ x $n_a$
+	\item $B_{dimensions} = m_b$ x $n_b$
+	\item Dimensions side by side: ($m_a$ x $n_a$) ($m_b$ x $n_b$)
+	\item Required Dimensions: Inner Pair
+	\item Resulting Dimensions: Outer Pair
+\end{itemize}
+
+The resulting matrix will be of the form:
+\begin{equation}
+	\AdotB
+\end{equation}
+
+Python requires a NumPy command, as using straight multiplication will multiply element-wise.
+
+Here's an example of the dot product between two 2x2 matrices:
+\begin{python}
+	import numpy as np
+	
+	A = np.array([[2, 6], [3, -1]])
+	B = np.array([[-4, -2], [1, 0]])
+	C = np.dot(A, B)
+	
+	"""
+	array([[ -2,  -4],
+		   [-13,  -6]])
+	"""
+\end{python}
 
 
 

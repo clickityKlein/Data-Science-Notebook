@@ -32,3 +32,56 @@
 		c_{m,1} & \Cdots & c_{m,n} \\
 	\end{bNiceMatrix}%
 }
+
+% Matrix A by scalar c
+\newcommand*{\MatrixcA}
+{%
+	\begin{bNiceMatrix}
+		c*a_{1,1} & \Cdots & c*a_{1,n} \\
+		\Vdots  & \Ddots & \Vdots  \\
+		c*a_{m,1} & \Cdots & c*a_{m,n} \\
+	\end{bNiceMatrix}%
+}
+
+% Generic Matrix A with specified dimensions
+\newcommand*{\MatrixSpecA}
+{%
+	\begin{bNiceMatrix}
+		a_{1,1} & \Cdots & a_{1,n_a} \\
+		\Vdots  & \Ddots & \Vdots  \\
+		a_{m_a,1} & \Cdots & a_{m_a,n_a} \\
+	\end{bNiceMatrix}%
+}
+
+% Generic Matrix B with specified dimensions
+\newcommand*{\MatrixSpecB}
+{%
+	\begin{bNiceMatrix}
+		b_{1,1} & \Cdots & b_{1,n_b} \\
+		\Vdots  & \Ddots & \Vdots  \\
+		b_{m_b,1} & \Cdots & b_{m_b,n_b} \\
+	\end{bNiceMatrix}%
+}
+
+% Generic Matrix A dot product Matrix B
+\newcommand*{\AdotB}
+{%
+	\begin{bNiceMatrix}
+		\sum_{i=1}^{n_a} \sum_{j=1}^{m_b} a_{1, i} \cdot b_{j, 1} & \Cdots &
+		\sum_{i=1}^{n_a} \sum_{j=1}^{m_b} a_{1, i} \cdot b_{j, n_b} \\
+		\Vdots  & \Ddots & \Vdots  \\
+		\sum_{i=1}^{n_a} \sum_{j=1}^{m_b} a_{m_a, i} \cdot b_{j, 1} & \Cdots &
+		\sum_{i=1}^{n_a} \sum_{j=1}^{m_b} a_{m_a, i} \cdot b_{j, n_b} \\
+	\end{bNiceMatrix}%
+}
+
+
+
+
+
+
+
+
+
+
+
