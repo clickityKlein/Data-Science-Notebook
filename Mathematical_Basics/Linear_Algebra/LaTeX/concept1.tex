@@ -158,18 +158,52 @@ Magnitude is simply the length of a vector, which can be calculated using the di
 
 Given a vector, v, with dimensions n:
 \begin{equation}
-	v_1
-	v_n
+	\vec{v} = \VectorV
 \end{equation}
 
 We can calculate the magnitude as follows:
+\begin{equation}
+	\DistanceFormula
+\end{equation}
 
+Given we now know how to find the magnitude of a vector, we can introduce the concept of the unit vector. Every vector has a vector of magnitude 1 which points in the same direction as it, this is the unit vector.
 
+\begin{equation}
+	\UnitVector
+\end{equation}
 
+Syntactically, $\vec{u} = \hat{u}$, which represents a vector has length 1.
+
+Calculating an example in python introduces another NumPy command (and sub-module). Introducing numpy.linalg and np.linalg.norm:
+\begin{python}
+	v = [1, 2, 3]
+	v_magnitude = np.linalg.norm(v)
+	# 3.7416573867739413
+	u = v / v_magnitude
+	# [0.26726124 0.53452248 0.80178373]
+	u_magnitude = np.linalg.norm(u)
+	# 1.0
+\end{python}
 
 \subsection{Standard Basis Vector (SBV)}\label{concept1.5}
+The standard basis vectors are a set of vectors which can build every vector in their own respective n-dimensional space by scaling each one. These scaled combinations are called linear combinations.
+\\
+
+Set of standard basis vectors in $\mathbb{R}^n$:
+\begin{equation}
+	S = s_1, s_2, . . ., s_n = \BasisVectorsSet
+\end{equation}
+
+There are n vectors, each of which has dimension n.
+\\
+
+A linear combination can build any vector in their respective n-dimensional space:
+\begin{equation}
+	\VectorV = \vec{v} = v_1 \cdot s_1 + . . . + v_n \cdot s_n
+\end{equation}
 
 \subsection{Span}\label{concept1.6}
+
 
 \subsection{Linear Dependence \& Independence}\label{concept1.7}
 

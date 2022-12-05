@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{lin-alg-equations}[2022/12/01 Linear Algebra Equations]
+\ProvidesPackage{lin-alg-structures-equations}[2022/12/01 Linear Algebra Equations]
 \ProcessOptions\relax
 \RequirePackage{nicematrix}
 
@@ -76,21 +76,51 @@
 }
 
 % Generic Vector v
-\newcommand*{\vectorV}
+\newcommand*{\VectorV}
 {%
-    \begin{matrix}
+    \begin{bNiceMatrix}
         v_{1} \\
         \Vdots \\
-        v_{n} \\
-    \end(matrix)%
+        v_{n}
+    \end{bNiceMatrix}%
 }
 
 % Distance formula for a vector (magnitude)
-\newcommand*{\distanceFormula}
+\newcommand*{\DistanceFormula}
+{
+    \left\Vert \vec{v} \right\Vert = \sqrt{v_{1}^{2} + ... + v_{n}^{2}}
+}
+
+% Unit vector formula
+\newcommand*{\UnitVector}
+{
+    \vec{u} = \frac{1}{\left\Vert \vec{v} \right\Vert} \cdot \vec{v}
+}
+
+% Set of basis vectors
+\newcommand*{\BasisVectorsSet}
 {%
-    \begin{equation}
-        \left\Vert  something \right\Vert = \sqrt{v_{1}^{2} \Cdots v_{n}^{2}} 
-    \end(equation)%
+    \begin{bNiceMatrix}
+        1 \\
+        0 \\
+        \Vdots \\
+        0
+    \end{bNiceMatrix}%
+    , \;
+    \begin{bNiceMatrix}
+        0 \\
+        1 \\
+        \Vdots \\
+        0
+    \end{bNiceMatrix}%
+    , . . . \;
+    ,
+    \begin{bNiceMatrix}
+        0 \\
+        0 \\
+        \Vdots \\
+        1
+    \end{bNiceMatrix}%
 }
 
 

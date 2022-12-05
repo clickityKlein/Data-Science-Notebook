@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  5 DEC 2022 03:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  5 DEC 2022 04:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,35 +592,43 @@ Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
 \l__nicematrix_tmpc_int=\count330
 \l__nicematrix_brace_yshift_dim=\dimen296
 )
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 (./lin-alg-structures-equations.sty
-
-LaTeX Warning: You have requested package `lin-alg-structures-equations',
-               but the package provides `lin-alg-equations'.
-
-Package: lin-alg-equations 2022/12/01 Linear Algebra Equations
-) (./Linear_Algebra_Python_Applications_Notes.aux)
+Package: lin-alg-structures-equations 2022/12/01 Linear Algebra Equations
+)
+(./Linear_Algebra_Python_Applications_Notes.aux)
 \openout1 = `Linear_Algebra_Python_Applications_Notes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
 \c@lstlisting=\count331
-Package hyperref Info: Link coloring ON on input line 12.
+Package hyperref Info: Link coloring ON on input line 13.
 
 (c:/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -633,9 +641,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count332
 )
-LaTeX Info: Redefining \ref on input line 12.
-LaTeX Info: Redefining \pageref on input line 12.
-LaTeX Info: Redefining \nameref on input line 12.
+LaTeX Info: Redefining \ref on input line 13.
+LaTeX Info: Redefining \pageref on input line 13.
+LaTeX Info: Redefining \nameref on input line 13.
 
 (./Linear_Algebra_Python_Applications_Notes.out)
 (./Linear_Algebra_Python_Applications_Notes.out)
@@ -665,12 +673,24 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 19--21
+LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+
+
+(c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--21
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
 
  []
 
@@ -746,17 +766,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--158
 
  []
 
-) [5] (./Linear_Algebra_Python_Applications_Notes.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
+
+ []
+
+) [6] (./Linear_Algebra_Python_Applications_Notes.aux)
 Package rerunfilecheck Info: File `Linear_Algebra_Python_Applications_Notes.out
 ' has not changed.
 (rerunfilecheck)             Checksum: C36BEC88059F8456EF24151656BDDF34;2359.
  ) 
 Here is how much of TeX's memory you used:
- 22866 strings out of 478268
- 438763 string characters out of 5850345
- 964224 words of memory out of 5000000
- 40723 multiletter control sequences out of 15000+600000
- 475174 words of font info for 50 fonts, out of 8000000 for 9000
+ 24247 strings out of 478268
+ 462626 string characters out of 5850345
+ 968685 words of memory out of 5000000
+ 42072 multiletter control sequences out of 15000+600000
+ 477654 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,16n,97p,504b,1686s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
@@ -771,12 +801,13 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><c:/texlive/2022/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/font
 s/type1/public/amsfonts/cm/cmtt8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/pu
-blic/cm-super/sfrm1000.pfb>
-Output written on Linear_Algebra_Python_Applications_Notes.pdf (5 pages, 169667
+blic/amsfonts/symbols/msbm10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public
+/cm-super/sfrm1000.pfb>
+Output written on Linear_Algebra_Python_Applications_Notes.pdf (6 pages, 181394
  bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
+ 226 PDF objects out of 1000 (max. 8388607)
+ 188 compressed objects within 2 object streams
+ 57 named destinations out of 1000 (max. 500000)
  125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
