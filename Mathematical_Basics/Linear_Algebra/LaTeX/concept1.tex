@@ -83,7 +83,7 @@ Now to explain multiplying a matrix by another matrix. Dimensions and order of t
 The dot product constructs a new matrix with each element being the sum of the first matrix's rows by the second matrix's columns.
 \\
 
-Recall our generic matrices A and B, but with specified labels.
+For the dot product, the matrices can obviously be different dimensions as long as the requirements are met, so we'll slightly alter our generic matrices, A and B, with more specified labels.
 
 \begin{equation}
 	\MatrixSpecA
@@ -115,6 +115,7 @@ The resulting matrix will be of the form:
 \end{equation}
 
 Python requires a NumPy command, as using straight multiplication will multiply element-wise.
+\\
 
 Here's an example of the dot product between two 2x2 matrices:
 \begin{python}
@@ -130,9 +131,41 @@ Here's an example of the dot product between two 2x2 matrices:
 	"""
 \end{python}
 
+Properties of matrix multiplication (dot product):
+\begin{itemize}
+	\item NOT Commutative: AB $\neq$ BA
+	\item Associative: (AB)C = A(BC)
+	\item Distributive: A(B $\pm$ C) = AB $\pm$ AC
+	\item Zero Matrix: Any matrix multiplied by the zero matrix will return a zero matrix, but depending on order, the dimensions could change
+\end{itemize}
 
 
 \subsection{Vector Basics}\label{concept1.4}
+A vector can be thought of as a special type of matrix in which one of it's dimensions is 1. It can be represented as a column vector (column dimension = 1), or a row vector (row dimension = 1). We can break down or describe any matrix in terms of its vectors, via rows or columns. Similarly, we can build a matrix out of a collection of same length vectors.
+\\
+
+Since a vector is a special case of a matrix, as long as dimensional requirements are met, algebraic operations (addition, subtraction, matrix multiplication) between other vectors and matrices is possible.
+\\
+
+Vectors contain two pieces of information:
+\begin{itemize}
+	\item Direction
+	\item Magnitude (length)
+\end{itemize}
+
+Magnitude is simply the length of a vector, which can be calculated using the distance formula extended to the length of the vector.
+\\
+
+Given a vector, v, with dimensions n:
+\begin{equation}
+	v_1
+	v_n
+\end{equation}
+
+We can calculate the magnitude as follows:
+
+
+
 
 \subsection{Standard Basis Vector (SBV)}\label{concept1.5}
 
