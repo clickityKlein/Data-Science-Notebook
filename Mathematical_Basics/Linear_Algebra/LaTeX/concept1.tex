@@ -203,13 +203,91 @@ A linear combination can build any vector in their respective n-dimensional spac
 \end{equation}
 
 \subsection{Span}\label{concept1.6}
+Span of a vector set: collection of all vectors which can be represented by some linear combination of the set.
+\\
 
+Two generic examples:
+\begin{itemize}
+	\item SBVs in $\mathbb{R}^n$: spans the entirety of $\mathbb{R}^n$
+	\item Zero Vector, $\vec{0}$: spans the origin
+\end{itemize}t 
 
 \subsection{Linear Dependence \& Independence}\label{concept1.7}
+Span is closely related to Linear Dependence \& Independence:
+
+\begin{itemize}
+	\item Any n-dimensional linearly independent vectors will span $\mathbb{R}^n$
+	\item It takes n vectors to span $\mathbb{R}^n$
+	\item Vectors must be "different enough"
+	\begin{itemize}
+		\item Not "different": when n n-dimensional vectors line in the same (n-1)-dimensional space, they are linearly dependent and won't span $\mathbb{R}^n$
+		\item Example: Parallel lines in $\mathbb{R}^2$
+	\end{itemize}
+	\item Scaled vectors will always lie on the same line (i.e. parallel, collinear, coplanar, etc.)
+	\item Linear Dependence: when one vector in the set can be represented by a linear combination of the other vectors in the set
+\end{itemize}
+
+We'll quickly cover the concept of determining linear (in)dependence, just know that alternative and possibly more efficient methods will be presented.
+\\
+
+Given $\vec{0} = c_1 \cdot v_1 + . . . + c_n \cdot v_n$, if $c_i = 0 \: \forall i $ is the only solution, then the set is linear independent. Otherwise, the set is linearly dependent.
+\\
+
+To clarify a previous point, if a set contains (n+1) vectors in an n-dimensional space, the set must be linearly dependent.
 
 \subsection{Linear Subspaces}\label{concept1.8}
+A subspace must meet 3 criteria:
+
+\begin{enumerate}
+	\item Set includes the zero vector, $\vec{0}$
+	\item Set is closed under multiplication
+	\item Set is clsoed under addition
+\end{enumerate}
+
+Helpful Hint: If a set is closed under multiplication, then the set automatically includes the zero vector, hence only 2 and 3 are active requirements.
+\\
+
+Some examples:
+\\
+
+2) Closed under Multiplication:
+\\
+Given a set of vectors, $\SetofVectorsV$, the set is closed under multiplication if $c \cdot v_i \in V$ for any c.
+\\
+
+3) Closed under Addition
+\\
+Given a set of vectors, $\SetofVectorsV$, the set is closed under addition if $v_i + v_j \in V \: \forall i,j$ such that $i \neq j$.
 
 \subsection{Spans as Subspaces}\label{concept1.9}
+Some interesting observations:
+\begin{itemize}
+	\item $\mathbb{R}^n$ itself is a subspace
+	\item any hyperplane through the origin, and the $\vec{0}$, itself are subspaces
+	\item Any span (all linear combinations of the set's vectors) is a subspace
+\end{itemize}
 
 \subsection{Basis}\label{concept1.10}
+A linearly independent vector set that spans a vector space like  $\mathbb{R}^n$ forms a basis for  $\mathbb{R}^n$.
+\\
 
+In other words, a vector set is a basis for the space if:
+\begin{enumerate}
+	\item Spans the space
+	\item Linearly independent
+\end{enumerate}
+
+Standard Basis: set of unit vectors for  $\mathbb{R}^n$.
+\\
+
+Any set of n linearly independent vectors forms a basis for  $\mathbb{R}^n$.
+\\
+
+A quick check for span:
+\\
+Given a set of vectors, $\SetofVectorsV$, there exists a c which satisfies:
+\\
+$c \cdot V = \VectorX$
+\\
+
+for all combinations of $x_i$'s.
