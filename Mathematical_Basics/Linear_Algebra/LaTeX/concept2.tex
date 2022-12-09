@@ -1,0 +1,113 @@
+% Concept2: Dots Products & Cross Products
+
+We'll take another look into multiplication, more specifically multiplication between vectors, by further investigating properties of the dot product and introducing the cross product.
+
+\begin{itemize}
+	\item \nameref{concept2.1}
+	\item \nameref{concept2.2}
+	\item \nameref{concept2.3}
+	\item \nameref{concept2.4}
+	\item \nameref{concept2.5}
+	\item \nameref{concept2.6}
+%	\item \nameref{concept2.7}
+%	\item \nameref{concept2.8}
+%	\item \nameref{concept2.9}
+%	\item \nameref{concept2.10}
+\end{itemize}
+
+
+\subsection{Dot Product vs. Cross Products}\label{concept2.1}
+
+\begin{itemize}
+	\item Dot Product: How much two vectors point in the same direction.
+	\item Cross Product: How much two vectors point in opposite directions.
+\end{itemize}
+
+
+\subsection{Dot Products Between Vectors}\label{concept2.2}
+Relationship with vector length: "The square of the length of a vector is equal to the vector dotted with itself."
+\\
+
+Recall the distance formula (magnitude of a vector): $\DistanceFormula$
+
+Although we haven't explicitly defined the dot product for just vectors, if we follow the definition for dot products between matrices, the dot product for vectors produces a single value.
+\\
+\begin{equation}
+	\vec{v} \cdot \vec{v}  = v_1 \cdot v_1 + . . . + v_n \cdot v_n = v_1^2 + . . . + v_n^2
+	\longrightarrow
+	\vec{v} \cdot \vec{v} = \left(\sqrt{v_1^2 + . . . + v_n^2}\right)^2 = \left\Vert \vec{v} \right\Vert
+\end{equation}
+
+A interesting relationship, but let's jump into some more generic properties of the dot product between vectors:
+\begin{itemize}
+	\item commutative: $\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}$
+	\item distributive: $(\vec{u} \pm \vec{v}) \cdot \vec{w} = \vec{u} \cdot \vec{w} \pm \vec{v} \cdot \vec{w}$
+	\item associate: $(c \cdot \vec{u}) \cdot \vec{v} = c(\vec{u} \cdot \vec{v})$
+\end{itemize}
+
+Once again, to hit home the general vector dot product equation: 
+\begin{equation}
+	\DotProductVectors
+\end{equation}
+
+
+\subsection{Cauchy-Schwarz Inequality}\label{concept2.3}
+The absolute value of a dot product is always less than or equal to the product of their lengths.
+
+\begin{equation}
+	\CauchyShwarz
+\end{equation}
+
+The inequality is equivalent only when the vectors are collinear (i.e $\vec{u} = c \cdot \vec{v}$).
+\\
+
+Given that equivalence means collinearity, the C-S Inequality gives us another way to test for linear independence, since collinearity implies linear dependence.
+\\
+
+
+\subsection{Vector Triangle Inequality}\label{concept2.4}
+The sum of the lengths of two sides of a triangle will always be greater than or equal to the length of the third side.
+\\
+
+Given sides of a triangle a, b, and c:
+\begin{equation}
+	c \leq a + b
+\end{equation}
+
+Written in terms of vectors:
+\begin{equation}
+	\VectorTriangle
+\end{equation}
+
+Once again, the inequality is equivalent only when the vectors are collinear and implies linear dependence.
+
+
+\subsection{Angle Between Vectors}\label{concept2.5}
+So far we've been preoccupied with magnitude, but what other relationships can we find between vectors. How about angle?
+\\
+
+Given the following relationship:
+\begin{equation}
+	\CosDotProduct
+\end{equation}
+
+What further information can solving for $\theta$ provide?
+\\
+
+One of the more crucial relationships is finding when vectors are perpendicular.
+\begin{equation}
+	\theta = 90^\circ \longrightarrow
+	\cos (90^\circ) = 0 \longrightarrow
+	\vec{u} \cdot \vec{v} = 0
+\end{equation}
+
+In other words, in the case neither of the vectors are the zero vector, a dot product between vectors resulting in 0 implies the vectors are perpendicular.
+\\
+
+Orthogonality: The concept of perpendicular vectors makes sense in 2-dimensions, but to extend to n-dimensions requires the idea of orthogonality.
+\\
+
+In general, $\vec{u} \cdot \vec{v} = 0$ (and provided neither of the vectors are the zero vector) implies the vectors are orthogonal.
+
+
+\subsection{Equation of a Plane, and Normal Vectors}\label{concept2.6}
