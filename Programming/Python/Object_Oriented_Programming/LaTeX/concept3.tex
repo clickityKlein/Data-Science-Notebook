@@ -684,6 +684,103 @@ Next up, we add more variability with the Binomial distribution.
 
 
 \subsection{Uploading a Package to PyPI}
+First off, two different accounts must be created:
+\begin{itemize}
+	\item \href{pypi.org}{PyPi}
+	\item \href{test.pypy.org}{Test PyPy}
+\end{itemize}
+
+Next, along with the Python code needed for the package, some additional files and will be needed:
+\begin{itemize}
+	\item license.txt: used for copyright language (MIT language is good)
+	\item README.md: the document explaining how the package works
+	\item setup.cfg: data about the name of the README.md file
+\end{itemize}
+
+These files should be contained in a single folder, with a distinct name that will need to be unique to other packages in PyPi.
+\\
+
+This distinct folder should be placed in a folder with another file called "setup.py".
+\\
+
+General Folder Directory Tree:
+\begin{itemize}
+	\item Folder: package\_files
+	\begin{itemize}
+		\item Folder: distinct\_folder
+		\begin{itemize}
+			\item File: license.txt
+			\item File: README.md
+			\item File: setup.cfg
+			\item File(s): "python scripts"
+		\end{itemize}
+		\item setup.py
+	\end{itemize}
+\end{itemize}
+
+The setup.py folder should look something like this:
+\begin{python}
+	from setuptools import setup
+	
+	setup(name = 'distinct_folder',
+		  version = 'x.x',
+		  description = '',
+		  packages = ['distinct_folder'],
+		  author = 'Carl Klein',
+		  autor_email = carlj.klein@gmail.com,
+		  zip_safe = False)
+\end{python}
+
+After all of this is setup, we'll be working out of a terminal. Make sure to be in the package\_files folder, and enter in:
+\\
+
+"python setup.py sdist"
+\\
+
+This will install a few more packages necessary for the upload.
+\\
+
+Next, we need to install the twine package:
+\\
+
+"pip install twine"
+\\
+
+"--repository-url https://test.pypi.org/legacy/ dist/*"
+\\
+
+This will prompt a UN and PW associated with the Test PyPy account. Note that you can only upload a version once. Will need to delete some of those sdist folders before starting over if that error does occur. Once successful, enter this in:
+\\
+
+"pip install --index-url https://test.pypi.org/simple/ distinct-folder"
+\\
+
+Once ready to upload to the actual PyPi, enter in:
+\\
+
+"twine upload dist/*"
+\\
+
+This will prompt the UN and PW for the actual PyPi. After logging in, the package should be installed. If we want to use the package, it's recommended to first uninstall the package file and then reinstall from PyPi.
+\\
+
+"pip uninstall distinct-folder"
+\\
+
+"pip install distinct-folder"
+\\
+
+WARNING: Pip install / uninstall using dashes while the Python editor will user underscores.
+\\
+
+Finally, now we can use it like a regular package (and so can anyone else who knows how to use pip install).
+\\
+
+\begin{python}
+	from distinct_package import "python scripts"
+\end{python}
+
+
 \begin{itemize}
 	\item Recommended to create a virtual environment (almost like a silo) to test installing packages (won't affect main Python installation)
 	\item Virtual environments:

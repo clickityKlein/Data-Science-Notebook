@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  22 DEC 2022 23:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  23 DEC 2022 01:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -351,15 +351,106 @@ Underfull \hbox (badness 10000) in paragraph at lines 435--437
 
  []
 
-[14] [15] [16] [17] [18] [19]) [20] (./OOP.aux)
+[14] [15] [16] [17] [18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 700--702
+
+ []
+
+
+Overfull \hbox (5.58395pt too wide) in paragraph at lines 703--705
+[]\OT1/cmr/m/n/10 This dis-tinct folder should be placed in a folder with an-ot
+her file called "setup.py". 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--705
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 734--736
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 737--739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 740--742
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 743--745
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--748
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--751
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 752--754
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 755--757
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 758--760
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 761--763
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--766
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 767--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--772
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--775
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 776--778
+
+ []
+
+[21]) [22] (./OOP.aux)
 Package rerunfilecheck Info: File `OOP.out' has not changed.
 (rerunfilecheck)             Checksum: 3DB6BE65EFBC7CBDC27956E08FE03586;4025.
  ) 
 Here is how much of TeX's memory you used:
- 11521 strings out of 478268
- 172778 string characters out of 5850345
+ 11564 strings out of 478268
+ 173328 string characters out of 5850345
  1111065 words of memory out of 5000000
- 28980 multiletter control sequences out of 15000+600000
+ 29009 multiletter control sequences out of 15000+600000
  474354 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,6n,63p,453b,2065s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -371,10 +462,10 @@ ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsltt10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
 t8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on OOP.pdf (20 pages, 197945 bytes).
+Output written on OOP.pdf (22 pages, 203482 bytes).
 PDF statistics:
- 972 PDF objects out of 1000 (max. 8388607)
- 924 compressed objects within 10 object streams
- 642 named destinations out of 1000 (max. 500000)
+ 999 PDF objects out of 1000 (max. 8388607)
+ 949 compressed objects within 10 object streams
+ 656 named destinations out of 1000 (max. 500000)
  201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
