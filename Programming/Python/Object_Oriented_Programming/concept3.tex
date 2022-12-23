@@ -34,6 +34,191 @@
 \end{itemize}
 
 \subsection{OOP Example: Clothing}
+We'll be walking through the process of using object-oriented programming, starting with basic objects and then working our way to a generic parent class.
+\\
+Example 1: Create an object named Shirt
+\begin{itemize}
+	\item Attributes
+	\begin{itemize}
+		\item color
+		\item size
+		\item style
+		\item price
+	\end{itemize}
+	\item Methods
+	\begin{itemize}
+		\item change\_price: set the price a the shirt to a new value
+		\item discount: returns the price of a shirt with a discount applied
+	\end{itemize}
+\end{itemize}
+
+\begin{python}
+	class Shirt:
+		def __init__(self, shirt_color, shirt_size, shirt_style, shirt_price):
+			self.color = shirt_color
+			self.size = shirt_size
+			self.style = shirt_style
+			self.price = shirt_price
+		
+		def change_price(self, new_price):
+			self.price = new_price
+		
+		def discount(self, discount):
+			return self.price * (1 - discount)
+		
+	"""
+	Now, create a Shirt type object and test out the attributes and methods.
+	"""
+	new_shirt = Shirt('red', 'S', 'short sleeve', 15)
+	
+	print(new_shirt.color)
+	print(new_shirt.size)
+	print(new_shirt.style)
+	print(new_shirt.price)
+	"""
+	red
+	S
+	short sleeve
+	15
+	"""
+	
+	new_shirt.change_price(10)
+	print(new_shirt.price)
+	# 10
+	
+	print(new_shirt.discount(0.2))
+	# 8.0
+\end{python}
+
+Similar to the above, write a Pants class. This class will have waist size and length instead of shirt size and style, respectively.
+
+\begin{python}
+	class Pants:        
+		def __init__(self, color, waist_size, length, price):
+			"""Method for initializing a Pants object
+			
+			Args: 
+			color (str)
+			waist_size (int)
+			length (int)
+			price (float)
+			
+			Attributes:
+			color (str): color of a pants object
+			waist_size (str): waist size of a pants object
+			length (str): length of a pants object
+			price (float): price of a pants object
+			"""
+			
+			self.color = color
+			self.waist_size = waist_size
+			self.length = length
+			self.price = price
+		
+		def change_price(self, new_price):
+			"""The change_price method changes the price attribute of a pants object
+			
+			Args: 
+			new_price (float): the new price of the pants object
+			
+			Returns: None
+			
+			"""
+			self.price = new_price
+		
+		def discount(self, discount):
+			"""The discount method outputs a discounted price of a pants object
+			
+			Args:
+			percentage (float): a decimal representing the amount to discount
+			
+			Returns:
+			float: the discounted price
+			"""
+			return self.price * (1 - discount)
+\end{python}
+
+Now, let's see how we can combine and use the objects we create. Make a SalesPerson class with information and methods pertaining to selling pants.
+\begin{python}
+	class SalesPerson:
+		def __init__(self, first_name, last_name, employee_id, salary):
+			self.first_name = first_name
+			self.last_name = last_name
+			self.employee_id = employee_id
+			self.salary = salary
+			self.pants_sold = []
+			self.total_sales = 0
+		
+		def sell_pants(self, pants_object):
+			self.pants_sold.append(pants_object)
+		
+		def calculate_sales(self):
+			self.total_sales = sum([pants.price for pants in self.pants_sold])
+			return self.total_sales
+		
+		def display_sales(self):
+			for pants in self.pants_sold:
+			print(f'color: {pants.color}, length: {pants.length}, price: {pants.price}, waist size: {pants.waist_size}')
+		
+		def calculate_commission(self, commission):
+			sales_total = self.calculate_sales()
+			return sales_total * commission
+\end{python}
+
+Something notable about SalesPerson class is the fact we set attributes to predefined values, such as the blank list and value of 0. Additionally, note that we were able to call Pants class attributes after they had been passed in.
+\\
+
+Moving into the more general parent class we discussed while describing inheritance, let's create that general Clothing class.
+
+\begin{python}
+	class Clothing:
+		def __init__(self, color, size, style, price):
+			self.color = color
+			self.size = size
+			self.style = style
+			self.price = price
+		
+		def change_price(self, price):
+			self.price = price
+		
+		def calculate_discount(self, discount):
+			return self.price * (1 - discount)
+		
+		def calculate_shipping(self, weight, rate):
+			return weight * rate
+	"""
+	Children classes will inherit Clothing's attributes and methods,
+	but can also be added to and overwritten.
+	See Below for some examples:
+	"""
+	
+	# Shirt
+	class Shirt(Clothing):
+		def __init__(self, color, size, style, price, long_or_short):
+			Clothing.__init__(self, color, size, style, price)
+			self.long_or_short = long_or_short
+		
+		def double_price(self):
+		self.price = 2 * self.price
+	
+	# Pants
+	class Pants(Clothing):
+		def __init__(self, color, size, style, price, waist):
+			Clothing.__init__(self, color, size, style, price)
+			self.waist = waist
+		
+		def calculate_discount(self, discount):
+			return self.price * (discount / 2)
+	
+	# Blouse
+	class Blouse(Clothing):
+		def __init__(self, color, size, style, price, country_of_origin):
+			Clothing.__init__(self, color, size, style, price)
+			self.country_of_origin = country_of_origin
+		
+		def triple_price(self):
+			return self.price * 3
+\end{python}
 
 
 \subsection{OOP Example: Distributions}

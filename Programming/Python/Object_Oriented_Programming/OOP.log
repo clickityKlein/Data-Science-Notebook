@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  22 DEC 2022 19:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  22 DEC 2022 20:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -320,29 +320,41 @@ Overfull \hbox (5.84956pt too wide) in paragraph at lines 34--34
 []\OT1/cmr/bx/n/14.4 Introduction to Object-Oriented Pro-gram-ming 
  []
 
-(./concept3.tex [5] [6]) [7] (./OOP.aux)
+(./concept3.tex [5] [6]
+(c:/texlive/2022/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 56.
+ [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
+
+ []
+
+[9]) [10] (./OOP.aux)
 Package rerunfilecheck Info: File `OOP.out' has not changed.
 (rerunfilecheck)             Checksum: 3DB6BE65EFBC7CBDC27956E08FE03586;4025.
  ) 
 Here is how much of TeX's memory you used:
- 10015 strings out of 478268
- 154337 string characters out of 5850345
- 456777 words of memory out of 5000000
- 28086 multiletter control sequences out of 15000+600000
- 473849 words of font info for 43 fonts, out of 8000000 for 9000
+ 10908 strings out of 478268
+ 164110 string characters out of 5850345
+ 985065 words of memory out of 5000000
+ 28817 multiletter control sequences out of 15000+600000
+ 474354 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,453b,446s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,6n,63p,453b,2065s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2022/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super
-/sfrm1000.pfb>
-Output written on OOP.pdf (7 pages, 92143 bytes).
+c/amsfonts/cm/cmr17.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsltt10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t8.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on OOP.pdf (10 pages, 135337 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 500000)
+ 394 PDF objects out of 1000 (max. 8388607)
+ 362 compressed objects within 4 object streams
+ 192 named destinations out of 1000 (max. 500000)
  201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
