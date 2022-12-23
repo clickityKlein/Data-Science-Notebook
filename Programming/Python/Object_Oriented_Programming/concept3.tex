@@ -1,0 +1,72 @@
+% concept3: Introduction to Object-Oriented Programming
+
+\subsection{Learning Targets}
+\begin{itemize}
+	\item Syntax of Object-Oriented Programming
+	\begin{itemize}
+		\item Procedural vs. Object-Oriented Programming
+		\item Classes, Objects, Methods, and Attributes
+		\item Coding a Class
+		\item Magic Methods
+		\item Inheritance
+	\end{itemize}
+	\item Build a Python Package that Analyzes Distributions
+\end{itemize}
+
+\subsection{Procedural vs. OOP}
+\begin{itemize}
+	\item Object: Specific instance of a class in which attributes (and sometimes methods) change
+	\begin{itemize}
+		\item Characteristics (attributes)
+		\item Actions (methods)
+	\end{itemize}
+	\item Class: generic version of an object, almost a blueprint, which specifies attributes and methods
+	\item Magic methods: overwrite default python behavior
+\end{itemize}
+
+\subsection{Inheritance}
+\begin{itemize}
+	\item Imagine a Clothing parent class which provides a blueprint for any type of clothing
+	\item The general class helps to create more modular code and follow DRY
+	\item Inheritance helps organize code with a more general version of a class which translates to more specified children classes
+	\item Inheritance can make OOP more efficient to write
+	\item Updates to a parent class automatically trickle down to its children!
+\end{itemize}
+
+\subsection{OOP Example: Clothing}
+
+
+\subsection{OOP Example: Distributions}
+
+
+\subsection{Uploading a Package to PyPI}
+\begin{itemize}
+	\item Recommended to create a virtual environment (almost like a silo) to test installing packages (won't affect main Python installation)
+	\item Virtual environments:
+	\begin{itemize}
+		\item Conda: manages packages, manages environments
+		\item conda create --name environmentname
+		\item source activate environmentname
+		\item conda install numpy
+		\item Pip and Venv: Pip is a package manager, Venv is an environment manager that comes preinstalled with Python 3
+		\item Recommended to create a Conda environment and install Pip simultaneously
+		\begin{itemize}
+			\item conda create -–name environmentname pip
+		\end{itemize}
+		\item Pip with Venv work as expected, used for generic software development projects including web development
+		\begin{itemize}
+			\item python -m venv venv\_name
+			\item source venv\_name/bin/activate (activates virtual environment)
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+
+
+
+
+
+
+
+
+

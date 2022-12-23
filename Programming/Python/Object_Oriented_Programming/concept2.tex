@@ -1,0 +1,90 @@
+% concept2: Software Engineering Practices Pt. 2
+
+\subsection{Learning Targets}
+\begin{itemize}
+	\item Testing
+	\item Logging
+	\item Code Reviews
+\end{itemize}
+
+\subsection{Testing}
+\begin{itemize}
+	\item Essential before deployment
+	\item Many data scientist's code goes into production without testing, and can be an annoyance to the software developers
+	\item Test Driven Development (TDD): development process in which tests are written prior to code, itself
+	\item Unit Test: a test covering a unit of code, usually a single function
+\end{itemize}
+
+\subsection{Unit Tests Basics}
+\begin{itemize}
+	\item Useful when testing hundreds of functions repeatedly while tracking the outcomes
+	\item Reduces manual tests
+	\item Repeatable and Automated!
+	\item Isolated from the rest of program, thus no dependencies involved
+	\item A renowned testing tool: pytest
+	\item TDD: write unit tests as programming for errors that are likely occur
+\end{itemize}
+
+\subsection{Logging}
+\begin{itemize}
+	\item Logging: Recording of Errors / Error Messages
+	\item Be professional and clear
+	\item Be concise and use normal capitalization
+	\item Choose appropriate level for logging:
+	\begin{itemize}
+		\item Debug: use this "level" for anything that happens in the program
+		\item Error: use for any errors that occur
+		\item Info: records all actions that are user-driven or system-specific (regularly scheduled operations)
+		\item Provide any useful information
+	\end{itemize}
+\end{itemize}
+
+\subsection{Code Reviews}
+\begin{itemize}
+	\item Catch errors
+	\item Ensure readability
+	\item Check standards are met
+	\item Share knowledge (personal, professional, team, etc.)
+	\item Questions to ask when conducting a code review:
+	\begin{itemize}
+		\item Can I understand the code easily?
+		\item Does it use meaningful names and whitespace?
+		\item Is there duplicated code?
+		\item Can I provide another layer of abstraction?
+		\item Is each function and module necessary?
+		\item Is each function or module the right length?
+	\end{itemize}
+	\item Is the code efficient?
+	\begin{itemize}
+		\item Are there loops or other steps I can vectorize?
+		\item Can I use better data structures to optimize any steps?
+		\item Can I use generators or multiprocessing to optimize any steps?
+	\end{itemize}
+	\item Is the documentation effective?
+	\begin{itemize}
+		\item Are inline comments concise and meaningful?
+		\item Is there complex code that missing documentation?
+		\item Do functions use effective docstrings?
+		\item Is the necessary project documentation provided?
+	\end{itemize}
+	\item Is the code well tested?
+	\begin{itemize}
+		\item Does the code have test coverage?
+		\item Do tests check for interesting cases?
+		\item Are the tests readable?
+		\item Can the tests be made more efficient?
+	\end{itemize}
+	\item Is the logging effective?
+	\begin{itemize}
+		\item Are the log messages clear, concise, and professional?
+		\item Do they include all relevant and useful information?
+		\item Do they use the appropriate logging level?
+	\end{itemize}
+	\item Tips for code review:
+	\begin{itemize}
+		\item Use a code linter: linters like pylint can check for coding standard and PEP8 guidelines
+		\item Agree on a style guide as a team
+		\item Explain issues and make suggestions
+		\item Keep comments objective (avoid "I" and "you")
+	\end{itemize}
+\end{itemize}
