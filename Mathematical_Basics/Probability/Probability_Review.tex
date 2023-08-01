@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage{pythonhighlight}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{nicematrix}
+\usepackage{amssymb}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	\title{Probability Review}
+	\author{Klein \\ carlj.klein@gmail.com}
+	\date{}
+	\maketitle
+
+
+\section{Cards}
+\textbf{Question1:} \\
+Inclusion-Exclusion ID
+\\
+Hint: P(A $\bigcup$ B) = ?
+\\
+\textbf{Answer1:} \\
+P(A $\bigcup$ B) = P(A) + P(B) - P(AB)
+\\\\
+
+
+\textbf{Question2:} \\
+Define Mutually Exclusive
+\\
+\textbf{Answer2:} \\
+If AB = $\emptyset \rightarrowtail$ A and B are mutually exclusive 
+\\\\
+
+\textbf{Question3:} \\
+Conditional Probability and Corollary
+\\
+\textbf{Answer3:} \\
+Definition: P(E$\mid$F) = $\frac{P(EF)}{P(F)}$ 
+\\
+Corollary: P(EF) = P(E) * P(F$\mid$E)
+\\\\
+
+
+\textbf{Question4:} \\
+Multiplication Rule
+\\
+Hint: extension of conditional probability: $\rightarrow P(E_1 *** E_n)$ = ?
+\\
+\textbf{Answer4:} \\
+$P(E_1 *** E_n) = P(E_1) * P(E_2\mid E_1) * P(E_3\mid E_2 * E_1) *** P(E_n\mid E_{n-1} *** E_1)$
+\\\\
+
+
+\textbf{Question5:} \\
+Law of Total Probability
+\\
+Hint: Given a mutually exclusive and exhaustive set A, P($A_1$) + ... + P($A_k$) = 1, what can be deduced about the probability of an event B occurring?
+\\
+\textbf{Answer5:} \\
+P(B)\\
+= P(B$A_1$) + ... + P(B$A_k$)\\
+= P($A_1$) * P(B $\mid$ $A_1$) + ... + P($A_k$) * P(B $\mid$ $A_k$)\\
+= $\sum_{i=1}^k P(A_i) * P(B \mid A_i)$
+\\\\
+
+
+\textbf{Question6:} \\
+Bayes' Theorem 
+\\
+\textbf{Answer6:} \\
+Given a mutually exclusive and exhaustive set A, P($A_1$) + ... + P($A_k$) = 1, then\\
+$P(A_j \mid B) = $\\
+$\frac{P(A_jB)}{P(B)} = $\\
+$\frac{P(A_j) * P(B \mid A_j)}{\sum_{i=1}^k P(A_i) * P(B \mid A_i)}$
+
+
+
+\end{document}
