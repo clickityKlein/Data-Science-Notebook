@@ -75,6 +75,217 @@ Given a mutually exclusive and exhaustive set A, P($A_1$) + ... + P($A_k$) = 1, 
 $P(A_j \mid B) = $\\
 $\frac{P(A_jB)}{P(B)} = $\\
 $\frac{P(A_j) * P(B \mid A_j)}{\sum_{i=1}^k P(A_i) * P(B \mid A_i)}$
+\\\\
+
+
+\textbf{Question7:} \\
+How does independence extend to intersections and conditional probability?
+\\
+\textbf{Answer7:} \\
+Given independent events, A and B:\\
+P(AB) = P(A) * P(B)\\
+P(A$\mid$B) = P(A) and P(B$\mid$A) = P(B)
+\\\\
+
+
+\textbf{Question8:} \\
+Cumulative Distribution Function (CDF)
+\\
+\textbf{Answer8:} \\
+F(x) = P(X $\leq$ x)
+\\\\
+
+
+\textbf{Question9:} \\
+Properties of the CDF
+\\
+\textbf{Answer9:} \\
+\begin{itemize}
+	\item 0 $\leq$ F(x) $\leq$ 1
+	\item If x $\leq$ y $\rightarrow$ F(x) $\leq$ F(y)
+	\item $lim_ {x \to \infty} F (x)$ = 1
+	\item $lim_ {x to -\infty} F (x)$ = 0
+\end{itemize}
+
+
+\textbf{Question10:} \\
+Probability Mass Function (pmf)
+\\
+\textbf{Answer10:} \\
+Note: for finate or coutnable infinite set (i.e. discrete)\\
+p(x) = P(X=x)
+\\\\
+
+
+\textbf{Question11:} \\
+For discrete values, describe the following:\\
+\begin{itemize}
+	\item E[X]
+	\item E[X$^2$]
+	\item E[g(X)]
+	\item E[aX + b]
+	\item E[aX + bY]
+\end{itemize}
+
+\textbf{Answer11:} \\
+\begin{itemize}
+	\item E[X] = $\sum_{x} xP(X=x)$
+	\item E[X$^2$] = $\sum_{x} x^2P(X=x)$
+	\item E[g(X)] = $\sum_{x} g(x)P(X=x)$
+	\item E[aX + b] = aE[X] + b
+	\item E[aX + bY] = aE[X] + bE[Y]
+\end{itemize}
+
+
+\textbf{Question12:} \\
+For discrete values, describe the following:\\
+\begin{itemize}
+	\item Var(X)
+	\item Var(cX)
+	\item Var(aX + b)
+	\item sd(X)
+\end{itemize}
+
+\textbf{Answer12:} \\
+\begin{itemize}
+	\item Var(X) = E[(X - $\mu$)$^2$] = E[X$^2$] - (E[X])$^2$ = $\sigma^2$
+	\item Var(cX) = c$^2$Var(X)
+	\item Var(aX + b) = a$^2$Var(X)
+	\item sd(X) = $\sqrt{Var(X)} = \sigma$
+\end{itemize}
+
+
+\textbf{Question13:} \\
+Define moment and compare it to $\sigma$
+\\
+
+\textbf{Answer13:} \\
+E[X$^k$] = k$^{th}$ raw moment\\
+$\sigma$ = mean = 1st raw moment
+\\\\
+
+
+\textbf{Question14:} \\
+Define covariance and provide the formula.
+\\
+\textbf{Answer14:} \\
+Cov(X, Y) = \\
+E[(X - E[X])(Y - E[Y])] = \\
+E[XY] - E[X]E[Y]
+\\\\
+
+
+\textbf{Question15:} \\
+Describe the following properties of covariance:\\
+\begin{itemize}
+	\item Cov(X, X)
+	\item Cov(aX, Y)
+	\item Cov($\sum_{i=1}^n X_i$, $\sum_{j=1}^m Y_j$)
+\end{itemize}
+
+\textbf{Answer15:} \\
+\begin{itemize}
+	\item Cov(X, X) = E[X$^2$] - (E[X])$^2$ = $\sigma^2$ = Var(X)
+	\item Cov(aX, Y) = aCov(X, Y)
+	\item Cov($\sum_{i=1}^n X_i$, $\sum_{j=1}^m Y_j$) = $\sum_{i=1}^n$ $\sum_{j=1}^m$ Cov($X_i$, $Y_j$)
+\end{itemize}
+
+
+\textbf{Question16:} \\
+Uniform Distribution (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pdf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer16:} \\
+\begin{itemize}
+	\item P(X=x) = $\frac{1}{n}$
+	\item E[X] = $\frac{n + 1}{2}$ = $\frac{b + a}{2}$
+	\item Var(X) = $\frac{n^2 + 1}{12}$ = $\frac{(b - a + 1)^2 + 1}{12}$
+\end{itemize}
+
+
+\textbf{Question17:} \\
+Bernoulli Distribution (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pdf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer17:} \\
+Example: flipping a coin for a single experiment, 0 represents heads (probability p) and 1 represents tails ()probability 1 - p).
+\begin{itemize}
+	\item \[P(X=x) =
+		\begin{cases} 
+			p; x = 0 \\
+			1 - p; x = 1   
+		\end{cases}
+	\]
+	\item E[X] = p
+	\item Var(X) = p(1 - p)
+\end{itemize}
+
+
+\textbf{Question18:} \\
+Binomial Distribution (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pdf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer18:} \\
+Example: Multiple experiments where each experiment only has 2 outcomes (flipping a coin multiple times).\\
+The distribution is the sum of Bernoulli's, number of successes with probability p in n independent trials.
+\begin{itemize}
+	\item P(X=x) = $\binom{n}{x}p^{x}p(1-p)^{n-x}$
+	\item E[X] = np
+	\item Var(X) = np(1 - p)
+\end{itemize}
+
+
+\textbf{Question19:} \\
+Geometric Distribution - "Starting at 0" (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pdf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer19:} \\
+Example: x is the number of failures before a success (i.e. can be 0).
+\begin{itemize}
+	\item P(X=x) = p(1-p)$^x$
+	\item E[X] = $\frac{1 - p}{p}$
+	\item Var(X) = $\frac{1 - p}{p^2}$
+\end{itemize}
+
+
+\textbf{Question20:} \\
+Geometric Distribution - "Starting at 1" (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pdf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer20:} \\
+Example: x is the number of trials necessary for a success, including the success (i.e. cannot be 0).
+\begin{itemize}
+	\item P(X=x) = p(1-p)$^{x - 1}$
+	\item E[X] = $\frac{1}{p}$
+	\item Var(X) = $\frac{1 - p}{p^2}$
+\end{itemize}
+
+
 
 
 
