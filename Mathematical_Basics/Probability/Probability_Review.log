@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  2 AUG 2023 18:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.14)  4 AUG 2023 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -837,18 +837,208 @@ Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
-[4] [5] [6] (./Probability_Review.aux)
+[4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 323--327
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 380--388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--398
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--402
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--451
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--451
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 473--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 473--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 503--511
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 503--511
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--537
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--537
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--537
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--547
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 563--572
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--584
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 599--600
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 602--605
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--620
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 634--646
+
+ []
+
+[13] [14] (./Probability_Review.aux)
 Package rerunfilecheck Info: File `Probability_Review.out' has not changed.
 (rerunfilecheck)             Checksum: 744A29ED285E0C2B9E13F1D8A4E9B15F;68.
  ) 
 Here is how much of TeX's memory you used:
- 20911 strings out of 478268
- 400606 string characters out of 5850345
- 666455 words of memory out of 5000000
+ 20919 strings out of 478268
+ 400659 string characters out of 5850345
+ 667457 words of memory out of 5000000
  38797 multiletter control sequences out of 15000+600000
  477150 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,6n,80p,468b,377s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 76i,6n,80p,468b,395s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2022
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-di
@@ -862,13 +1052,13 @@ ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2022/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2022/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msam10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000
-.pfb>
-Output written on Probability_Review.pdf (6 pages, 175243 bytes).
+fonts/cm/cmsy5.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy7.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10
+.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on Probability_Review.pdf (14 pages, 209847 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 8 named destinations out of 1000 (max. 500000)
+ 166 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 16 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

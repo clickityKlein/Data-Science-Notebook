@@ -112,7 +112,7 @@ Properties of the CDF
 Probability Mass Function (pmf)
 \\
 \textbf{Answer10:} \\
-Note: for finate or coutnable infinite set (i.e. discrete)\\
+Note: for finite or countably infinite set (i.e. discrete)\\
 p(x) = P(X=x)
 \\\\
 
@@ -195,7 +195,7 @@ Describe the following properties of covariance:\\
 Uniform Distribution (discrete)\\
 Provide the following:
 \begin{itemize}
-	\item pdf
+	\item pmf
 	\item E[X]
 	\item Var(X)
 \end{itemize}
@@ -212,7 +212,7 @@ Provide the following:
 Bernoulli Distribution (discrete)\\
 Provide the following:
 \begin{itemize}
-	\item pdf
+	\item pmf
 	\item E[X]
 	\item Var(X)
 \end{itemize}
@@ -235,7 +235,7 @@ Example: flipping a coin for a single experiment, 0 represents heads (probabilit
 Binomial Distribution (discrete)\\
 Provide the following:
 \begin{itemize}
-	\item pdf
+	\item pmf
 	\item E[X]
 	\item Var(X)
 \end{itemize}
@@ -254,7 +254,7 @@ The distribution is the sum of Bernoulli's, number of successes with probability
 Geometric Distribution - "Starting at 0" (discrete)\\
 Provide the following:
 \begin{itemize}
-	\item pdf
+	\item pmf
 	\item E[X]
 	\item Var(X)
 \end{itemize}
@@ -272,7 +272,7 @@ Example: x is the number of failures before a success (i.e. can be 0).
 Geometric Distribution - "Starting at 1" (discrete)\\
 Provide the following:
 \begin{itemize}
-	\item pdf
+	\item pmf
 	\item E[X]
 	\item Var(X)
 \end{itemize}
@@ -286,7 +286,362 @@ Example: x is the number of trials necessary for a success, including the succes
 \end{itemize}
 
 
+\textbf{Question21:} \\
+Negative Binomial (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pmf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer21:} \\
+Number of failures before the r$^{th}$ success.\\
+Sum of Geometric Distributions "starting at 0".
+\begin{itemize}
+	\item P(X=x) = $\binom{n + (r - 1)}{r - 1}p^{r}(1-p)^{n}$
+	\item E[X] = $r\frac{1 - p}{p}$
+	\item Var(X) = $r\frac{1 - p}{p^2}$
+\end{itemize}
 
 
+\textbf{Question22:} \\
+Poisson Distribution (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pmf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer22:} \\
+\begin{itemize}
+	\item P(X=x) = $e^{-\lambda}\frac{\lambda^x}{x!}$
+	\item E[X] = $\lambda$
+	\item Var(X) = $\lambda$
+\end{itemize}
+Note that the sum of independent Poisson distributions is Poisson: \\
+Given N = Poiss($\lambda_1$) and M = Poiss($\lambda_2$) \\
+$\rightarrow$ P(N + M = x) = P(Poiss($\lambda_{1} + \lambda_{2}$) = x)
+\\\\
+
+
+\textbf{Question23:} \\
+Hypergeometric Distribution (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pmf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer23:} \\
+Choosing items without replacement:
+\begin{itemize}
+	\item G: total "good"
+	\item g: number of "good" wanted
+	\item N: total
+	\item n: number inspected
+\end{itemize}
+
+\begin{itemize}
+	\item P(X=g) = $\frac
+	{\binom{G}{g}\binom{N - G}{n - g}}
+	{\binom{N}{n}}
+	$
+	\item E[X] = $\frac{G}{N}$
+	\item Var(X) = $\frac{N - n}{N - 1}np(1 - p)$
+\end{itemize}
+
+
+\textbf{Question24:} \\
+Multinomial Distribution (discrete)\\
+Provide the following:
+\begin{itemize}
+	\item pmf
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer24:} \\
+Example: k-sided die rolled n times (i.e. n trials with k outcomes). Derivation of the binomial distribution (i.e. has more than 2 outcomes).\\
+Given:\\
+$X_i$: number of trials resulting in the $i^{th}$ outcome.\\
+k: number of categories\\
+then
+
+\begin{itemize}
+	\item P($X_1 = x_1$, ..., $X_k = x_k$) = $\frac{n!}{x_{1}! *** x_{k}!}p_{1}^{x_1} *** p_{k}^{x_k}$
+	\item E[$X_i$] = $np_i$
+	\item Var($X_i$) = $np_i(1-p_i)$
+\end{itemize}
+
+
+\textbf{Question25:} \\
+Define the probability density function (PDF).
+\\
+\textbf{Answer25:} \\
+Function which describes the probability for an event to occur for continuous functions.
+\\\\
+f(x) = $\frac{d}{dx}$F(x) $\rightarrow$ P(X $\in$ B) = $\int_{B}$f(x)dx
+\\\\
+
+
+\textbf{Question26:} \\
+Properties of the PDF.
+\\
+\textbf{Answer26:} \\
+f(x) $\geq$ 0 \\
+$\int_{-\infty}^{\infty}$f(x)dx = 1 \\
+$\int_{a}^{b}$f(x)dx = P(a $\leq$ x $\leq$ b)
+\\\\
+
+
+\textbf{Question27:} \\
+For continuous values, describe the following:\\
+\begin{itemize}
+	\item E[X]
+	\item E[g(X)]
+	\item Var(X)
+\end{itemize}
+\textbf{Answer27:} \\
+\begin{itemize}
+	\item E[X] = $\int_{-\infty}^{\infty}$xf(x)dx
+	\item E[g(X)] = $\int_{-\infty}^{\infty}$g(x)f(x)dx
+	\item Var(X) = E[X$^2$] - (E[X])$^2$ = $\sigma^2$
+\end{itemize}
+
+
+\textbf{Question28:} \\
+Uniform Distribution (continuous)\\
+Provide the following:
+\begin{itemize}
+	\item PDF
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer28:} \\
+\begin{itemize}
+	\item f(x) = $\frac{1}{b - a}$ , $a < x < b$
+	\item E[X] = $\frac{a + b}{2}$
+	\item Var(X) = $\frac{(b - a)^2}{12}$
+\end{itemize}
+
+
+\textbf{Question29:} \\
+Normal Distribution (continuous)\\
+Provide the following:
+\begin{itemize}
+	\item PDF
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer29:} \\
+\begin{itemize}
+	\item f(x) = $\frac{1}{\sqrt{2\pi}\sigma}e^{\frac{-(x - \mu)^2}{2\sigma^2}}$
+	\item E[X] = $\mu$
+	\item Var(X) = $\sigma^2$
+\end{itemize}
+Standard Normal Conversion:\\
+Want $\mu = 0$ and $\sigma = 1$ \\
+If X = Norm($\mu$, $\sigma^2$) $\rightarrow$ Z = $\frac{x - \mu}{\sigma}$ is the standard normal.
+\\\\
+
+
+\textbf{Question30:} \\
+Exponential Distribution (continuous)\\
+Provide the following:
+\begin{itemize}
+	\item PDF
+	\item E[X]
+	\item Var(X)
+\end{itemize}
+
+\textbf{Answer30:} \\
+Example: X is the waiting time until an event occurs, when events are always occurring at a random rate of $\mu > 0$.
+\begin{itemize}
+	\item f(x) = $\mu e^{-\lambda x}$, $x > 0$
+	\item E[X] = $\frac{1}{\lambda}$
+	\item Var(X) =$\frac{1}{\lambda^2}$
+\end{itemize}
+$P(X > x) = e^{-\lambda x}$ \\
+X has the memoryless property: implies the probability of an event occurring in the future is independent of how long it has not occurred in the past.
+
+
+\textbf{Question31:} \\
+Central Limit Theorem (CLT).
+\\
+\textbf{Answer31:} \\
+The sum of a large number of independent random variables has a distribution that is approximately normal.\\
+That is, given a sequence of individually and identically distributed random variables (iid's), each with mean $\mu$ and variance $\sigma^2$:\\
+$\frac{x_1 + ... + x_n - n\mu}{\sigma \sqrt{n}}$ is approximately N(0,1) as n $\rightarrow$ $\infty$
+\\\\
+$S_n = x_1 + ... + x_n$, E[$S_n$] = n$\mu$, SD($S_n$) = $\sigma \sqrt{n}$, VarSD($S_n$) = $\sigma^2$n
+\\\\
+$\rightarrow$ $\frac{S_n - n\mu}{\sigma \sqrt{n}}$ is approximately N(0,1).
+\\\\
+
+
+\textbf{Question32:} \\
+Central Limit Theorem (CLT) Extensions, describe the following:
+\begin{itemize}
+	\item Given $S_n = x_1 + ... + x_n$, provide the CDF P($S_n \leq$ x)
+	\item Averages
+\end{itemize}
+
+\textbf{Answer32:}\\
+\begin{itemize}
+	\item P($S_n \leq$ x) = P($\frac{S_n - n\mu}{\sigma \sqrt{n}} \leq \frac{x - n\mu}{\sigma \sqrt{n}}$) = $\phi(\frac{x - n\mu}{\sigma \sqrt{n}})$
+	\item $S_n = \sum x_i \rightarrow \bar{x} = \frac{S}{n} \rightarrow E[\bar{X}] = E[X]$\\
+	$Var(\bar{X}) = \frac{Var(X)}{n}$\\
+	$\rightarrow$ X is approximately $N(E[X], \frac{Var(X)}{n})$
+\end{itemize}
+
+
+\textbf{Question33:} \\
+Describe the strong law of large numbers.
+\\
+\textbf{Answer33:}\\
+The average of a sequence of iid's random variables will converge to the mean of that distribution.\\
+Given E[$X_i$] = $\mu$, $S_n = x_1 + ... + x_n$, \\
+then $\frac{S_n}{n} \rightarrow \mu$ as $n \rightarrow \infty$
+\\\\
+
+
+\textbf{Question34:} \\
+Moment Generating Function (MGF)
+\\
+\textbf{Answer34:}\\
+M(t) = E[$e^{tx}$], which can be generated for both discrete and continuous variables.\\
+M'(0) = E[X] = $1^{st}$ moment\\
+.\\
+.\\
+.\\
+$M^k$ = E[$X^k$] = $k^{th}$ moment
+\\\\
+
+
+\textbf{Question35:} \\
+Define joint CDFs for both discrete (pmf) and continuous.
+\\
+\textbf{Answer35:}\\
+Discrete: joint pmf: p(i, j) = P(X=i, Y=j)\\
+Individual pmfs from joint: P(X=i) = $\sum_j$ P(i, j), P(X=j) = $\sum_i$ P(i, j)
+\\\\
+Continuous: F(x, y) = P(X $\leq$ x, Y $\leq$ y); $-\infty<x,y<\infty$\\
+Individual CDFs (marginal distributions):\\
+$F_x(x) = \lim_{y\to\infty} F(x,y)$, $F_y(x) = \lim_{x\to\infty} F(x,y)$
+\\\\
+
+\textbf{Question36:} \\
+Define joint PDFs.
+\\
+\textbf{Answer36:}\\
+Suppose we have joint PDF f(x, y) such that\\
+P((x, y) $\in$ C) = $\int \int_{C}$ f(x, y)dxdy\\
+$\rightarrow f_x(x) = \int_{\infty}^{-\infty} f(x, y)dy$, $f_y(y) = \int_{\infty}^{-\infty} f(x, y)dx$\\
+\\\\
+$\rightarrow$ f(x, y) = $\frac{\partial^2}{\partial x \partial y}$ F(x, y)
+
+
+\textbf{Question37:} \\
+Joint PDF Independence.
+\\
+\textbf{Answer37:}\\
+Random variables X and Y are independent if for all sets A and B:\\
+P(x $\in$ A, y $\in$ B) = P(X $\in$ A)P(y $\in$ B)\\
+Independence creates the following:
+\begin{itemize}
+	\item F(a, b) = $F_X(a)F_Y(b)$
+	\item p(x, y) = $p_x(x)p_y(y)$
+	\item f(x, y) = $f_X(x)f_Y(y)$
+\end{itemize}
+
+
+\textbf{Question38:} \\
+Define joint conditional distributions for both discrete and continuous random variables.
+\\
+\textbf{Answer38:}\\
+Discrete:\\
+P(Y = y $\mid$ X = x) = $\frac{P(X=x, Y=y)}{P(X=x)}$ = $\frac{P(Y=x, Y=y)}{\sum_y P(X=x, Y=y)}$
+\\\\
+Continuous:\\
+$f_{x \mid y}(y \mid X=x)$ = $\frac{f(x, y)}{f_x(x)}$ = $\frac{f(x, y)}{\int f(x, y)dy}$
+
+
+\textbf{Question39:} \\
+Define joint moments:
+\begin{itemize}
+	\item E[g(x, y)]
+	\item E[y $\mid$ X=x]
+	\item E[g(y) $\mid$ X=x]
+	\item E[$Y^k$]
+\end{itemize}
+
+\textbf{Answer39:}\\
+\begin{itemize}
+	\item E[g(x, y)] = $\int \int g(x,y)f(x,y)dxdy$
+	\item E[y $\mid$ X=x] = E[Y $\mid$ X] = $\int yf_{y \mid x}(y \mid X=x)$
+	\item E[g(y) $\mid$ X=x] = $\int g(y)f_{y \mid x}(y \mid X=x)$
+	\item E[$Y^k$] = E[E[$Y^k \mid X$]]
+\end{itemize}
+
+
+\textbf{Question40:} \\
+Define the following in terms of X and Y:
+\begin{itemize}
+	\item Var(Y) 
+	\item Var($Y \mid X=x$)
+\end{itemize}
+
+\textbf{Answer40:}\\
+\begin{itemize}
+	\item Var(Y) = E[Var(Y $\mid$ X)] + Var(E[Y $\mid$ X])
+	\item Var($Y \mid X=x$) = E[$Y^2 \mid X=x$] - $(E[Y \mid X=x])^2$
+	\\\\
+	 = $\int y^2 f_{y \mid x}(y \mid X=x)dy$ - $(\int y f_{y \mid x}(y \mid X=x)dy)^2$
+\end{itemize}
+
+
+\textbf{Question41:} \\
+Define the following covariance:
+\begin{itemize}
+	\item Cov(X, Y)
+	\item Var(X + Y)
+	\item Var(aX + bY)
+	\item Cov(X, b)
+	\item Cov(X, X)
+	\item Cov(aX + bY, cZ)
+\end{itemize}
+
+\textbf{Answer41:}\\
+\begin{itemize}
+	\item Cov(X, Y) = E[XY] - E[X]E[Y]
+	\item Var(X + Y) = Var(x) + 2Cov(X, Y) + Var(Y)
+	\item Var(aX + bY) = $a^2$(x) + 2abCov(X, Y) + $b^2$Var(Y)
+	\item Cov(X, b) = 0
+	\item Cov(X, X) = Var(X)
+	\item Cov(aX + bY, cZ) = Cov(aX, cZ) + Cov(bY, cZ)\\
+	= acCov(X, Z) + bcCov(Y, Z)
+\end{itemize}
+
+
+\textbf{Question42:} \\
+Define the multi-variate moment generating functions (MGFs).
+
+\textbf{Answer42:}\\
+$M_{X, Y}(s, t)$ = E[$e^{sx + ty}$]
+\\\\
+$\frac{\partial}{\partial s} M_{x, y} = E[X e^{sx+ty}]$
+\\\\
+$\frac{\partial}{\partial t} M_{x, y} = E[Y e^{sx+ty}]$
+\\\\
+$\frac{\partial}{\partial s} M_{x, y} \mid _{0,0} = E[X]$
+\\\\
+$\frac{\partial}{\partial t} M_{x, y} \mid _{0,0} = E[Y]$
+\\\\
+$\frac{\partial^2}{\partial s \partial t} M_{x, y} \mid _{0,0} = E[XY]$
 
 \end{document}
