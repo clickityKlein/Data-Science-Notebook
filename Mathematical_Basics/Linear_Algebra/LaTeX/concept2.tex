@@ -9,8 +9,8 @@ We'll take another look into multiplication, more specifically multiplication be
 	\item \nameref{concept2.4}
 	\item \nameref{concept2.5}
 	\item \nameref{concept2.6}
-%	\item \nameref{concept2.7}
-%	\item \nameref{concept2.8}
+	\item \nameref{concept2.7}
+	\item \nameref{concept2.8}
 %	\item \nameref{concept2.9}
 %	\item \nameref{concept2.10}
 \end{itemize}
@@ -35,7 +35,7 @@ Although we haven't explicitly defined the dot product for just vectors, if we f
 \begin{equation}
 	\vec{v} \cdot \vec{v}  = v_1 \cdot v_1 + . . . + v_n \cdot v_n = v_1^2 + . . . + v_n^2
 	\longrightarrow
-	\vec{v} \cdot \vec{v} = \left(\sqrt{v_1^2 + . . . + v_n^2}\right)^2 = \left\Vert \vec{v} \right\Vert
+	\vec{v} \cdot \vec{v} = \left(\sqrt{v_1^2 + . . . + v_n^2}\right)^2 = \left\Vert \vec{v} \right\Vert^2
 \end{equation}
 
 A interesting relationship, but let's jump into some more generic properties of the dot product between vectors:
@@ -110,4 +110,209 @@ Orthogonality: The concept of perpendicular vectors makes sense in 2-dimensions,
 In general, $\vec{u} \cdot \vec{v} = 0$ (and provided neither of the vectors are the zero vector) implies the vectors are orthogonal.
 
 
-\subsection{Equation of a Plane, and Normal Vectors}\label{concept2.6}
+\subsection{Cross Product}\label{concept2.6}
+The cross product of two vectors, a x b, gives an orthogonal vector to both a and b.
+\\
+It's calculated by taking the determinant of:
+\begin{equation}
+	\begin{bNiceMatrix}
+		i & j & k \\
+		a_1 & a_2 & a_3 \\
+		b_1 & b_2 & b_3 \\
+	\end{bNiceMatrix}
+\end{equation}
+
+The dot product and cross product are opposite ideas:
+\begin{itemize}
+	\item Dot Product: how much two vectors point in the same direction.
+	\item Cross Product: how much two vectors point in opposite directions.
+\end{itemize}
+
+The cross product can also be defined as:
+\begin{equation}
+	\SinCrossProduct
+\end{equation}
+
+where the following hold:
+\begin{itemize}
+	\item $\theta = 90^\circ$: orthogonal
+	\item $\theta = 0^\circ$ or $180^\circ$: collinear 
+\end{itemize}
+
+
+\subsection{Fundamental Subspaces}\label{concept2.7}
+The four fundamental subspaces:
+\begin{itemize}
+	\item Null: $N(A)$
+	\item Left Null: $N(A^T)$
+	\item Row: $C(A^T)$
+	\item Column: $C(A)$
+\end{itemize}
+
+\textbf{Null Space}
+\\
+
+The Null Space of a matrix A is defined as the set of all vectors which satisfy:
+\begin{itemize}
+	\item $A \cdot \vec{x} = \vec{0}$
+	\item $N(A) = N(rref(A))$
+\end{itemize}
+
+\textbf{Column Space}
+\\
+
+The Column Space of a matrix A is defined as:
+\begin{itemize}
+	\item $C(A) =$ linear combinations of columns of A
+	\item $=$ span of columns of A
+\end{itemize}
+
+To find the Column Space, $C(A)$, we can use $A \cdot \vec{x} = b \rightarrow b \in C(A)$, along with the $N(A)$ and the concept of a basis.
+\\
+
+Recall:
+\begin{itemize}
+	\item Basis: a collection of linearly independent vectors that span an entire vector space.
+	\item Independence: None of the vectors can be expressed as a linear combination of the others.
+\end{itemize}
+
+We know that if $N(A) = \vec{0} \rightarrow$ columns of $A$ are linearly independent (forms a basis). And if $N(A) = \vec{0}, \vec{v} \rightarrow$ columns of $A$ are linearly dependent (do not form a basis).
+\\
+
+A quick aside on dimensions. Given an $m x n$ matrix $A$, $N(A)$ will is a subspace of $\mathbb{R}^n$, and $C(A)$ of $A$ is a subspace  in $\mathbb{R}^m$.
+
+\begin{itemize}
+	\item $C(A)$: r-dimensional subspace where r is the number of pivot columns
+	\item $N(A)$: (n-r)-dimensional subspace where n is the total number of columns, and would be the total number of non-pivot columns
+\end{itemize}
+
+For example, given the matrix:
+
+\begin{equation}
+	\begin{bNiceMatrix}
+		2 & 1 & 3 & 1 \\
+		4 & -2 & 8 & 4 \\
+		5 & 6 & -2 & -3 \\
+	\end{bNiceMatrix}
+\end{equation}
+
+then,
+\\
+
+
+\[
+\begin{bNiceMatrix}
+	x_1 \\
+	x_2 \\
+	x_3 \\
+	x_4 \\
+\end{bNiceMatrix}
+%
+= x_4 *
+%
+\begin{bNiceMatrix}
+	\frac{3}{31} \\
+	\frac{8}{31} \\
+	\frac{-15}{31} \\
+	1 \\
+\end{bNiceMatrix}
+\]
+
+Therefor,
+
+\[
+N(A) = N(rref(A)) =
+%
+Span(
+%
+\begin{bNiceMatrix}
+	\frac{3}{31} \\
+	\frac{8}{31} \\
+	\frac{-15}{31} \\
+	1 \\
+\end{bNiceMatrix}
+%
+)
+\]
+
+And we also have $Dim(N(A)) = 1$.
+\\
+
+Given that $x_4$ is a "free", meaning it is a scalar which can take on any value (infinitely many), this means $N(A)$ doesn't just contain the zero vector and there is more than one solution to $A\vec{x} = \vec{0}$, which means that the column vectors of A are a linearly dependent set.
+\\
+
+Since the vector set (columns) in our matrix $A$ are not linearly independent, then they can't form a basis for the column space.
+\\
+
+The column space is still, however, a linearly combination of the column vectors. In other words $C(A) = Span([A_1], [A_2], [A_3], [A_4])$.
+\\
+
+We can take the span and create a basis, though!
+\\
+
+Since $x_4$ is free, we can set $x_4 = 0$. If $A$ is still our aforementioned matrix, then let $A'$ be our matrix with $x_4 = 0$. If we solve for $N(A')$, then we'll find that the only solution to $N(A')$ is $\vec{0}$. Thus, $C(A') = Span([A'_1], [A'_2], [A'_3])$ is also a basis for the column space. Hence, $Dim(C(A)) = 3$.
+\\
+
+The Complementary, Particular, and General Solutions
+\\
+
+If we let any $\vec{x}$ such that $A\vec{x}=\vec{0}\rightarrowtail$ $\vec{x}$ be known as the complementary solution.
+\\
+
+Then, if we let any $\vec{x}$ such that $A\vec{x}=\vec{b}\rightarrowtail$ $\vec{x}$ be known as the particular solution.
+\\
+
+Then, the general solution is the sum of the complementary and the particular solution.
+\\
+
+For notation's sake, let
+
+\begin{itemize}
+	\item $x_n$: complementary solution
+	\item $x_p$: particular solution
+	\item $x$: general solution
+\end{itemize}
+
+then $A\vec{x_n} + A\vec{x_p} = \vec{0} + \vec{b} \rightarrow$
+\\
+
+$A(\vec{x_n} + \vec{x_p}) = \vec{b} = A\vec{x}$.
+\\
+
+Applying this to solving for the complete set of solutions, if we set any free variables to 0 for both the complementary and particular solution, then we get the complete set of solutions.
+\\
+
+A quick summary:
+\begin{itemize}
+	\item complementary solution: $N(A)$
+	\item particular solution: $C(A)$
+	\item $dim(A) = m x n$
+	\item rank: $rank(A) = dim(C(A)) = r$
+	\item nullity: $nullity(A) = dim((N(A))) = n-r$
+\end{itemize}
+
+
+\subsection{Functions and Transformations}\label{concept2.8}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
