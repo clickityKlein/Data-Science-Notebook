@@ -1,0 +1,445 @@
+% Concept3: Matrix-Vector Products
+
+We'll go deeper into the relationships between matrices and vectors, and combining and introducing new concepts.
+
+\begin{itemize}
+	\item \nameref{concept3.1}
+	\item \nameref{concept3.2}
+	\item \nameref{concept3.3}
+	\item \nameref{concept3.4}
+	\item \nameref{concept3.5}
+	\item \nameref{concept3.6}
+	\item \nameref{concept3.7}
+%	\item \nameref{concept3.8}
+%	\item \nameref{concept3.9}
+%	\item \nameref{concept3.10}
+\end{itemize}
+
+
+\subsection{Fundamental Subspaces}\label{concept3.1}
+The four fundamental subspaces:
+\begin{itemize}
+	\item Null: $N(A)$
+	\item Left Null: $N(A^T)$
+	\item Row: $C(A^T)$
+	\item Column: $C(A)$
+\end{itemize}
+
+\textbf{Null Space}
+\\
+
+The Null Space of a matrix A is defined as the set of all vectors which satisfy:
+\begin{itemize}
+	\item $A \cdot \vec{x} = \vec{0}$
+	\item $N(A) = N(rref(A))$
+\end{itemize}
+
+\textbf{Column Space}
+\\
+
+The Column Space of a matrix A is defined as:
+\begin{itemize}
+	\item $C(A) =$ linear combinations of columns of A
+	\item $=$ span of columns of A
+\end{itemize}
+
+To find the Column Space, $C(A)$, we can use $A \cdot \vec{x} = b \rightarrow b \in C(A)$, along with the $N(A)$ and the concept of a basis.
+\\
+
+Recall:
+\begin{itemize}
+	\item Basis: a collection of linearly independent vectors that span an entire vector space.
+	\item Independence: None of the vectors can be expressed as a linear combination of the others.
+\end{itemize}
+
+We know that if $N(A) = \vec{0} \rightarrow$ columns of $A$ are linearly independent (forms a basis). And if $N(A) = \vec{0}, \vec{v} \rightarrow$ columns of $A$ are linearly dependent (do not form a basis).
+\\
+
+A quick aside on dimensions. Given an $m x n$ matrix $A$, $N(A)$ will is a subspace of $\mathbb{R}^n$, and $C(A)$ of $A$ is a subspace  in $\mathbb{R}^m$.
+
+\begin{itemize}
+	\item $C(A)$: r-dimensional subspace where r is the number of pivot columns
+	\item $N(A)$: (n-r)-dimensional subspace where n is the total number of columns, and would be the total number of non-pivot columns
+\end{itemize}
+
+For example, given the matrix:
+
+\begin{equation}
+	\begin{bNiceMatrix}
+		2 & 1 & 3 & 1 \\
+		4 & -2 & 8 & 4 \\
+		5 & 6 & -2 & -3 \\
+	\end{bNiceMatrix}
+\end{equation}
+
+then,
+\\
+
+
+\[
+\begin{bNiceMatrix}
+	x_1 \\
+	x_2 \\
+	x_3 \\
+	x_4 \\
+\end{bNiceMatrix}
+%
+= x_4 *
+%
+\begin{bNiceMatrix}
+	\frac{3}{31} \\
+	\frac{8}{31} \\
+	\frac{-15}{31} \\
+	1 \\
+\end{bNiceMatrix}
+\]
+
+Therefor,
+
+\[
+N(A) = N(rref(A)) =
+%
+Span(
+%
+\begin{bNiceMatrix}
+	\frac{3}{31} \\
+	\frac{8}{31} \\
+	\frac{-15}{31} \\
+	1 \\
+\end{bNiceMatrix}
+%
+)
+\]
+
+And we also have $Dim(N(A)) = 1$.
+\\
+
+Given that $x_4$ is a "free", meaning it is a scalar which can take on any value (infinitely many), this means $N(A)$ doesn't just contain the zero vector and there is more than one solution to $A\vec{x} = \vec{0}$, which means that the column vectors of A are a linearly dependent set.
+\\
+
+Since the vector set (columns) in our matrix $A$ are not linearly independent, then they can't form a basis for the column space.
+\\
+
+The column space is still, however, a linearly combination of the column vectors. In other words $C(A) = Span([A_1], [A_2], [A_3], [A_4])$.
+\\
+
+We can take the span and create a basis, though!
+\\
+
+Since $x_4$ is free, we can set $x_4 = 0$. If $A$ is still our aforementioned matrix, then let $A'$ be our matrix with $x_4 = 0$. If we solve for $N(A')$, then we'll find that the only solution to $N(A')$ is $\vec{0}$. Thus, $C(A') = Span([A'_1], [A'_2], [A'_3])$ is also a basis for the column space. Hence, $Dim(C(A)) = 3$.
+\\
+
+\subsection{Complementary, Particular, and General Solutions}\label{concept3.2}
+
+If we let any $\vec{x}$ such that $A\vec{x}=\vec{0}\rightarrowtail$ $\vec{x}$ be known as the complementary solution.
+\\
+
+Then, if we let any $\vec{x}$ such that $A\vec{x}=\vec{b}\rightarrowtail$ $\vec{x}$ be known as the particular solution.
+\\
+
+Then, the general solution is the sum of the complementary and the particular solution.
+\\
+
+For notation's sake, let
+
+\begin{itemize}
+	\item $x_n$: complementary solution
+	\item $x_p$: particular solution
+	\item $x$: general solution
+\end{itemize}
+
+then $A\vec{x_n} + A\vec{x_p} = \vec{0} + \vec{b} \rightarrow$
+\\
+
+$A(\vec{x_n} + \vec{x_p}) = \vec{b} = A\vec{x}$.
+\\
+
+Applying this to solving for the complete set of solutions, if we set any free variables to 0 for both the complementary and particular solution, then we get the complete set of solutions.
+\\
+
+A quick summary:
+\begin{itemize}
+	\item complementary solution: $N(A)$
+	\item particular solution: $C(A)$
+	\item $dim(A) = m x n$
+	\item rank: $rank(A) = dim(C(A)) = r$
+	\item nullity: $nullity(A) = dim((N(A))) = n-r$
+\end{itemize}
+
+
+\subsection{Functions and Transformations}\label{concept3.3}
+
+A transformation is function which maps vectors. Some common notation and properties associated with transformations.
+\\
+Given the transformation from $\mathbb{R}^m \rightarrow \mathbb{R}^n$:
+\begin{itemize}
+	\item $T(\vec{v}) = \vec{v}_T$
+	\item domain: $\mathbb{R}^m$
+	\item codomain: $\mathbb{R}^n$
+	\item range: specific points mapped inside the codomain (may not be all of $\mathbb{R}^n$)
+\end{itemize}
+
+A transformation matrix, $M$, contains instructions for how to alter a vector or set of vectors when $M$ is applied to them.
+
+\begin{itemize}
+	\item Preimage: the vector, or vector set, before a transformation
+	\item Image: the vector, or vector set, after a transformation
+\end{itemize}
+
+Consider the transformation matrix
+
+\begin{equation}
+	M = 
+	\begin{bNiceMatrix}
+		a & b\\
+		c & d\\
+	\end{bNiceMatrix}
+\end{equation}
+
+Given preimage vectors of the unit vectors, then then we can create corresponding image vectors:
+
+\begin{equation}
+	m_i = 
+	\begin{bNiceMatrix}
+		a & b\\
+		c & d\\
+	\end{bNiceMatrix}
+	*
+	\begin{bNiceMatrix}
+		1\\
+		0\\
+	\end{bNiceMatrix}
+	=
+	\begin{bNiceMatrix}
+		a\\
+		c\\
+	\end{bNiceMatrix}
+\end{equation}
+
+and 
+
+\begin{equation}
+	m_j = 
+	\begin{bNiceMatrix}
+		a & b\\
+		c & d\\
+	\end{bNiceMatrix}
+	*
+	\begin{bNiceMatrix}
+		0\\
+		1\\
+	\end{bNiceMatrix}
+	=
+	\begin{bNiceMatrix}
+		b\\
+		d\\
+	\end{bNiceMatrix}
+\end{equation}
+
+This is extends to any dimensions and can be applied to any vector in a hyperspace.
+
+A few more facts about transformations:
+\begin{itemize}
+	\item Transformations are subspaces
+	\item $T^{-1}$ maps to the preimage in the domain
+	\item Kernel: all vectors that result in $\vec{0}$ under T
+\end{itemize}
+
+\subsection{Linear Transformations as Matrix-Vector Products}\label{concept3.4}
+
+$T:\mathbb{R}^m \rightarrow \mathbb{R}^n$ is a linear transformation if:
+\begin{itemize}
+	\item $T(\vec{u} + \vec{v}) = T(\vec{u}) + T(\vec{v})$
+	\item $T(c\vec{u}) = cT(\vec{u})$ AND $T(c\vec{v}) = cT(\vec{v})$
+\end{itemize}
+
+Given a codomain equation, we can backwards solve to obtain the transformation. This is done by plugging $I$ in.
+\\
+
+\begin{equation}
+	T(
+	\begin{bNiceMatrix}
+		a_1\\
+		a_2\\
+	\end{bNiceMatrix}
+	)
+	=
+	\begin{bNiceMatrix}
+		-a_1 + 2a_2\\
+		a_2 - 3a_1\\
+		a_1 - a_2\\
+	\end{bNiceMatrix}
+\end{equation}
+
+Substitute $I$ in the following manner:
+
+\begin{equation}
+	T(
+	\begin{bNiceMatrix}
+		1\\
+		0\\
+	\end{bNiceMatrix}
+	)
+	=
+	\begin{bNiceMatrix}
+		-1\\
+		-3\\
+		1\\
+	\end{bNiceMatrix}
+\end{equation}
+
+and
+
+\begin{equation}
+	T(
+	\begin{bNiceMatrix}
+		0\\
+		1\\
+	\end{bNiceMatrix}
+	)
+	=
+	\begin{bNiceMatrix}
+		2\\
+		1\\
+		-1\\
+	\end{bNiceMatrix}
+\end{equation}
+
+Hence,
+
+\begin{equation}
+	T
+	=
+	\begin{bNiceMatrix}
+		-1 & 2\\
+		-3 & 1\\
+		1 & -1\\
+	\end{bNiceMatrix}
+\end{equation}
+
+\textbf{Linear Transformation as Rotations}
+\begin{itemize}
+	\item Use a linear transformation to rotate by a certain degree
+	\item Use a matrix combination of $sin$ and $cos$, changing with $n$ for $\mathbb{R}^n$
+\end{itemize}
+
+\textbf{Adding and Scaling Linear Transformations}
+
+Given the following transformations, $S(\vec{x}) = A\vec{x}$ and $T(\vec{x}) = B\vec{x}$, where both $S$ and $T$ are $\mathbb{R}^n \rightarrow \mathbb{R}^m$.
+
+\begin{itemize}
+	\item Summations: $(S + T)\vec{x} = S\vec{x} + T\vec{x} = (A + B)\vec{x}$
+	\item Scaling: $cT(\vec{x}) = c(B\vec{x}) = (cB)\vec{x}$
+\end{itemize}
+
+
+\subsection{Projections as Linear Transformations}\label{concept3.5}
+
+We can think of a projection in the following manner. Take a  vector $\vec{v}$ casting a shadow on a line L, then
+\\
+
+Projection of $vec{v}$ onto L: $Proj_L(\vec{v})$
+\\
+
+And if $\vec{x}$ is any vector on L, $Proj_L(\vec{v})$ is a scaled version of $\vec{x}$, i.e.
+\\
+
+$Proj_L(\vec{v}) = c\vec{x}$
+\\
+
+Another property of projections is that
+
+$v - Proj_L(\vec{v})$ is orthogonal to L,
+\\
+
+thus,
+
+$\rightarrow c = \frac{\vec{v}\vec{x}}{\vec{x}\vec{x}}$
+\\
+
+$Proj_L(\vec{v}) = \rightarrow c = \frac{\vec{v}\vec{x}}{\vec{x}\vec{x}}\vec{x}$.
+\\
+
+Recall the fact that $\vec{x}\vec{x} = ||\vec{x}||^2$, then
+\\
+
+$Proj_L(\vec{v}) = (\frac{\vec{v}\vec{x}}{||\vec{x}||^2})\vec{x}$
+\\
+
+If we normalize $\vec{x}$, then
+\\
+
+$Proj_L(\vec{v}) = (\vec{v} \vec{u})\vec{u}$,
+\\
+
+Using this, it's easy to show that the projection is a linear transformation due to
+\\
+
+$Proj_L(\vec{v}) = (\vec{v} \vec{u})\vec{u} = A \vec{v}$
+
+\subsection{Compositions of Linear Transformations}\label{concept3.6}
+
+Given the following Linear Transformations:
+\begin{itemize}
+	\item $T: X \rightarrow Y$
+	\item $S: Y \rightarrow Z$
+\end{itemize}
+
+Then, we can summarize a composition with the following notation (equivalent):
+\begin{itemize}
+	\item $T(S(\vec{x})): X \rightarrow Z$
+	\item $T \circ S: X \rightarrow Z$
+\end{itemize}
+
+\textbf{Compositions, themselves, are also linear transformations}.
+\\
+
+$T \circ S (x+y) = T(S(X) + S(y))$
+\\
+$= T(S(X)) + T(S(y))$
+\\
+$= T \circ Sx + T \circ Sy$
+\\
+and
+\\
+$T \circ S (cx) = cT \circ S (x)$
+\\
+
+Finally, because they are linear transformations, they can be written as matrix-vector products:
+\\
+
+Give $S(x) = Ax$ and $T(x) = Bx$,
+\\
+
+then $T \circ S(x) = T \circ Ax = BAx = Cx$
+\\
+
+\textbf{Note the ordering of the matrix multiplication here (it may almost seem counterintuitive).}
+\\\\
+
+\subsection{Inverses}\label{concept3.7}
+
+\textbf{When specifically speaking of transformations and invertibility:}
+
+\begin{itemize}
+	\item The identity matrix, $I$, maps to itself $I \rightarrow I$
+	\item Definition: A transformation is invertible if it has an inverse:
+		\item $T: A \rightarrow B$
+		\item $T^{-1} \circ T = I_A$
+		\item $T \circ T^{-1} = I_B$ 
+\end{itemize}
+
+\textbf{Invertibility and Uniqueness:}
+\\
+
+If a transformation, $T$, is invertible, then the following hold:
+\begin{itemize}
+	\item $T^{-1}$ is unique
+	\item $T$ maps $a \in A$ to a unique $b \in B$
+	\item $T^{-1}$ maps $b \in B$ back to a unique $a \in A$
+\end{itemize}
+
+... this brings us to the topics of \textbf{Surjective and Injective}!
+
+
+
